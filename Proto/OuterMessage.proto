@@ -1,0 +1,78 @@
+syntax = "proto3";
+package ML;
+enum MSG{
+	_Default = 0;
+	_C2S_UserLogin = 5; //用户登录
+	_S2C_UserLogin = 6; //用户登录返回
+	_S2D_ReadRoleInfo = 7; //读取用户信息
+	_D2S_ReadRoleInfo = 8; //读取用户信息
+	_S2D_SaveRoleInfo = 9; //读取用户信息
+	_S2C_RoleInfo = 10; //通知用户信息发生变化
+	_S2WEB_ServerHeart = 11; //服务器心跳
+}
+//int属性
+message AttrInt{
+	int32 K = 1;//key
+	int64 V = 2;//值
+}
+
+//str属性
+message AttrStr{
+	int32 K = 1;//key
+	string V = 2;//值
+}
+
+//角色数据存储信息
+message RoleDbInfo{
+	int32 RoleId = 1;//角色编号
+	repeated AttrInt AttrInts = 2;//角色int属性
+	repeated AttrStr AttrStrs = 3;//角色int属性
+}
+
+//用户登录
+message C2S_UserLogin{
+	int32 AccountId = 1;//帐号ID
+	int64 Timestamp = 2;//时间戳
+	string sign = 3;//签名
+}
+
+//用户登录返回
+message S2C_UserLogin{
+	int32 tag = 1;//结果
+}
+
+//读取用户信息
+message S2D_ReadRoleInfo{
+	int32 RoleId = 1;//角色编号
+}
+
+//读取用户信息
+message D2S_ReadRoleInfo{
+	int32 tag = 1;//结果
+	int32 RoleId = 2;//角色编号
+	string RoleName = 3;//角色名称
+	bytes RoleData = 4;//角色数据
+}
+
+//读取用户信息
+message S2D_SaveRoleInfo{
+	int32 RoleId = 1;//角色编号
+	bytes RoleData = 2;//角色数据
+}
+
+//通知用户信息发生变化
+message S2C_RoleInfo{
+	int32 RoleId = 1;//角色编号
+	repeated AttrInt AttrInts = 2;//角色int属性
+	repeated AttrStr AttrStrs = 3;//角色str属性
+}
+
+//服务器心跳
+message S2WEB_ServerHeart{
+	int32 ServerId = 1;//服务器编号
+	string ServerName = 2;//服务器名称
+	string Ip = 3;//服务器IP
+	int32 Port = 4;//服务器端口
+	int32 Online = 5;//在线人数
+}
+

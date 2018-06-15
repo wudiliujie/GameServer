@@ -1,0 +1,25 @@
+[
+  {
+    "AppId": 1,
+    "AppType": "AllServer",
+    "ServerIP": "*",
+    "OuterConfig": {
+      "Host": "127.0.0.1",
+      "Port": 10000
+    },
+    "InnerConfig": {
+      "Host": "127.0.0.1",
+      "Port": 20000
+    },
+    "DBConfig": {
+      "ConnectionString": null,
+      "DBName": null
+    },
+    "HttpConfig": {
+      "Url": "http://*:8080/",
+      "AppId": 0,
+      "AppKey": "",
+      "ManagerSystemUrl": ""
+    }
+  }
+]

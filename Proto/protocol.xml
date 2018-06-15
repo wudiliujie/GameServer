@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- r:代表是资源结构 -->
+<pack>
+  <s n="ActorResponse" d="Actor回复信息" r="1" db="1">
+    <p i="1" n="RpcId" t="int" d="编号" />
+    <p i="2" n="Tag" t="int" d="结果" />
+    <p i="3" n="Message" t="string" d="名字" />
+  </s>
+  <s n="ResponseMessage" d="回复信息" r="1" db="1">
+    <p i="1" n="RpcId" t="int" d="编号" />
+    <p i="2" n="Tag" t="int" d="结果" />
+    <p i="3" n="Message" t="string" d="名字" />
+  </s>
+  <s n="ErrInfo" d="错误信息" r="1">
+    <p i="1" n="i" t="int" d="编号" />
+    <p i="2" n="n" t="string" d="名字" />
+    <p i="3" n="m" t="string" d="值" />
+  </s>
+  <s n="ErrFile" d="错误信息" r="1">
+    <p i="1" n="data" t="ErrInfo" a="1" d="data" />
+  </s>
+  <s n="AttrInt" d="int属性" db="1">
+    <p i="1" n="K" t="int" d="key" />
+    <p i="2" n="V" t="long" d="值" />
+  </s>
+  <s n="AttrStr" d="str属性" db="1">
+    <p i="1" n="K" t="int" d="key" />
+    <p i="2" n="V" t="string" d="值" />
+  </s>
+  <s n="RoleDbInfo" d="角色数据存储信息" db="1">
+    <p i="1" n="RoleId" t="int" d="角色编号" />
+    <p i="2" n="AttrInts" t="AttrInt" a="1" d="角色int属性" />
+    <p i="3" n="AttrStrs" t="AttrStr" a="1" d="角色int属性" />
+  </s>
+  <p n="UserLogin" d="用户登录" s="C" t="WEB">
+    <p i="1" n="UserName" t="string" d="帐号" />
+    <p i="2" n="UserPass" t="string" d="密码" />
+  </p>
+  <p n="UserLogin" d="用户登录返回" s="WEB" t="C">
+    <p i="1" n="tag" t="int" d="结果" />
+    <p i="2" n="AccountId" t="int" d="帐号ID" />
+    <p i="3" n="IsCreateRole" t="bool" d="是否创建角色" />
+    <p i="4" n="Timestamp" t="long" d="时间戳" />
+    <p i="5" n="Ip" t="string" d="ip" />
+    <p i="6" n="Port" t="int" d="端口" />
+    <p i="7" n="Sign" t="string" d="签名" />
+  </p>
+  <p n="CreateRole" d="创建角色" s="C" t="WEB">
+    <p i="1" n="AccountId" t="int" d="帐号Id" />
+    <p i="2" n="RoleName" t="string" d="角色名称" />
+    <p i="3" n="Timestamp" t="long" d="时间戳" />
+    <p i="4" n="Sign" t="string" d="签名" />
+  </p>
+  <p n="CreateRole" d="用户登录返回" s="WEB" t="C">
+    <p i="1" n="tag" t="int" d="结果" />
+    <p i="2" n="AccountId" t="int" d="帐号ID" />
+    <p i="3" n="IsCreateRole" t="bool" d="是否创建角色" />
+    <p i="4" n="Timestamp" t="long" d="时间戳" />
+    <p i="5" n="Ip" t="string" d="ip" />
+    <p i="6" n="Port" t="int" d="端口" />
+    <p i="7" n="sign" t="string" d="签名" />
+  </p>
+  <p n="UserLogin" d="用户登录" s="C" t="S" pt="IRequest">
+    <p i="1" n="AccountId" t="int" d="帐号ID" />
+    <p i="2" n="Timestamp" t="long" d="时间戳" />
+    <p i="3" n="sign" t="string" d="签名" />
+  </p>
+  <p n="UserLogin" d="用户登录返回" s="S" t="C" pt="IResponse">
+    <p i="1" n="tag" t="int" d="结果" />
+  </p>
+  <p n="ReadRoleInfo" d="读取用户信息" s="S" t="D">
+    <p i="1" n="RoleId" t="int" d="角色编号" />
+  </p>
+  <p n="ReadRoleInfo" d="读取用户信息" s="D" t="S">
+    <p i="1" n="tag" t="int" d="结果" />
+    <p i="2" n="RoleId" t="int" d="角色编号" />
+    <p i="3" n="RoleName" t="string" d="角色名称" />
+    <p i="4" n="RoleData" t="bytes" d="角色数据" />
+  </p>
+  <p n="SaveRoleInfo" d="读取用户信息" s="S" t="D">
+    <p i="1" n="RoleId" t="int" d="角色编号" />
+    <p i="2" n="RoleData" t="bytes" d="角色数据" />
+  </p>
+  <p n="RoleInfo" d="通知用户信息发生变化" s="S" t="C">
+    <p i="1" n="RoleId" t="int" d="角色编号" />
+    <p i="2" n="AttrInts" t="AttrInt" a="1" d="角色int属性" />
+    <p i="3" n="AttrStrs" t="AttrStr" a="1" d="角色str属性" />
+  </p>
+  <p n="ServerHeart" d="服务器心跳" s="S" t="WEB">
+    <p i="1" n="ServerId" t="int" d="服务器编号" />
+    <p i="2" n="ServerName" t="string" d="服务器名称" />
+    <p i="3" n="Ip" t="string" d="服务器IP" />
+    <p i="4" n="Port" t="int" d="服务器端口" />
+    <p i="5" n="Online" t="int" d="在线人数" />
+  </p>
+  <p n="ServerHeart1" d="服务器心跳" s="S" t="S">
+    <p i="1" n="ActorResponse" t="ActorResponse" d="服务器编号" />
+  </p>
+  <ids>
+    <id i="1" n="C2WEB_UserLogin" />
+    <id i="2" n="WEB2C_UserLogin" />
+    <id i="3" n="C2WEB_CreateRole" />
+    <id i="4" n="WEB2C_CreateRole" />
+    <id i="5" n="C2S_UserLogin" />
+    <id i="6" n="S2C_UserLogin" />
+    <id i="7" n="S2D_ReadRoleInfo" />
+    <id i="8" n="D2S_ReadRoleInfo" />
+    <id i="9" n="S2D_SaveRoleInfo" />
+    <id i="10" n="S2C_RoleInfo" />
+    <id i="11" n="S2WEB_ServerHeart" />
+    <id i="12" n="S2S_ServerHeart1" />
+  </ids>
+</pack>

@@ -1,0 +1,11 @@
+[
+  {
+    "AppId": 2,
+    "AppType": "Benchmark",
+    "ServerIP": "*",
+    "ClientConfig": {
+      "Host": "127.0.0.1",
+      "Port": 10000
+    }
+  }
+]
