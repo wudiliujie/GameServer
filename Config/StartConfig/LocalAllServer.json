@@ -12,7 +12,7 @@
       "Port": 20000
     },
     "DBConfig": {
-      "ConnectionString": null,
+      "ConnectionString": "Server=192.168.44.141;port=3306;Database=gamedb;Uid=root;Pwd=111111;charset=utf8;SslMode = none",
       "DBName": null
     },
     "HttpConfig": {
