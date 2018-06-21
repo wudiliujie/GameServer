@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using Dapper;
 using System.Threading.Tasks;
-
+using Google.Protobuf;
 namespace ETHotfix.Module.Sql
 {
     public class UserInfo
@@ -44,12 +44,32 @@ namespace ETHotfix.Module.Sql
 
                 if (ret == null)
                 {
-                    return null;
+                    return new RoleDbInfo();
                 }
                 else
                 {
                     RoleDbInfo role = RoleDbInfo.Parser.ParseFrom(ret.UserData);
                     return role;
+                }
+            }
+        }
+        public async static Task<bool> SaveUserDbInfo(this SqlComponent self, int UserId, RoleDbInfo data)
+        {
+            string sql = "Update User_Info Set UserData=@UserData where UserId = @UserId";
+            using (var db = self.GetDBConnection())
+            {
+                var param = new { UserData = data.ToByteArray(), UserId = UserId };
+                var row = await db.ExecuteAsync(sql,param );
+                if (row==0)
+                {
+                    sql = "Insert User_Info (UserId,UserData)values(@UserId,@UserData)";
+                    row = await db.ExecuteAsync(sql, param);
+                    return row == 1;
+
+                }
+                else
+                {
+                    return true;
                 }
             }
         }

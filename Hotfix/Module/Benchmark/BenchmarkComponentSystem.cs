@@ -21,10 +21,7 @@ namespace ETHotfix
             try
             {
                 NetOuterComponent networkComponent = Game.Scene.GetComponent<NetOuterComponent>();
-                for (int i = 0; i < 1; i++)
-                {
-                    self.TestAsync(networkComponent, ipEndPoint, i);
-                }
+                self.TestLoginAsync(networkComponent, ipEndPoint);
             }
             catch (Exception e)
             {
@@ -54,6 +51,37 @@ namespace ETHotfix
             {
                 Log.Error(e);
             }
+        }
+        public static async void TestLoginAsync(this BenchmarkComponent self, NetOuterComponent networkComponent, IPEndPoint ipEndPoint)
+        {
+            try
+            {
+                using (Session session = networkComponent.Create(ipEndPoint))
+                {
+                    await self.Login(session);
+                }
+            }
+            catch (RpcException e)
+            {
+                Log.Error(e);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
+        }
+        public static async Task Login(this BenchmarkComponent self, Session session)
+        {
+            var send = new C2S_UserLogin();
+            send.AccountId = 1;
+            Log.Debug("发送");
+            var ret = await session.Call(send);
+            Log.Debug(ret.ToString());
+            if (ret.Tag == 0)
+            {
+                //var  send1 = new C2S_UserLoginHandler
+            }
+            
         }
 
         public static async Task Send(this BenchmarkComponent self, Session session, int j)

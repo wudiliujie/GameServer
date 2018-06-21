@@ -45,7 +45,7 @@ namespace Server.Client
                 OuterConfig outerConfig = startConfig.GetComponent<OuterConfig>();
                 InnerConfig innerConfig = startConfig.GetComponent<InnerConfig>();
                 ClientConfig clientConfig = startConfig.GetComponent<ClientConfig>();
-                Game.Scene.AddComponent<NetOuterComponent>();
+                Game.Scene.AddComponent<NetOuterComponent>();            
                 Game.Scene.AddComponent<BenchmarkComponent, IPEndPoint>(clientConfig.IPEndPoint);
 
                 while (true)

@@ -2,6 +2,7 @@
 using System.Net;
 using System.Threading;
 using ETModel;
+using Model.Fishs.Components;
 using Model.Module.MySql;
 using MongoDB.Bson.Serialization;
 using NLog;
@@ -98,6 +99,7 @@ namespace App
                         Game.Scene.AddComponent<GateSessionKeyComponent>();
                         Game.Scene.AddComponent<ConfigComponent>();
                         Game.Scene.AddComponent<ServerFrameComponent>();
+                        Game.Scene.AddComponent<UnitManageComponent>();
                         Game.Scene.AddComponent<SqlComponent, string>(dbConfig.ConnectionString);
                         // Game.Scene.AddComponent<HttpComponent>();
                         break;

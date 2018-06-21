@@ -53,7 +53,9 @@ message C2S_UserLogin{
 
 //用户登录返回
 message S2C_UserLogin{
-	int32 tag = 1;//结果
+	int32 Tag = 98;
+	int32 RpcId = 99;
+	string Message = 100;
 }
 
 //读取用户信息

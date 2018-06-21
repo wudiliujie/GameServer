@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using ETHotfix.Module.Sql;
 using Model.Fishs.Components;
+using ETHotfix.Fishs.Systems;
 
 namespace ETHotfix
 {
@@ -16,16 +17,20 @@ namespace ETHotfix
         {
             S2C_UserLogin response = new S2C_UserLogin();
             Log.Debug("请求");
-            var data = await Game.Scene.GetComponent<SqlComponent>().GetUserDbInfo(1);
             Model.Fishs.Entitys.Unit unit = ComponentFactory.Create<Model.Fishs.Entitys.Unit, UnitType>(UnitType.Hero);
-            Game.Scene.GetComponent<UnitManageComponent>().Add(unit);
-            session.AddComponent<Model.Fishs.Components.SessionPlayerComponent>().Player =unit;
-            session.AddComponent<MailBoxComponent, string>(ActorType.GateSession);
 
+            unit.AddComponent<PlayerDbComponent, int>(message.AccountId);
+            var initRet = await unit.GetComponent<PlayerDbComponent>().InitDataSync();
+            if (initRet)
+            {
+                Game.Scene.GetComponent<UnitManageComponent>().Add(unit);
+                session.AddComponent<Model.Fishs.Components.SessionPlayerComponent>().Player = unit;
+                session.AddComponent<MailBoxComponent, string>(ActorType.GateSession);
+            }
             response.Tag = 0;
             reply(response);
 
-        Log.Debug("数据库结束");
+            Log.Debug("数据库结束");
             count++;
         }
     }

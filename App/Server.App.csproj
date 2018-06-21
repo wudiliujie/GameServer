@@ -13,7 +13,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;SERVER</DefineConstants>
-    <OutputPath>..\Bin\</OutputPath>
+    <OutputPath>..\Bin\App</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hotfix\Server.Hotfix.csproj" />
     <ProjectReference Include="..\Model\Server.Model.csproj" />
   </ItemGroup>
 

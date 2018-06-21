@@ -133,12 +133,12 @@ namespace ETModel
                 return;
             }
 
-            object message;
+            IMessage message;
             try
             {
                 OpcodeTypeComponent opcodeTypeComponent = this.Network.Entity.GetComponent<OpcodeTypeComponent>();
-                Type responseType = opcodeTypeComponent.GetType(opcode);
-                message = this.Network.MessagePacker.DeserializeFrom(responseType, packet.Bytes, packet.Offset, packet.Length);
+                message = opcodeTypeComponent.GetNewMessage(opcode);
+                message.MergeFrom(packet.Bytes, packet.Offset, packet.Length);
                 //Log.Debug($"recv: {JsonHelper.ToJson(message)}");
             }
             catch (Exception e)

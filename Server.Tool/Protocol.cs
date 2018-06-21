@@ -220,6 +220,12 @@ namespace Server.Tool
                 {
                     writer.WriteLine("int32 RpcId = 99;");
                 }
+                if (item.pt == "IResponse")
+                {
+                    writer.WriteLine("int32 Tag = 98;");
+                    writer.WriteLine("int32 RpcId = 99;");
+                    writer.WriteLine("string Message = 100;");
+                }
 
                 writer.WriteLine("}");
                 writer.WriteLine("");

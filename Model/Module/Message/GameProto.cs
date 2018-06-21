@@ -31,20 +31,20 @@ namespace ETModel {
             "VE1vZGVsLkF0dHJJbnQSIgoIQXR0clN0cnMYAyADKAsyEC5FVE1vZGVsLkF0",
             "dHJTdHIiUgoNQzJTX1VzZXJMb2dpbhIRCglBY2NvdW50SWQYASABKAUSEQoJ",
             "VGltZXN0YW1wGAIgASgDEgwKBHNpZ24YAyABKAkSDQoFUnBjSWQYYyABKAUi",
-            "HAoNUzJDX1VzZXJMb2dpbhILCgN0YWcYASABKAUiIgoQUzJEX1JlYWRSb2xl",
-            "SW5mbxIOCgZSb2xlSWQYASABKAUiUwoQRDJTX1JlYWRSb2xlSW5mbxILCgN0",
-            "YWcYASABKAUSDgoGUm9sZUlkGAIgASgFEhAKCFJvbGVOYW1lGAMgASgJEhAK",
-            "CFJvbGVEYXRhGAQgASgMIjQKEFMyRF9TYXZlUm9sZUluZm8SDgoGUm9sZUlk",
-            "GAEgASgFEhAKCFJvbGVEYXRhGAIgASgMImYKDFMyQ19Sb2xlSW5mbxIOCgZS",
-            "b2xlSWQYASABKAUSIgoIQXR0ckludHMYAiADKAsyEC5FVE1vZGVsLkF0dHJJ",
-            "bnQSIgoIQXR0clN0cnMYAyADKAsyEC5FVE1vZGVsLkF0dHJTdHIiYwoRUzJX",
-            "RUJfU2VydmVySGVhcnQSEAoIU2VydmVySWQYASABKAUSEgoKU2VydmVyTmFt",
-            "ZRgCIAEoCRIKCgJJcBgDIAEoCRIMCgRQb3J0GAQgASgFEg4KBk9ubGluZRgF",
-            "IAEoBSqrAQoDTVNHEgwKCF9EZWZhdWx0EAASEgoOX0MyU19Vc2VyTG9naW4Q",
-            "BRISCg5fUzJDX1VzZXJMb2dpbhAGEhUKEV9TMkRfUmVhZFJvbGVJbmZvEAcS",
-            "FQoRX0QyU19SZWFkUm9sZUluZm8QCBIVChFfUzJEX1NhdmVSb2xlSW5mbxAJ",
-            "EhEKDV9TMkNfUm9sZUluZm8QChIWChJfUzJXRUJfU2VydmVySGVhcnQQC2IG",
-            "cHJvdG8z"));
+            "PAoNUzJDX1VzZXJMb2dpbhILCgNUYWcYYiABKAUSDQoFUnBjSWQYYyABKAUS",
+            "DwoHTWVzc2FnZRhkIAEoCSIiChBTMkRfUmVhZFJvbGVJbmZvEg4KBlJvbGVJ",
+            "ZBgBIAEoBSJTChBEMlNfUmVhZFJvbGVJbmZvEgsKA3RhZxgBIAEoBRIOCgZS",
+            "b2xlSWQYAiABKAUSEAoIUm9sZU5hbWUYAyABKAkSEAoIUm9sZURhdGEYBCAB",
+            "KAwiNAoQUzJEX1NhdmVSb2xlSW5mbxIOCgZSb2xlSWQYASABKAUSEAoIUm9s",
+            "ZURhdGEYAiABKAwiZgoMUzJDX1JvbGVJbmZvEg4KBlJvbGVJZBgBIAEoBRIi",
+            "CghBdHRySW50cxgCIAMoCzIQLkVUTW9kZWwuQXR0ckludBIiCghBdHRyU3Ry",
+            "cxgDIAMoCzIQLkVUTW9kZWwuQXR0clN0ciJjChFTMldFQl9TZXJ2ZXJIZWFy",
+            "dBIQCghTZXJ2ZXJJZBgBIAEoBRISCgpTZXJ2ZXJOYW1lGAIgASgJEgoKAklw",
+            "GAMgASgJEgwKBFBvcnQYBCABKAUSDgoGT25saW5lGAUgASgFKqsBCgNNU0cS",
+            "DAoIX0RlZmF1bHQQABISCg5fQzJTX1VzZXJMb2dpbhAFEhIKDl9TMkNfVXNl",
+            "ckxvZ2luEAYSFQoRX1MyRF9SZWFkUm9sZUluZm8QBxIVChFfRDJTX1JlYWRS",
+            "b2xlSW5mbxAIEhUKEV9TMkRfU2F2ZVJvbGVJbmZvEAkSEQoNX1MyQ19Sb2xl",
+            "SW5mbxAKEhYKEl9TMldFQl9TZXJ2ZXJIZWFydBALYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ETModel.MSG), }, new pbr::GeneratedClrTypeInfo[] {
@@ -54,7 +54,7 @@ namespace ETModel {
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ResponseMessage), global::ETModel.ResponseMessage.Parser, new[]{ "RpcId", "Tag", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.RoleDbInfo), global::ETModel.RoleDbInfo.Parser, new[]{ "RoleId", "AttrInts", "AttrStrs" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.C2S_UserLogin), global::ETModel.C2S_UserLogin.Parser, new[]{ "AccountId", "Timestamp", "Sign", "RpcId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.S2C_UserLogin), global::ETModel.S2C_UserLogin.Parser, new[]{ "Tag" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.S2C_UserLogin), global::ETModel.S2C_UserLogin.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.S2D_ReadRoleInfo), global::ETModel.S2D_ReadRoleInfo.Parser, new[]{ "RoleId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.D2S_ReadRoleInfo), global::ETModel.D2S_ReadRoleInfo.Parser, new[]{ "Tag", "RoleId", "RoleName", "RoleData" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.S2D_SaveRoleInfo), global::ETModel.S2D_SaveRoleInfo.Parser, new[]{ "RoleId", "RoleData" }, null, null, null),
@@ -1189,6 +1189,8 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_UserLogin(S2C_UserLogin other) : this() {
       tag_ = other.tag_;
+      rpcId_ = other.rpcId_;
+      message_ = other.message_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1196,17 +1198,36 @@ namespace ETModel {
       return new S2C_UserLogin(this);
     }
 
-    /// <summary>Field number for the "tag" field.</summary>
-    public const int TagFieldNumber = 1;
+    /// <summary>Field number for the "Tag" field.</summary>
+    public const int TagFieldNumber = 98;
     private int tag_;
-    /// <summary>
-    ///结果
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Tag {
       get { return tag_; }
       set {
         tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Message" field.</summary>
+    public const int MessageFieldNumber = 100;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1224,6 +1245,8 @@ namespace ETModel {
         return true;
       }
       if (Tag != other.Tag) return false;
+      if (RpcId != other.RpcId) return false;
+      if (Message != other.Message) return false;
       return true;
     }
 
@@ -1231,6 +1254,8 @@ namespace ETModel {
     public override int GetHashCode() {
       int hash = 1;
       if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
       return hash;
     }
 
@@ -1242,8 +1267,16 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Tag != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(144, 6);
         output.WriteInt32(Tag);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(162, 6);
+        output.WriteString(Message);
       }
     }
 
@@ -1251,7 +1284,13 @@ namespace ETModel {
     public int CalculateSize() {
       int size = 0;
       if (Tag != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
       return size;
     }
@@ -1264,6 +1303,12 @@ namespace ETModel {
       if (other.Tag != 0) {
         Tag = other.Tag;
       }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1274,8 +1319,16 @@ namespace ETModel {
           default:
             input.SkipLastField();
             break;
-          case 8: {
+          case 784: {
             Tag = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 802: {
+            Message = input.ReadString();
             break;
           }
         }
