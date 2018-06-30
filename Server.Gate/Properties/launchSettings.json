@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Server.Gate": {
+      "commandName": "Project",
+      "commandLineArgs": "2"
+    }
+  }
+}

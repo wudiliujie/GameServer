@@ -72,6 +72,7 @@ namespace ETModel
 
         public void OnAccept(AChannel channel)
         {
+            Console.WriteLine("OnAccept");
             Session session = ComponentFactory.CreateWithParent<Session, NetworkComponent, AChannel>(this, this, channel);
             this.sessions.Add(session.Id, session);
         }

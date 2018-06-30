@@ -10,7 +10,7 @@ namespace ETModel
 		[Option("appType", Required = false, Default = AppType.Manager)]
 		public AppType AppType { get; set; }
 
-		[Option("config", Required = false, Default = "../Config/StartConfig/LocalAllServer.txt")]
+		[Option("config", Required = false, Default = "../../Config/StartConfig/LocalAllServer.json")]
 		public string Config { get; set; }
 	}
 }

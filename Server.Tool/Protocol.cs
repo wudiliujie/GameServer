@@ -44,8 +44,8 @@ namespace Server.Tool
         }
         public string n { get; set; }
         public string d { get; set; }
-        public string s { get; set; }
-        public string t { get; set; }
+        //public string s { get; set; }
+        //public string t { get; set; }
         public bool db { get; set; }
         public string pt { get; set; }
         /// <summary>
@@ -55,19 +55,21 @@ namespace Server.Tool
         public List<P> Props { get; set; }
         public string GetName()
         {
-            if (string.IsNullOrWhiteSpace(s))
-            {
-                return n;
-            }
-            return string.Format("{0}2{1}_{2}", s, t, n);
+            return n;
+            //if (string.IsNullOrWhiteSpace(s))
+            //{
+            //    return n;
+            //}
+            //return string.Format("{0}2{1}_{2}", s, t, n);
         }
         public string GetPrev()
         {
-            if (string.IsNullOrWhiteSpace(s))
-            {
-                return "";
-            }
-            return string.Format("{0}2{1}", s, t);
+            return "";
+            //if (string.IsNullOrWhiteSpace(s))
+            //{
+            //    return "";
+            //}
+            //return string.Format("{0}2{1}", s, t);
         }
     }
     public class Protocol
@@ -77,14 +79,14 @@ namespace Server.Tool
         Dictionary<string, int> m_Ids = new Dictionary<string, int>();
         int m_nMaxId = 0;
         private string m_sFileName = "";
-        Dictionary<ServerType, HashSet<string>> m_Relation = new Dictionary<ServerType, HashSet<string>>();
+        //Dictionary<ServerType, HashSet<string>> m_Relation = new Dictionary<ServerType, HashSet<string>>();
         Dictionary<string, TypeMapping> m_TypeMapping = new Dictionary<string, TypeMapping>();
         public Protocol()
         {
-            m_Relation.Add(ServerType.GameServer, new HashSet<string>() { "S2C", "C2S", "S2D", "D2S", "S2WEB", "WEB2S" });
-            m_Relation.Add(ServerType.Client, new HashSet<string>() { "S2C", "C2S", "C2WEB", "WEB2C" });
-            m_Relation.Add(ServerType.Web, new HashSet<string>() { "C2WEB", "WEB2C", "S2WEB", "WEB2S" });
-            m_Relation.Add(ServerType.Resource, new HashSet<string>());
+            //m_Relation.Add(ServerType.GameServer, new HashSet<string>() { "S2C", "C2S", "S2D", "D2S", "S2WEB", "WEB2S","S2L" });
+            //m_Relation.Add(ServerType.Client, new HashSet<string>() { "S2C", "C2S", "C2WEB", "WEB2C" });
+            //m_Relation.Add(ServerType.Web, new HashSet<string>() { "C2WEB", "WEB2C", "S2WEB", "WEB2S" });
+            //m_Relation.Add(ServerType.Resource, new HashSet<string>());
 
             m_TypeMapping.Add("int", new TypeMapping("int", "int32", "number"));
             m_TypeMapping.Add("long", new TypeMapping("int", "int64", "protobuf.Long"));
@@ -120,8 +122,8 @@ namespace Server.Tool
                 Pack model = new Pack();
                 model.d = item.Attributes["d"].Value;
                 model.n = item.Attributes["n"].Value;
-                model.s = item.Attributes["s"]?.Value ?? "";
-                model.t = item.Attributes["t"]?.Value ?? "";
+                //model.s = item.Attributes["s"]?.Value ?? "";
+                //model.t = item.Attributes["t"]?.Value ?? "";
                 model.db = !(item.Attributes["db"]?.Value == null);
                 model.r = !(item.Attributes["r"]?.Value == null);
                 model.pt = item.Attributes["pt"]?.Value ?? "";
@@ -277,6 +279,40 @@ namespace Server.Tool
             File.WriteAllText(fileName, writer.ToString(), Encoding.UTF8);
         }
 
+        public void GenerateGameProtoEx(string fileName)
+        {
+            Writer writer = new Writer();
+            writer.WriteLine("using System;");
+            writer.WriteLine("namespace ETModel");
+            writer.WriteLine("{");
+            foreach (var item in m_Packs)
+            {
+                if (string.IsNullOrWhiteSpace(item.pt))
+                {
+                    continue;
+                }
+                writer.WriteLine("public partial class {0} : {1}", item.n, item.pt);
+                writer.WriteLine("{");
+
+                writer.WriteLine("}");
+            }
+
+            writer.WriteLine("public static class RegisterClass");
+            writer.WriteLine("{");
+            writer.WriteLine("public static void Register(this OpcodeTypeComponent self)");
+            writer.WriteLine("{");
+            foreach (var item in m_Packs)
+            {                
+                writer.WriteLine("self.RegisterType({0}, typeof({1}), () => {{ return new {1}(); }});", m_Ids[item.GetName()], item.GetName());
+            }
+
+            writer.WriteLine("}");
+            writer.WriteLine("}");
+
+            writer.WriteLine("}");
+            File.WriteAllText(fileName, writer.ToString(), Encoding.UTF8);
+        }
+
 
         private List<string> GetNeedIds(ServerType type)
         {
@@ -336,14 +372,14 @@ namespace Server.Tool
         private List<Pack> GetNeedPacket(ServerType type)
         {
             List<Pack> list = new List<Pack>();
-            var hash = m_Relation[type];
+            //var hash = m_Relation[type];
 
             foreach (var item in m_Packs)
             {
-                if (hash.Contains(item.GetPrev())) //需要生成的包
-                {
-                    list.Add(item);
-                }
+                //if (hash.Contains(item.GetPrev())) //需要生成的包
+                //{
+                list.Add(item);
+                //}
             }
             return list;
         }

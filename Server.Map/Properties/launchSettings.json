@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Server.Map": {
+      "commandName": "Project",
+      "commandLineArgs": "3"
+    }
+  }
+}

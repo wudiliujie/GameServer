@@ -25,6 +25,7 @@ namespace ETModel
 			this.innArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
 			
 			this.acceptor.Bind(ipEndPoint);
+            Log.Debug(ipEndPoint.ToString());
 			this.acceptor.Listen(1000);
 		}
 
@@ -55,6 +56,7 @@ namespace ETModel
 		{
 			if (this.acceptor != null)
 			{
+                Log.Debug("启动");
 				this.AcceptAsync();
 			}
 		}
@@ -71,6 +73,7 @@ namespace ETModel
 
 		private void OnAcceptComplete(object sender, SocketAsyncEventArgs o)
 		{
+            Console.WriteLine("OnAcceptComplete");
 			SocketAsyncEventArgs e = o;
 			UserTokenInfo userTokenInfo = (UserTokenInfo) e.UserToken;
 			if (userTokenInfo.InstanceId != this.InstanceId)

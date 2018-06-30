@@ -22,21 +22,21 @@ namespace ETModel
 
         public StartConfig StartConfig { get; private set; }
 
-        public StartConfig DBConfig { get; private set; }
+        //public StartConfig DBConfig { get; private set; }
 
-        public StartConfig RealmConfig { get; private set; }
+        //public StartConfig RealmConfig { get; private set; }
 
-        public StartConfig LocationConfig { get; private set; }
+        //public StartConfig LocationConfig { get; private set; }
 
-        public List<StartConfig> MapConfigs { get; private set; }
+        //public List<StartConfig> MapConfigs { get; private set; }
 
-        public List<StartConfig> GateConfigs { get; private set; }
+        //public List<StartConfig> GateConfigs { get; private set; }
 
         public void Awake(string path, int appId)
         {
             this.configDict = new Dictionary<int, StartConfig>();
-            this.MapConfigs = new List<StartConfig>();
-            this.GateConfigs = new List<StartConfig>();
+            //this.MapConfigs = new List<StartConfig>();
+            //this.GateConfigs = new List<StartConfig>();
 
             try
             {
@@ -68,6 +68,18 @@ namespace ETModel
                         cfg.EndInit();
                         startConfig.AddComponent(cfg);
                     }
+                    var locationConfig = jsonData["LocationConfig"]?.Value<JObject>();
+                    if (locationConfig != null)
+                    {
+                        LocationConfig cfg = new LocationConfig();
+                        cfg.Host = locationConfig["Host"].Value<string>();
+                        cfg.Port = locationConfig["Port"].Value<int>();
+                        cfg.BeginInit();
+                        cfg.EndInit();
+                        startConfig.AddComponent(cfg);
+                    }
+
+
                     var httpConfig = jsonData["HttpConfig"]?.Value<JObject>();
                     if (httpConfig != null)
                     {

@@ -6,6 +6,8 @@ using Model.Fishs.Components;
 using Model.Module.MySql;
 using MongoDB.Bson.Serialization;
 using NLog;
+using ETHotfix;
+using System.Threading.Tasks;
 
 namespace App
 {
@@ -19,9 +21,10 @@ namespace App
             try
             {
                 Game.EventSystem.Add(DLLType.Model, typeof(Game).Assembly);
-                Game.EventSystem.Add(DLLType.Hotfix, DllHelper.GetHotfixAssembly());
+                //Game.EventSystem.Add(DLLType.Hotfix, DllHelper.GetHotfixAssembly());
+                Game.EventSystem.Add(DLLType.Hotfix, typeof(Hotfix).Assembly);
 
-                Options options = Game.Scene.AddComponent<OptionComponent, string[]>(args).Options;
+                Options options = Game.Scene.AddComponent<OptionComponent, Options>(new Options { AppId = 1, AppType = AppType.Location, Config = "../../Config/StartConfig/LocalAllServer.json" }).Options;
                 StartConfig startConfig = Game.Scene.AddComponent<StartConfigComponent, string, int>(options.Config, options.AppId).StartConfig;
 
                 if (!options.AppType.Is(startConfig.AppType))
@@ -29,6 +32,8 @@ namespace App
                     Log.Error("命令行参数apptype与配置不一致");
                     return;
                 }
+
+
 
                 IdGenerater.AppId = options.AppId;
 
@@ -110,6 +115,15 @@ namespace App
                     default:
                         throw new Exception($"命令行参数没有设置正确的AppType: {startConfig.AppType}");
                 }
+                var locationProxyComponent = Game.Scene.GetComponent<LocationProxyComponent>();
+                if (locationProxyComponent != null && startConfig.AppType != AppType.AllServer) //需要注册
+                {
+                    var a = locationProxyComponent.RegisterServer().Result;
+                    Log.Debug(">>>" + a);
+
+                }
+
+
 
                 while (true)
                 {

@@ -26,6 +26,7 @@ namespace ETModel
             {
                 return f();
             }
+            Log.Debug("opcode:" + opcode + "不存在");
             return null;
         }
 
@@ -38,7 +39,7 @@ namespace ETModel
 
             base.Dispose();
         }
-        public void RegisterType(ushort opcode,Type t, Func<IMessage> func)
+        public void RegisterType(ushort opcode, Type t, Func<IMessage> func)
         {
             opcodeTypes.Add(opcode, t);
             opcodeCreates.Add(opcode, func);

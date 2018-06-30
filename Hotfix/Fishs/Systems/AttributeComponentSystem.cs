@@ -102,7 +102,7 @@ namespace ETHotfix.Fishs.Systems
                     {
                         send.AttrStrs.Add(new AttrStr() { K = (int)item.Key, V = item.Value });
                     }
-                    self.GetParent<Unit>().GetComponent<Model.Fishs.Components.SessionPlayerComponent>().
+                    //self.GetParent<Unit>().GetComponent<Model.Fishs.Components.SessionPlayerComponent>().
                 }
             }
         }

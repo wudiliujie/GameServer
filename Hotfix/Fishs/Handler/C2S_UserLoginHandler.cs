@@ -6,6 +6,7 @@ using System.Text;
 using ETHotfix.Module.Sql;
 using Model.Fishs.Components;
 using ETHotfix.Fishs.Systems;
+using System.Net;
 
 namespace ETHotfix
 {
@@ -16,18 +17,17 @@ namespace ETHotfix
         protected async override void Run(Session session, C2S_UserLogin message, Action<S2C_UserLogin> reply)
         {
             S2C_UserLogin response = new S2C_UserLogin();
-            Log.Debug("请求");
-            Model.Fishs.Entitys.Unit unit = ComponentFactory.Create<Model.Fishs.Entitys.Unit, UnitType>(UnitType.Hero);
-
-            unit.AddComponent<PlayerDbComponent, int>(message.AccountId);
-            var initRet = await unit.GetComponent<PlayerDbComponent>().InitDataSync();
-            if (initRet)
+            //从local获取一个map地址
+            var ret = await Game.Scene.GetComponent<LocationProxyComponent>().GetMapAddress(1);
+            if (ret.Tag != 0)
             {
-                Game.Scene.GetComponent<UnitManageComponent>().Add(unit);
-                session.AddComponent<Model.Fishs.Components.SessionPlayerComponent>().Player = unit;
-                session.AddComponent<MailBoxComponent, string>(ActorType.GateSession);
+                response.Tag = ret.Tag;
+                reply(response);
             }
-            response.Tag = 0;
+            Session mapSession = Game.Scene.GetComponent<NetInnerComponent>().Get(NetworkHelper.ToIPEndPoint(ret.Address));
+            M2G_CreateUnit createUnit = (M2G_CreateUnit)await mapSession.Call(new G2M_CreateUnit() { AccountId = message.AccountId, GateSessionId = session.InstanceId });
+            response.Tag = createUnit.UnitId;
+
             reply(response);
 
             Log.Debug("数据库结束");

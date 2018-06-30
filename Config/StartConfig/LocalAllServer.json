@@ -1,6 +1,48 @@
 [
   {
     "AppId": 1,
+    "AppName": "本地服务",
+    "AppType": "Location",
+    "ServerIP": "*",
+    "InnerConfig": {
+      "Host": "127.0.0.1",
+      "Port": 20000
+    }
+  },
+  {
+    "AppId": 2,
+    "AppName": "网关服务",
+    "AppType": "Gate",
+    "ServerIP": "*",
+    "InnerConfig": {
+      "Host": "127.0.0.1",
+      "Port": 20001
+    },
+    "OuterConfig": {
+      "Host": "127.0.0.1",
+      "Port": 10000
+    },
+    "LocationConfig": {
+      "Host": "127.0.0.1",
+      "Port": 20000
+    }
+  },
+  {
+    "AppId": 3,
+    "AppName": "Map服务",
+    "AppType": "Map",
+    "ServerIP": "*",
+    "InnerConfig": {
+      "Host": "127.0.0.1",
+      "Port": 20003
+    },    
+    "LocationConfig": {
+      "Host": "127.0.0.1",
+      "Port": 20000
+    }
+  },
+  {
+    "AppId": 1110,
     "AppType": "AllServer",
     "ServerIP": "*",
     "OuterConfig": {

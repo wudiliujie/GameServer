@@ -18,6 +18,9 @@ namespace ETModel
         public const int ERR_ReloadFail = 2003;
         public const int ERR_ActorLocationNotFound = 2004;
 
+        public const int ERR_ServerIdExt = 3001;//服务器已经存在
+
+
         public const int ERR_Exception = 100000;
 
         public const int ERR_SessionDispose = 100001;

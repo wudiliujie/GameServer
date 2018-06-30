@@ -18,8 +18,7 @@ namespace ETHotfix
     {
         public static void Awake(this OpcodeTypeComponent self)
         {
-            self.RegisterType(Convert.ToUInt16(MSG.C2SUserLogin), typeof(C2S_UserLogin), () => { return new C2S_UserLogin(); });
-            self.RegisterType(Convert.ToUInt16(MSG.S2CUserLogin), typeof(S2C_UserLogin), () => { return new S2C_UserLogin(); });
+            self.Register();
             //Type[] types = DllHelper.GetMonoTypes();
             //foreach (Type type in types)
             //{

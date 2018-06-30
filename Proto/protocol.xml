@@ -6,11 +6,8 @@
     <p i="2" n="Tag" t="int" d="结果" />
     <p i="3" n="Message" t="string" d="名字" />
   </s>
-  <s n="ResponseMessage" d="回复信息" r="1" db="1">
-    <p i="1" n="RpcId" t="int" d="编号" />
-    <p i="2" n="Tag" t="int" d="结果" />
-    <p i="3" n="Message" t="string" d="名字" />
-  </s>
+  <p n="ResponseMessage" d="回复信息" r="1" db="1" pt="IResponse">
+  </p>
   <s n="ErrInfo" d="错误信息" r="1">
     <p i="1" n="i" t="int" d="编号" />
     <p i="2" n="n" t="string" d="名字" />
@@ -32,11 +29,11 @@
     <p i="2" n="AttrInts" t="AttrInt" a="1" d="角色int属性" />
     <p i="3" n="AttrStrs" t="AttrStr" a="1" d="角色int属性" />
   </s>
-  <p n="UserLogin" d="用户登录" s="C" t="WEB">
+  <p n="C2WEB_UserLogin" d="用户登录">
     <p i="1" n="UserName" t="string" d="帐号" />
     <p i="2" n="UserPass" t="string" d="密码" />
   </p>
-  <p n="UserLogin" d="用户登录返回" s="WEB" t="C">
+  <p n="WEB2C_UserLogin" d="用户登录返回">
     <p i="1" n="tag" t="int" d="结果" />
     <p i="2" n="AccountId" t="int" d="帐号ID" />
     <p i="3" n="IsCreateRole" t="bool" d="是否创建角色" />
@@ -45,13 +42,13 @@
     <p i="6" n="Port" t="int" d="端口" />
     <p i="7" n="Sign" t="string" d="签名" />
   </p>
-  <p n="CreateRole" d="创建角色" s="C" t="WEB">
+  <p n="C2WEB_CreateRole" d="创建角色">
     <p i="1" n="AccountId" t="int" d="帐号Id" />
     <p i="2" n="RoleName" t="string" d="角色名称" />
     <p i="3" n="Timestamp" t="long" d="时间戳" />
     <p i="4" n="Sign" t="string" d="签名" />
   </p>
-  <p n="CreateRole" d="用户登录返回" s="WEB" t="C">
+  <p n="WEB2C_CreateRole" d="用户登录返回">
     <p i="1" n="tag" t="int" d="结果" />
     <p i="2" n="AccountId" t="int" d="帐号ID" />
     <p i="3" n="IsCreateRole" t="bool" d="是否创建角色" />
@@ -60,27 +57,18 @@
     <p i="6" n="Port" t="int" d="端口" />
     <p i="7" n="sign" t="string" d="签名" />
   </p>
-  <p n="UserLogin" d="用户登录" s="C" t="S" pt="IRequest">
+  <p n="C2S_UserLogin" d="用户登录" pt="IRequest">
     <p i="1" n="AccountId" t="int" d="帐号ID" />
     <p i="2" n="Timestamp" t="long" d="时间戳" />
     <p i="3" n="sign" t="string" d="签名" />
   </p>
-  <p n="UserLogin" d="用户登录返回" s="S" t="C" pt="IResponse">
-  </p>
-  <p n="ReadRoleInfo" d="读取用户信息" s="S" t="D">
-    <p i="1" n="RoleId" t="int" d="角色编号" />
-  </p>
-  <p n="ReadRoleInfo" d="读取用户信息" s="D" t="S">
-    <p i="1" n="tag" t="int" d="结果" />
-    <p i="2" n="RoleId" t="int" d="角色编号" />
-    <p i="3" n="RoleName" t="string" d="角色名称" />
-    <p i="4" n="RoleData" t="bytes" d="角色数据" />
+  <p n="S2C_UserLogin" d="用户登录返回" pt="IResponse">
   </p>
   <p n="SaveRoleInfo" d="读取用户信息" s="S" t="D">
     <p i="1" n="RoleId" t="int" d="角色编号" />
     <p i="2" n="RoleData" t="bytes" d="角色数据" />
   </p>
-  <p n="RoleInfo" d="通知用户信息发生变化" s="S" t="C">
+  <p n="S2C_RoleInfo" d="通知用户信息发生变化">
     <p i="1" n="RoleId" t="int" d="角色编号" />
     <p i="2" n="AttrInts" t="AttrInt" a="1" d="角色int属性" />
     <p i="3" n="AttrStrs" t="AttrStr" a="1" d="角色str属性" />
@@ -92,21 +80,43 @@
     <p i="4" n="Port" t="int" d="服务器端口" />
     <p i="5" n="Online" t="int" d="在线人数" />
   </p>
-  <p n="ServerHeart1" d="服务器心跳" s="S" t="S">
-    <p i="1" n="ActorResponse" t="ActorResponse" d="服务器编号" />
+  <s n="ServerInfo" d="服务器信息">
+    <p i="1" n="ServerId" t="int" d="服务器编号" />
+    <p i="2" n="ServerType" t="int" d="服务器类型" />
+    <p i="3" n="NetInnerIp" t="string" d="内部Ip" />
+    <p i="4" n="NetInnerPort" t="int" d="内部端口" />
+  </s>
+  <p n="S2L_RegisterServer" d="注册服务器" pt="IRequest">
+    <p i="1" n="Info" t="ServerInfo" d="服务器信息" />
+  </p>
+  <p n="G2M_CreateUnit" d="通知地图服务器创建unit" pt="IRequest">
+    <p i="1" n="AccountId" t="int" d="服务器信息" />
+    <p i="2" n="GateSessionId" t="long" d="网关sessionid" />
+  </p>
+  <p n="M2G_CreateUnit" d="通知地图服务器创建unit" pt="IResponse">
+    <p i="1" n="UnitId" t="int" d="unit编号" />
+  </p>
+  <p n="G2L_GetMapAddress" d="获取指定类型map 的地址" pt="IRequest">
+    <p i="1" n="MapType" t="int" d="map类型" />
+  </p>
+  <p n="L2G_GetMapAddress" d="通知地图服务器创建unit" pt="IResponse">
+    <p i="1" n="Address" t="string" d="地址" />
   </p>
   <ids>
-    <id i="1" n="C2WEB_UserLogin" />
-    <id i="2" n="WEB2C_UserLogin" />
-    <id i="3" n="C2WEB_CreateRole" />
-    <id i="4" n="WEB2C_CreateRole" />
-    <id i="5" n="C2S_UserLogin" />
-    <id i="6" n="S2C_UserLogin" />
-    <id i="7" n="S2D_ReadRoleInfo" />
-    <id i="8" n="D2S_ReadRoleInfo" />
-    <id i="9" n="S2D_SaveRoleInfo" />
-    <id i="10" n="S2C_RoleInfo" />
-    <id i="11" n="S2WEB_ServerHeart" />
-    <id i="12" n="S2S_ServerHeart1" />
+    <id i="1" n="ResponseMessage" />
+    <id i="2" n="C2WEB_UserLogin" />
+    <id i="3" n="WEB2C_UserLogin" />
+    <id i="4" n="C2WEB_CreateRole" />
+    <id i="5" n="WEB2C_CreateRole" />
+    <id i="6" n="C2S_UserLogin" />
+    <id i="7" n="S2C_UserLogin" />
+    <id i="8" n="SaveRoleInfo" />
+    <id i="9" n="S2C_RoleInfo" />
+    <id i="10" n="ServerHeart" />
+    <id i="11" n="S2L_RegisterServer" />
+    <id i="12" n="G2M_CreateUnit" />
+    <id i="13" n="M2G_CreateUnit" />
+    <id i="14" n="G2L_GetMapAddress" />
+    <id i="15" n="L2G_GetMapAddress" />
   </ids>
 </pack>

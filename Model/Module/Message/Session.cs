@@ -52,6 +52,7 @@ namespace ETModel
 
             channel.ErrorCallback += (c, e) =>
             {
+                Log.Debug("移除:" + e);
                 this.Error = e;
                 this.Network.Remove(this.Id);
             };
@@ -71,9 +72,9 @@ namespace ETModel
             }
 
             long id = this.Id;
-
+            Game.EventSystem.Run<Session>(EventIdType.SessionDispose, this);
             base.Dispose();
-
+            Log.Debug("session释放");
             foreach (Action<IResponse> action in this.requestCallback.Values.ToArray())
             {
                 action.Invoke(new ResponseMessage { Tag = ErrorCode.ERR_SessionDispose });
@@ -174,10 +175,10 @@ namespace ETModel
             {
                 try
                 {
-                    if (response.Tag > ErrorCode.ERR_Exception)
-                    {
-                        throw new RpcException(response.Tag, response.Message);
-                    }
+                    //if (response.Tag > ErrorCode.ERR_Exception)
+                    //{
+                    //    throw new RpcException(response.Tag, response.Message);
+                    //}
 
                     tcs.SetResult(response);
                 }

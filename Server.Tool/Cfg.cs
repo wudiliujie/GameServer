@@ -16,5 +16,7 @@ namespace Server.Tool
         }
         public static string ProtocolName { get { return Root["ProtocolName"]; } }
         public static string ProtocolGameServer { get { return Root["ProtocolGameServer"]; } }
+        public static string GameProtoEx { get { return Root["GameProtoEx"]; } }
+        
     }
 }

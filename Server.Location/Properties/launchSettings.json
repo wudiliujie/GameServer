@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Server.Location": {
+      "commandName": "Project",
+      "commandLineArgs": "1 ../../Config/StartConfig/LocalAllServer.json"
+    }
+  }
+}

@@ -10,6 +10,7 @@ namespace Server.Tool
             protocol.Read(Cfg.ProtocolName);
             protocol.AllotId();
             protocol.GenerateProto(Cfg.ProtocolGameServer, ServerType.GameServer);
+            protocol.GenerateGameProtoEx(Cfg.GameProtoEx);
         }
     }
 }

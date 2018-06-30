@@ -6,7 +6,7 @@ namespace ETModel
 	{
 		public static Component CreateWithParent(Type type, Component parent)
 		{
-			Component component = (Component)Game.ObjectPool.Fetch(type);
+			Component component = Game.ObjectPool.Fetch(type);
 			component.Parent = parent;
 			Game.EventSystem.Awake(component);
 			return component;

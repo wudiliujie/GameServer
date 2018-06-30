@@ -6,307 +6,309 @@ using System.Net.Sockets;
 
 namespace ETModel
 {
-	/// <summary>
-	/// 封装Socket,将回调push到主线程处理
-	/// </summary>
-	public sealed class TChannel: AChannel
-	{
-		private Socket socket;
-		private readonly SocketAsyncEventArgs innArgs = new SocketAsyncEventArgs();
-		private readonly SocketAsyncEventArgs outArgs = new SocketAsyncEventArgs();
+    /// <summary>
+    /// 封装Socket,将回调push到主线程处理
+    /// </summary>
+    public sealed class TChannel : AChannel
+    {
+        private Socket socket;
+        private readonly SocketAsyncEventArgs innArgs = new SocketAsyncEventArgs();
+        private readonly SocketAsyncEventArgs outArgs = new SocketAsyncEventArgs();
 
-		private readonly CircularBuffer recvBuffer = new CircularBuffer();
-		private readonly CircularBuffer sendBuffer = new CircularBuffer();
+        private readonly CircularBuffer recvBuffer = new CircularBuffer();
+        private readonly CircularBuffer sendBuffer = new CircularBuffer();
 
-		private bool isSending;
+        private bool isSending;
 
-		private bool isConnected;
+        private bool isConnected;
 
-		public readonly PacketParser parser;
+        public readonly PacketParser parser;
 
-		public TChannel(IPEndPoint ipEndPoint, TService service): base(service, ChannelType.Connect)
-		{
-			this.socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-			this.socket.NoDelay = true;
-			this.parser = new PacketParser(this.recvBuffer);
-			this.innArgs.Completed += this.OnComplete;
-			this.outArgs.Completed += this.OnComplete;
-			this.innArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
-			this.outArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
+        public TChannel(IPEndPoint ipEndPoint, TService service) : base(service, ChannelType.Connect)
+        {
+            this.socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            this.socket.NoDelay = true;
+            this.parser = new PacketParser(this.recvBuffer);
+            this.innArgs.Completed += this.OnComplete;
+            this.outArgs.Completed += this.OnComplete;
+            this.innArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
+            this.outArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
 
-			this.RemoteAddress = ipEndPoint;   
+            this.RemoteAddress = ipEndPoint;
         }
-		
-		public TChannel(Socket socket, TService service): base(service, ChannelType.Accept)
-		{
-			this.socket = socket;
-			this.socket.NoDelay = true;
-			this.parser = new PacketParser(this.recvBuffer);
-			this.innArgs.Completed += this.OnComplete;
-			this.outArgs.Completed += this.OnComplete;
-			this.innArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
-			this.outArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
 
-			this.RemoteAddress = (IPEndPoint)socket.RemoteEndPoint;
-			
-			this.isConnected = true;
-		}
-		
-		public override void Dispose()
-		{
-			if (this.IsDisposed)
-			{
-				return;
-			}
-			
-			base.Dispose();
-			
-			this.socket.Close();
-			this.innArgs.Dispose();
-			this.outArgs.Dispose();
-			this.socket = null;
-		}
+        public TChannel(Socket socket, TService service) : base(service, ChannelType.Accept)
+        {
+            this.socket = socket;
+            this.socket.NoDelay = true;
+            this.parser = new PacketParser(this.recvBuffer);
+            this.innArgs.Completed += this.OnComplete;
+            this.outArgs.Completed += this.OnComplete;
+            this.innArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
+            this.outArgs.UserToken = new UserTokenInfo() { InstanceId = this.InstanceId };
 
-		public override void Start()
-		{
-			if (!this.isConnected)
-			{
-				this.ConnectAsync(this.RemoteAddress);
-				return;
-			}
-			
-			this.StartSend();
-			this.StartRecv();
-		}
+            this.RemoteAddress = (IPEndPoint)socket.RemoteEndPoint;
 
-		public override void Send(byte[] buffer, int index, int length)
-		{
-			if (this.IsDisposed)
-			{
-				throw new Exception("TChannel已经被Dispose, 不能发送消息");
-			}
-			byte[] sizeBuffer = BitConverter.GetBytes(length);
-			this.sendBuffer.Write(sizeBuffer, 0, sizeBuffer.Length);
-			this.sendBuffer.Write(buffer, index, length);
-			if (this.isConnected && !this.isSending)
-			{
-				this.StartSend();
-			}
-		}
+            this.isConnected = true;
+        }
 
-		public override void Send(List<byte[]> buffers)
-		{
-			if (this.IsDisposed)
-			{
-				throw new Exception("TChannel已经被Dispose, 不能发送消息");
-			}
-			ushort size = (ushort)buffers.Select(b => b.Length).Sum();
-			byte[] sizeBuffer = BitConverter.GetBytes(size);
-			this.sendBuffer.Write(sizeBuffer, 0, sizeBuffer.Length);
-			foreach (byte[] buffer in buffers)
-			{
-				this.sendBuffer.Write(buffer, 0, buffer.Length);
-			}
-			if (this.isConnected && !this.isSending)
-			{
-				this.StartSend();
-			}
-		}
+        public override void Dispose()
+        {
+            if (this.IsDisposed)
+            {
+                return;
+            }
 
-		private void OnComplete(object sender, SocketAsyncEventArgs e)
-		{
-			switch (e.LastOperation)
-			{
-				case SocketAsyncOperation.Connect:
-					OneThreadSynchronizationContext.Instance.Post(this.OnConnectComplete, e);
-					break;
-				case SocketAsyncOperation.Receive:
-					OneThreadSynchronizationContext.Instance.Post(this.OnRecvComplete, e);
-					break;
-				case SocketAsyncOperation.Send:
-					OneThreadSynchronizationContext.Instance.Post(this.OnSendComplete, e);
-					break;
-				case SocketAsyncOperation.Disconnect:
-					OneThreadSynchronizationContext.Instance.Post(this.OnDisconnectComplete, e);
-					break;
-				default:
-					throw new Exception($"socket error: {e.LastOperation}");
-			}
-		}
+            base.Dispose();
 
-		public void ConnectAsync(IPEndPoint ipEndPoint)
-		{
-			this.outArgs.RemoteEndPoint = ipEndPoint;
-			if (this.socket.ConnectAsync(this.outArgs))
-			{
-				return;
-			}
-			OnConnectComplete(this.outArgs);
-		}
+            this.socket.Close();
+            this.innArgs.Dispose();
+            this.outArgs.Dispose();
+            this.socket = null;
+        }
 
-		private void OnConnectComplete(object o)
-		{
-			SocketAsyncEventArgs e = (SocketAsyncEventArgs) o;
-			UserTokenInfo userTokenInfo = (UserTokenInfo) e.UserToken;
-			if (userTokenInfo.InstanceId != this.InstanceId)
-			{
-				return;
-			}
+        public override void Start()
+        {
+            if (!this.isConnected)
+            {
+                Log.Debug("ConnectAsync:" + this.RemoteAddress.ToString());
+                this.ConnectAsync(this.RemoteAddress);
+                return;
+            }
 
-			if (e.SocketError != SocketError.Success)
-			{
-				this.OnError((int)e.SocketError);	
-				return;
-			}
-			this.isConnected = true;
-			
-			this.StartSend();
-			this.StartRecv();
-		}
+            this.StartSend();
+            this.StartRecv();
+        }
 
-		private void OnDisconnectComplete(object o)
-		{
-			SocketAsyncEventArgs e = (SocketAsyncEventArgs)o;
-			this.OnError((int)e.SocketError);
-		}
+        public override void Send(byte[] buffer, int index, int length)
+        {
+            if (this.IsDisposed)
+            {
+                throw new Exception("TChannel已经被Dispose, 不能发送消息");
+            }
+            byte[] sizeBuffer = BitConverter.GetBytes(length);
+            this.sendBuffer.Write(sizeBuffer, 0, sizeBuffer.Length);
+            this.sendBuffer.Write(buffer, index, length);
+            if (this.isConnected && !this.isSending)
+            {
+                this.StartSend();
+            }
+        }
 
-		private void StartRecv()
-		{
-			int size = this.recvBuffer.ChunkSize - this.recvBuffer.LastIndex;
-			this.RecvAsync(this.recvBuffer.Last, this.recvBuffer.LastIndex, size);
-		}
+        public override void Send(List<byte[]> buffers)
+        {
+            if (this.IsDisposed)
+            {
+                throw new Exception("TChannel已经被Dispose, 不能发送消息");
+            }
+            ushort size = (ushort)buffers.Select(b => b.Length).Sum();
+            byte[] sizeBuffer = BitConverter.GetBytes(size);
+            this.sendBuffer.Write(sizeBuffer, 0, sizeBuffer.Length);
+            foreach (byte[] buffer in buffers)
+            {
+                this.sendBuffer.Write(buffer, 0, buffer.Length);
+            }
+            if (this.isConnected && !this.isSending)
+            {
+                this.StartSend();
+            }
+        }
 
-		public void RecvAsync(byte[] buffer, int offset, int count)
-		{
-			try
-			{
-				this.innArgs.SetBuffer(buffer, offset, count);
-			}
-			catch (Exception e)
-			{
-				throw new Exception($"socket set buffer error: {buffer.Length}, {offset}, {count}", e);
-			}
-			
-			if (this.socket.ReceiveAsync(this.innArgs))
-			{
-				return;
-			}
-			OnRecvComplete(this.innArgs);
-		}
+        private void OnComplete(object sender, SocketAsyncEventArgs e)
+        {
+            switch (e.LastOperation)
+            {
+                case SocketAsyncOperation.Connect:
+                    OneThreadSynchronizationContext.Instance.Post(this.OnConnectComplete, e);
+                    break;
+                case SocketAsyncOperation.Receive:
+                    OneThreadSynchronizationContext.Instance.Post(this.OnRecvComplete, e);
+                    break;
+                case SocketAsyncOperation.Send:
+                    OneThreadSynchronizationContext.Instance.Post(this.OnSendComplete, e);
+                    break;
+                case SocketAsyncOperation.Disconnect:
+                    OneThreadSynchronizationContext.Instance.Post(this.OnDisconnectComplete, e);
+                    break;
+                default:
+                    throw new Exception($"socket error: {e.LastOperation}");
+            }
+        }
 
-		private void OnRecvComplete(object o)
-		{
-			SocketAsyncEventArgs e = (SocketAsyncEventArgs)o;
-			UserTokenInfo userTokenInfo = (UserTokenInfo) e.UserToken;
-			if (userTokenInfo.InstanceId != this.InstanceId)
-			{
-				return;
-			}
+        public void ConnectAsync(IPEndPoint ipEndPoint)
+        {
+            this.outArgs.RemoteEndPoint = ipEndPoint;
+            if (this.socket.ConnectAsync(this.outArgs))
+            {
+                return;
+            }
+            OnConnectComplete(this.outArgs);
+        }
 
-			if (e.SocketError != SocketError.Success)
-			{
-				this.OnError((int)e.SocketError);
-				return;
-			}
+        private void OnConnectComplete(object o)
+        {
+            SocketAsyncEventArgs e = (SocketAsyncEventArgs)o;
+            UserTokenInfo userTokenInfo = (UserTokenInfo)e.UserToken;
+            if (userTokenInfo.InstanceId != this.InstanceId)
+            {
+                return;
+            }
 
-			if (e.BytesTransferred == 0)
-			{
-				this.OnError((int)e.SocketError);
-				return;
-			}
+            if (e.SocketError != SocketError.Success)
+            {
+                Log.Debug("err:%v" + e.SocketError);
+                this.OnError((int)e.SocketError);
+                return;
+            }
+            this.isConnected = true;
 
-			this.recvBuffer.LastIndex += e.BytesTransferred;
-			if (this.recvBuffer.LastIndex == this.recvBuffer.ChunkSize)
-			{
-				this.recvBuffer.AddLast();
-				this.recvBuffer.LastIndex = 0;
-			}
+            this.StartSend();
+            this.StartRecv();
+        }
 
-			// 收到消息回调
-			while (true)
-			{
-				if (!this.parser.Parse())
-				{
-					break;
-				}
+        private void OnDisconnectComplete(object o)
+        {
+            SocketAsyncEventArgs e = (SocketAsyncEventArgs)o;
+            this.OnError((int)e.SocketError);
+        }
 
-				Packet packet = this.parser.GetPacket();
-				try
-				{
-					this.OnRead(packet);
-				}
-				catch (Exception exception)
-				{
-					Log.Error(exception);
-				}
-			}
+        private void StartRecv()
+        {
+            int size = this.recvBuffer.ChunkSize - this.recvBuffer.LastIndex;
+            this.RecvAsync(this.recvBuffer.Last, this.recvBuffer.LastIndex, size);
+        }
 
-			if (userTokenInfo.InstanceId != this.InstanceId)
-			{
-				return;
-			}
-			this.StartRecv();
-		}
+        public void RecvAsync(byte[] buffer, int offset, int count)
+        {
+            try
+            {
+                this.innArgs.SetBuffer(buffer, offset, count);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"socket set buffer error: {buffer.Length}, {offset}, {count}", e);
+            }
 
-		private void StartSend()
-		{
-			// 没有数据需要发送
-			if (this.sendBuffer.Length == 0)
-			{
-				this.isSending = false;
-				return;
-			}
+            if (this.socket.ReceiveAsync(this.innArgs))
+            {
+                return;
+            }
+            OnRecvComplete(this.innArgs);
+        }
 
-			this.isSending = true;
+        private void OnRecvComplete(object o)
+        {
+            SocketAsyncEventArgs e = (SocketAsyncEventArgs)o;
+            UserTokenInfo userTokenInfo = (UserTokenInfo)e.UserToken;
+            if (userTokenInfo.InstanceId != this.InstanceId)
+            {
+                return;
+            }
 
-			int sendSize = this.sendBuffer.ChunkSize - this.sendBuffer.FirstIndex;
-			if (sendSize > this.sendBuffer.Length)
-			{
-				sendSize = (int)this.sendBuffer.Length;
-			}
+            if (e.SocketError != SocketError.Success)
+            {
+                this.OnError((int)e.SocketError);
+                return;
+            }
 
-			this.SendAsync(this.sendBuffer.First, this.sendBuffer.FirstIndex, sendSize);
-		}
+            if (e.BytesTransferred == 0)
+            {
+                this.OnError((int)e.SocketError);
+                return;
+            }
 
-		public void SendAsync(byte[] buffer, int offset, int count)
-		{
-			try
-			{
-				this.outArgs.SetBuffer(buffer, offset, count);
-			}
-			catch (Exception e)
-			{
-				throw new Exception($"socket set buffer error: {buffer.Length}, {offset}, {count}", e);
-			}
-			if (this.socket.SendAsync(this.outArgs))
-			{
-				return;
-			}
-			OnSendComplete(this.outArgs);
-		}
+            this.recvBuffer.LastIndex += e.BytesTransferred;
+            if (this.recvBuffer.LastIndex == this.recvBuffer.ChunkSize)
+            {
+                this.recvBuffer.AddLast();
+                this.recvBuffer.LastIndex = 0;
+            }
 
-		private void OnSendComplete(object o)
-		{
-			SocketAsyncEventArgs e = (SocketAsyncEventArgs)o;
-			UserTokenInfo userTokenInfo = (UserTokenInfo) e.UserToken;
-			if (userTokenInfo.InstanceId != this.InstanceId)
-			{
-				return;
-			}
+            // 收到消息回调
+            while (true)
+            {
+                if (!this.parser.Parse())
+                {
+                    break;
+                }
 
-			if (e.SocketError != SocketError.Success)
-			{
-				this.OnError((int)e.SocketError);
-				return;
-			}
-			this.sendBuffer.FirstIndex += e.BytesTransferred;
-			if (this.sendBuffer.FirstIndex == this.sendBuffer.ChunkSize)
-			{
-				this.sendBuffer.FirstIndex = 0;
-				this.sendBuffer.RemoveFirst();
-			}
+                Packet packet = this.parser.GetPacket();
+                try
+                {
+                    this.OnRead(packet);
+                }
+                catch (Exception exception)
+                {
+                    Log.Error(exception);
+                }
+            }
 
-			this.StartSend();
-		}
-	}
+            if (userTokenInfo.InstanceId != this.InstanceId)
+            {
+                return;
+            }
+            this.StartRecv();
+        }
+
+        private void StartSend()
+        {
+            // 没有数据需要发送
+            if (this.sendBuffer.Length == 0)
+            {
+                this.isSending = false;
+                return;
+            }
+
+            this.isSending = true;
+
+            int sendSize = this.sendBuffer.ChunkSize - this.sendBuffer.FirstIndex;
+            if (sendSize > this.sendBuffer.Length)
+            {
+                sendSize = (int)this.sendBuffer.Length;
+            }
+
+            this.SendAsync(this.sendBuffer.First, this.sendBuffer.FirstIndex, sendSize);
+        }
+
+        public void SendAsync(byte[] buffer, int offset, int count)
+        {
+            try
+            {
+                this.outArgs.SetBuffer(buffer, offset, count);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"socket set buffer error: {buffer.Length}, {offset}, {count}", e);
+            }
+            if (this.socket.SendAsync(this.outArgs))
+            {
+                return;
+            }
+            OnSendComplete(this.outArgs);
+        }
+
+        private void OnSendComplete(object o)
+        {
+            SocketAsyncEventArgs e = (SocketAsyncEventArgs)o;
+            UserTokenInfo userTokenInfo = (UserTokenInfo)e.UserToken;
+            if (userTokenInfo.InstanceId != this.InstanceId)
+            {
+                return;
+            }
+
+            if (e.SocketError != SocketError.Success)
+            {
+                this.OnError((int)e.SocketError);
+                return;
+            }
+            this.sendBuffer.FirstIndex += e.BytesTransferred;
+            if (this.sendBuffer.FirstIndex == this.sendBuffer.ChunkSize)
+            {
+                this.sendBuffer.FirstIndex = 0;
+                this.sendBuffer.RemoveFirst();
+            }
+
+            this.StartSend();
+        }
+    }
 }
