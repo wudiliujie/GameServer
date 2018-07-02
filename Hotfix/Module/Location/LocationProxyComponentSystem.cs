@@ -50,7 +50,7 @@ namespace ETHotfix
                 info.NetInnerPort = innerConfig.Port;
                 info.ServerId = startConfig.AppId;
                 info.ServerType = (int)startConfig.AppType;
-                var a = await session.Call(new S2L_RegisterServer() { Info = info });
+                var a = await session.Call<ResponseMessage>(new S2L_RegisterServer() { Info = info });
                 if (a.Tag != 0)
                 {
                     Log.Fatal("连接本地服务器失败" + a);
@@ -82,7 +82,7 @@ namespace ETHotfix
         public static async Task<L2G_GetMapAddress> GetMapAddress(this LocationProxyComponent self, int mapType)
         {
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
-            L2G_GetMapAddress result = (L2G_GetMapAddress)await session.Call(new G2L_GetMapAddress() { MapType = mapType });
+            L2G_GetMapAddress result = await session.Call<L2G_GetMapAddress>(new G2L_GetMapAddress() { MapType = mapType });
             return result;
         }
 

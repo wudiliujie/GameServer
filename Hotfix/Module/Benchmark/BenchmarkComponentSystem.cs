@@ -75,7 +75,7 @@ namespace ETHotfix
             var send = new C2S_UserLogin();
             send.AccountId = 1;
             Log.Debug("发送");
-            var ret = await session.Call(send);
+            var ret = await session.Call<S2C_UserLogin>(send);
             Log.Debug(ret.ToString());
             if (ret.Tag == 0)
             {
@@ -92,7 +92,7 @@ namespace ETHotfix
                 var send = new C2S_UserLogin();
                 send.AccountId = 1;
                 Log.Debug("发送");
-                await session.Call(send);
+                await session.Call<S2C_UserLogin>(send);
                 Log.Debug("发送完成");
                 //++self.k;
 

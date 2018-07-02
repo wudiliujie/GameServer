@@ -26,6 +26,30 @@ namespace ETModel
             self.Start();
         }
     }
+    public interface IRequestCallbackInfo
+    {
+        void Fail(int tag);
+        void Success(IResponse response);
+    }
+    public class RequestCallbackInfo<T> : IRequestCallbackInfo where T : class, IResponse, new()
+    {
+        public RequestCallbackInfo(Action<IResponse> action)
+        {
+            Action = action;
+        }
+        public Action<IResponse> Action { get; private set; }
+        public void Fail(int tag)
+        {
+            var param = new T();
+            param.Tag = tag;
+            Action.Invoke(param);
+        }
+
+        public void Success(IResponse response)
+        {
+            Action.Invoke(response);
+        }
+    }
 
     public sealed class Session : Entity
     {
@@ -33,7 +57,7 @@ namespace ETModel
         private AChannel channel;
         public int Error;
 
-        private readonly Dictionary<int, Action<IResponse>> requestCallback = new Dictionary<int, Action<IResponse>>();
+        private readonly Dictionary<int, IRequestCallbackInfo> requestCallback = new Dictionary<int, IRequestCallbackInfo>();
         private readonly List<byte[]> byteses = new List<byte[]>() { new byte[1], new byte[0], new byte[0] };
 
         public NetworkComponent Network
@@ -75,9 +99,10 @@ namespace ETModel
             Game.EventSystem.Run<Session>(EventIdType.SessionDispose, this);
             base.Dispose();
             Log.Debug("session释放");
-            foreach (Action<IResponse> action in this.requestCallback.Values.ToArray())
+            foreach (IRequestCallbackInfo action in this.requestCallback.Values.ToArray())
             {
-                action.Invoke(new ResponseMessage { Tag = ErrorCode.ERR_SessionDispose });
+                action.Fail(ErrorCode.ERR_SessionDispose);
+                //action.Invoke(new ResponseMessage { Tag = ErrorCode.ERR_SessionDispose });
             }
 
             this.Error = 0;
@@ -156,22 +181,22 @@ namespace ETModel
             {
                 throw new Exception($"flag is response, but message is not! {opcode}");
             }
-            Action<IResponse> action;
+            IRequestCallbackInfo action;
             if (!this.requestCallback.TryGetValue(response.RpcId, out action))
             {
                 return;
             }
             this.requestCallback.Remove(response.RpcId);
 
-            action(response);
+            action.Success(response);
         }
 
-        public Task<IResponse> Call(IRequest request)
+        public Task<TRep> Call<TRep>(IRequest request) where TRep : class, IResponse, new()
         {
             int rpcId = ++RpcId;
-            var tcs = new TaskCompletionSource<IResponse>();
+            var tcs = new TaskCompletionSource<TRep>();
 
-            this.requestCallback[rpcId] = (response) =>
+            this.requestCallback[rpcId] = new RequestCallbackInfo<TRep>((response) =>
             {
                 try
                 {
@@ -180,25 +205,24 @@ namespace ETModel
                     //    throw new RpcException(response.Tag, response.Message);
                     //}
 
-                    tcs.SetResult(response);
+                    tcs.SetResult(response as TRep);
                 }
                 catch (Exception e)
                 {
                     tcs.SetException(new Exception($"Rpc Error: {request.GetType().FullName}", e));
                 }
-            };
-
+            });
             request.RpcId = rpcId;
             this.Send(0x00, request);
             return tcs.Task;
         }
 
-        public Task<IResponse> Call(IRequest request, CancellationToken cancellationToken)
+        public Task<TRep> Call<TRep>(IRequest request, CancellationToken cancellationToken) where TRep : class, IResponse, new()
         {
             int rpcId = ++RpcId;
-            var tcs = new TaskCompletionSource<IResponse>();
+            var tcs = new TaskCompletionSource<TRep>();
 
-            this.requestCallback[rpcId] = (response) =>
+            this.requestCallback[rpcId] = new RequestCallbackInfo<TRep>((response) =>
             {
                 try
                 {
@@ -207,13 +231,13 @@ namespace ETModel
                         throw new RpcException(response.Tag, response.Message);
                     }
 
-                    tcs.SetResult(response);
+                    tcs.SetResult(response as TRep);
                 }
                 catch (Exception e)
                 {
                     tcs.SetException(new Exception($"Rpc Error: {request.GetType().FullName}", e));
                 }
-            };
+            });
 
             cancellationToken.Register(() => this.requestCallback.Remove(rpcId));
 

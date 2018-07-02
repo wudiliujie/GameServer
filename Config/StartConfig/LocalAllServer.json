@@ -35,10 +35,24 @@
     "InnerConfig": {
       "Host": "127.0.0.1",
       "Port": 20003
-    },    
+    },
     "LocationConfig": {
       "Host": "127.0.0.1",
       "Port": 20000
+    },
+    "DBConfig": {
+      "ConnectionString": "Server=192.168.44.141;port=3306;Database=gamedb;Uid=root;Pwd=111111;charset=utf8;SslMode = none",
+      "DBName": null
+    }
+  },
+  {
+    "AppId": 10001,
+    "AppName": "¿Í»§¶Ë",
+    "AppType": "Client",
+    "ServerIP": "*",
+    "ClientConfig": {
+      "Host": "127.0.0.1",
+      "Port": 10000
     }
   },
   {

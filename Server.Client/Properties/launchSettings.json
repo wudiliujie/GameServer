@@ -2,7 +2,7 @@
   "profiles": {
     "Server.Client": {
       "commandName": "Project",
-      "commandLineArgs": "--appId=2 --appType=Benchmark --config=../../Config/StartConfig/Benchmark.json",
+      "commandLineArgs": "10001",
       "workingDirectory": "../bin/Client"
     }
   }

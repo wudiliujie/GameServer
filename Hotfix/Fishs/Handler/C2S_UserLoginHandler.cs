@@ -25,7 +25,7 @@ namespace ETHotfix
                 reply(response);
             }
             Session mapSession = Game.Scene.GetComponent<NetInnerComponent>().Get(NetworkHelper.ToIPEndPoint(ret.Address));
-            M2G_CreateUnit createUnit = (M2G_CreateUnit)await mapSession.Call(new G2M_CreateUnit() { AccountId = message.AccountId, GateSessionId = session.InstanceId });
+            M2G_CreateUnit createUnit = await mapSession.Call<M2G_CreateUnit>(new G2M_CreateUnit() { AccountId = message.AccountId, GateSessionId = session.InstanceId });
             response.Tag = createUnit.UnitId;
 
             reply(response);

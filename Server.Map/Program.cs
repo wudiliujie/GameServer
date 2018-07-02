@@ -1,5 +1,7 @@
 ﻿using ETHotfix;
 using ETModel;
+using Model.Fishs.Components;
+using Model.Module.MySql;
 using NLog;
 using System;
 using System.Net;
@@ -60,9 +62,8 @@ namespace Server.Map
                 Game.Scene.AddComponent<LocationProxyComponent>();
                 Game.Scene.AddComponent<ActorMessageSenderComponent>();
                 //Game.Scene.AddComponent<GateSessionKeyComponent>();
-
-
-
+                Game.Scene.AddComponent<SqlComponent, string>(dbConfig.ConnectionString);
+                Game.Scene.AddComponent<UnitManageComponent>();
 
                 while (true)
                 {

@@ -1,5 +1,9 @@
-﻿using System.Net;
+﻿using ETModel;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Text;
 
 namespace ETModel
 {
@@ -8,7 +12,7 @@ namespace ETModel
         public string Host { get; set; }
         public int Port { get; set; }
 
-        [BsonIgnore]
+
         private IPEndPoint ipEndPoint;
 
         public override void EndInit()
@@ -18,7 +22,6 @@ namespace ETModel
             this.ipEndPoint = NetworkHelper.ToIPEndPoint(this.Host, this.Port);
         }
 
-        [BsonIgnore]
         public IPEndPoint IPEndPoint
         {
             get
