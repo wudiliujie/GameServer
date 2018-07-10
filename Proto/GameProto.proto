@@ -2,7 +2,18 @@
 package ETModel;
 enum MSG{
 	_Default = 0;
+	_ActorResponse = 30; //Actor回复信息
 	_ResponseMessage = 1; //回复信息
+	_ObjectAddRequest = 20; //添加对象
+	_ObjectAddResponse = 21; //添加对象
+	_ObjectRemoveRequest = 22; //删除对象
+	_ObjectRemoveResponse = 23; //删除对象
+	_ObjectLockRequest = 24; //锁定对象
+	_ObjectLockResponse = 25; //锁定对象
+	_ObjectUnLockRequest = 26; //取消锁定对象
+	_ObjectUnLockResponse = 27; //取消锁定对象
+	_ObjectGetRequest = 28; //获取对象
+	_ObjectGetResponse = 29; //获取对象
 	_C2WEB_UserLogin = 2; //用户登录
 	_WEB2C_UserLogin = 3; //用户登录返回
 	_C2WEB_CreateRole = 4; //创建角色
@@ -17,6 +28,8 @@ enum MSG{
 	_M2G_CreateUnit = 13; //通知地图服务器创建unit
 	_G2L_GetMapAddress = 14; //获取指定类型map 的地址
 	_L2G_GetMapAddress = 15; //通知地图服务器创建unit
+	_C2M_EnterRoom = 18; //用户进入房间
+	_M2C_EnterRoom = 19; //用户进入房间
 }
 //int属性
 message AttrInt{
@@ -38,13 +51,6 @@ message ServerInfo{
 	int32 NetInnerPort = 4;//内部端口
 }
 
-//Actor回复信息
-message ActorResponse{
-	int32 RpcId = 1;//编号
-	int32 Tag = 2;//结果
-	string Message = 3;//名字
-}
-
 //角色数据存储信息
 message RoleDbInfo{
 	int32 RoleId = 1;//角色编号
@@ -52,8 +58,86 @@ message RoleDbInfo{
 	repeated AttrStr AttrStrs = 3;//角色int属性
 }
 
+//Actor回复信息
+message ActorResponse{
+	int32 Tag = 98;
+	int32 RpcId = 99;
+	string Message = 100;
+}
+
 //回复信息
 message ResponseMessage{
+	int32 Tag = 98;
+	int32 RpcId = 99;
+	string Message = 100;
+}
+
+//添加对象
+message ObjectAddRequest{
+	int64 Key = 1;//对象编号
+	int64 InstanceId = 2;//实例ID
+	int32 RpcId = 99;
+}
+
+//添加对象
+message ObjectAddResponse{
+	int32 Tag = 98;
+	int32 RpcId = 99;
+	string Message = 100;
+}
+
+//删除对象
+message ObjectRemoveRequest{
+	int64 Key = 1;//对象编号
+	int32 RpcId = 99;
+}
+
+//删除对象
+message ObjectRemoveResponse{
+	int32 Tag = 98;
+	int32 RpcId = 99;
+	string Message = 100;
+}
+
+//锁定对象
+message ObjectLockRequest{
+	int64 Key = 1;//对象编号
+	int64 InstanceId = 2;//实例ID
+	int32 Time = 3;//实例ID
+	int32 RpcId = 99;
+}
+
+//锁定对象
+message ObjectLockResponse{
+	int32 Tag = 98;
+	int32 RpcId = 99;
+	string Message = 100;
+}
+
+//取消锁定对象
+message ObjectUnLockRequest{
+	int64 Key = 1;//对象编号
+	int64 OldInstanceId = 2;//实例ID
+	int64 InstanceId = 3;//实例ID
+	int32 RpcId = 99;
+}
+
+//取消锁定对象
+message ObjectUnLockResponse{
+	int32 Tag = 98;
+	int32 RpcId = 99;
+	string Message = 100;
+}
+
+//获取对象
+message ObjectGetRequest{
+	int64 Key = 1;//对象编号
+	int32 RpcId = 99;
+}
+
+//获取对象
+message ObjectGetResponse{
+	int64 InstanceId = 1;//实例ID
 	int32 Tag = 98;
 	int32 RpcId = 99;
 	string Message = 100;
@@ -105,6 +189,7 @@ message C2S_UserLogin{
 
 //用户登录返回
 message S2C_UserLogin{
+	int64 UnitId = 1;//UnitID
 	int32 Tag = 98;
 	int32 RpcId = 99;
 	string Message = 100;
@@ -147,7 +232,7 @@ message G2M_CreateUnit{
 
 //通知地图服务器创建unit
 message M2G_CreateUnit{
-	int32 UnitId = 1;//unit编号
+	int64 UnitId = 1;//unit编号
 	int32 Tag = 98;
 	int32 RpcId = 99;
 	string Message = 100;
@@ -162,6 +247,22 @@ message G2L_GetMapAddress{
 //通知地图服务器创建unit
 message L2G_GetMapAddress{
 	string Address = 1;//地址
+	int32 Tag = 98;
+	int32 RpcId = 99;
+	string Message = 100;
+}
+
+//用户进入房间
+message C2M_EnterRoom{
+	int32 RoomType = 1;//房间类型
+	int32 RoomId = 2;//房间编号
+	int32 RpcId = 99;
+	int64 ActorId = 100;
+}
+
+//用户进入房间
+message M2C_EnterRoom{
+	int32 RoomId = 1;//房间编号
 	int32 Tag = 98;
 	int32 RpcId = 99;
 	string Message = 100;

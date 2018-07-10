@@ -1,5 +1,6 @@
 ﻿using ETHotfix;
 using ETModel;
+using Model.Fishs.Components;
 using NLog;
 using System;
 using System.Net;
@@ -54,14 +55,14 @@ namespace Server.Gate
                 OuterConfig outerConfig = startConfig.GetComponent<OuterConfig>();
                 DBConfig dbConfig = startConfig.GetComponent<DBConfig>();
 
-                Game.Scene.AddComponent<PlayerComponent>();
+
                 Game.Scene.AddComponent<ActorMessageDispatherComponent>();
                 Game.Scene.AddComponent<NetInnerComponent, IPEndPoint>(innerConfig.IPEndPoint);
                 Game.Scene.AddComponent<NetOuterComponent, IPEndPoint>(outerConfig.IPEndPoint);
                 Game.Scene.AddComponent<LocationProxyComponent>();
                 Game.Scene.AddComponent<ActorMessageSenderComponent>();
                 //Game.Scene.AddComponent<GateSessionKeyComponent>();
-
+                Game.Scene.AddComponent<PlayerManagerComponent>();
 
 
 

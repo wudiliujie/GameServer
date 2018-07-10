@@ -1,6 +1,7 @@
 ﻿using System;
 using ETModel;
 using Google.Protobuf;
+using Model.Fishs.Components;
 
 namespace ETHotfix
 {

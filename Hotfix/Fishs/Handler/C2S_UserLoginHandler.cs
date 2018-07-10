@@ -7,6 +7,7 @@ using ETHotfix.Module.Sql;
 using Model.Fishs.Components;
 using ETHotfix.Fishs.Systems;
 using System.Net;
+using Model.Fishs.Entitys;
 
 namespace ETHotfix
 {
@@ -26,8 +27,14 @@ namespace ETHotfix
             }
             Session mapSession = Game.Scene.GetComponent<NetInnerComponent>().Get(NetworkHelper.ToIPEndPoint(ret.Address));
             M2G_CreateUnit createUnit = await mapSession.Call<M2G_CreateUnit>(new G2M_CreateUnit() { AccountId = message.AccountId, GateSessionId = session.InstanceId });
-            response.Tag = createUnit.UnitId;
-
+            Player player = ComponentFactory.Create<Player, int>(message.AccountId);
+            player.UnitId = createUnit.UnitId;
+            Log.Debug("数据库结束:" + createUnit);
+            Game.Scene.GetComponent<PlayerManagerComponent>().Add(player);
+            session.AddComponent<SessionPlayerComponent>().Player = player;
+            session.AddComponent<MailBoxComponent, string>(ActorType.GateSession);
+            response.Tag = 0;
+            response.UnitId = createUnit.UnitId;
             reply(response);
 
             Log.Debug("数据库结束");

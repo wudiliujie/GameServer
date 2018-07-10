@@ -26,6 +26,7 @@ namespace ETModel
 
         public TChannel(IPEndPoint ipEndPoint, TService service) : base(service, ChannelType.Connect)
         {
+            Log.Debug("TChannel1");
             this.socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             this.socket.NoDelay = true;
             this.parser = new PacketParser(this.recvBuffer);
@@ -39,6 +40,7 @@ namespace ETModel
 
         public TChannel(Socket socket, TService service) : base(service, ChannelType.Accept)
         {
+            Log.Debug("TChannel2");
             this.socket = socket;
             this.socket.NoDelay = true;
             this.parser = new PacketParser(this.recvBuffer);
@@ -60,7 +62,7 @@ namespace ETModel
             }
 
             base.Dispose();
-
+            Log.Debug("TChannel Dispose");
             this.socket.Close();
             this.innArgs.Dispose();
             this.outArgs.Dispose();
@@ -69,6 +71,7 @@ namespace ETModel
 
         public override void Start()
         {
+            Log.Debug("Start");
             if (!this.isConnected)
             {
                 Log.Debug("ConnectAsync:" + this.RemoteAddress.ToString());
@@ -116,12 +119,15 @@ namespace ETModel
 
         private void OnComplete(object sender, SocketAsyncEventArgs e)
         {
+            Log.Debug("OnComplete:"+e.LastOperation);
+
             switch (e.LastOperation)
             {
                 case SocketAsyncOperation.Connect:
                     OneThreadSynchronizationContext.Instance.Post(this.OnConnectComplete, e);
                     break;
                 case SocketAsyncOperation.Receive:
+                    Log.Debug("接受消息:Receive");
                     OneThreadSynchronizationContext.Instance.Post(this.OnRecvComplete, e);
                     break;
                 case SocketAsyncOperation.Send:
@@ -198,6 +204,7 @@ namespace ETModel
 
         private void OnRecvComplete(object o)
         {
+            Log.Debug("接受消息");
             SocketAsyncEventArgs e = (SocketAsyncEventArgs)o;
             UserTokenInfo userTokenInfo = (UserTokenInfo)e.UserToken;
             if (userTokenInfo.InstanceId != this.InstanceId)
@@ -256,6 +263,7 @@ namespace ETModel
             if (this.sendBuffer.Length == 0)
             {
                 this.isSending = false;
+                Log.Debug("发送完成");
                 return;
             }
 
@@ -278,12 +286,16 @@ namespace ETModel
             }
             catch (Exception e)
             {
+                Log.Debug("发送:" + e);
                 throw new Exception($"socket set buffer error: {buffer.Length}, {offset}, {count}", e);
             }
+            Log.Debug("发送:" + count);
             if (this.socket.SendAsync(this.outArgs))
             {
+                Log.Debug("发送1:" + count);
                 return;
             }
+            Log.Debug("发送2:" + count);
             OnSendComplete(this.outArgs);
         }
 

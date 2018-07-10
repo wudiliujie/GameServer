@@ -47,17 +47,17 @@ namespace ETHotfix
 	/// </summary>
 	public static class MailBoxComponentEx
 	{
-		//public static async Task AddLocation(this MailBoxComponent self)
-		//{
-		//	await Game.Scene.GetComponent<LocationProxyComponent>().Add(self.Entity.Id, self.Entity.InstanceId);
-		//}
+        public static async Task AddLocation(this MailBoxComponent self)
+        {
+            await Game.Scene.GetComponent<LocationProxyComponent>().Add(self.Entity.Id, self.Entity.InstanceId);
+        }
 
-		//public static async Task RemoveLocation(this MailBoxComponent self)
-		//{
-		//	await Game.Scene.GetComponent<LocationProxyComponent>().Remove(self.Entity.Id);
-		//}
+        public static async Task RemoveLocation(this MailBoxComponent self)
+        {
+            await Game.Scene.GetComponent<LocationProxyComponent>().Remove(self.Entity.Id);
+        }
 
-		public static void Add(this MailBoxComponent self, ActorMessageInfo info)
+        public static void Add(this MailBoxComponent self, ActorMessageInfo info)
 		{
 			self.Queue.Enqueue(info);
 

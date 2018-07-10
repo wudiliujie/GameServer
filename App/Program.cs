@@ -66,8 +66,7 @@ namespace App
                         Game.Scene.AddComponent<LocationProxyComponent>();
                         Game.Scene.AddComponent<RealmGateAddressComponent>();
                         break;
-                    case AppType.Gate:
-                        Game.Scene.AddComponent<PlayerComponent>();
+                    case AppType.Gate:         
                         Game.Scene.AddComponent<ActorMessageDispatherComponent>();
                         Game.Scene.AddComponent<NetInnerComponent, IPEndPoint>(innerConfig.IPEndPoint);
                         Game.Scene.AddComponent<NetOuterComponent, IPEndPoint>(outerConfig.IPEndPoint);
@@ -89,7 +88,7 @@ namespace App
                         break;
                     case AppType.AllServer:
                         Game.Scene.AddComponent<ActorMessageSenderComponent>();
-                        Game.Scene.AddComponent<PlayerComponent>();
+                        //Game.Scene.AddComponent<PlayerComponent>();
                         Game.Scene.AddComponent<UnitComponent>();
                         Game.Scene.AddComponent<DBComponent>();
                         Game.Scene.AddComponent<DBProxyComponent>();

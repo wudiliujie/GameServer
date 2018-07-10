@@ -26,61 +26,97 @@ namespace ETModel {
             "ASgFEgkKAVYYAiABKAMiHwoHQXR0clN0chIJCgFLGAEgASgFEgkKAVYYAiAB",
             "KAkiXAoKU2VydmVySW5mbxIQCghTZXJ2ZXJJZBgBIAEoBRISCgpTZXJ2ZXJU",
             "eXBlGAIgASgFEhIKCk5ldElubmVySXAYAyABKAkSFAoMTmV0SW5uZXJQb3J0",
-            "GAQgASgFIjwKDUFjdG9yUmVzcG9uc2USDQoFUnBjSWQYASABKAUSCwoDVGFn",
-            "GAIgASgFEg8KB01lc3NhZ2UYAyABKAkiZAoKUm9sZURiSW5mbxIOCgZSb2xl",
-            "SWQYASABKAUSIgoIQXR0ckludHMYAiADKAsyEC5FVE1vZGVsLkF0dHJJbnQS",
-            "IgoIQXR0clN0cnMYAyADKAsyEC5FVE1vZGVsLkF0dHJTdHIiPgoPUmVzcG9u",
+            "GAQgASgFImQKClJvbGVEYkluZm8SDgoGUm9sZUlkGAEgASgFEiIKCEF0dHJJ",
+            "bnRzGAIgAygLMhAuRVRNb2RlbC5BdHRySW50EiIKCEF0dHJTdHJzGAMgAygL",
+            "MhAuRVRNb2RlbC5BdHRyU3RyIjwKDUFjdG9yUmVzcG9uc2USCwoDVGFnGGIg",
+            "ASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3NhZ2UYZCABKAkiPgoPUmVzcG9u",
             "c2VNZXNzYWdlEgsKA1RhZxhiIAEoBRINCgVScGNJZBhjIAEoBRIPCgdNZXNz",
-            "YWdlGGQgASgJIjUKD0MyV0VCX1VzZXJMb2dpbhIQCghVc2VyTmFtZRgBIAEo",
-            "CRIQCghVc2VyUGFzcxgCIAEoCSKCAQoPV0VCMkNfVXNlckxvZ2luEgsKA3Rh",
-            "ZxgBIAEoBRIRCglBY2NvdW50SWQYAiABKAUSFAoMSXNDcmVhdGVSb2xlGAMg",
-            "ASgIEhEKCVRpbWVzdGFtcBgEIAEoAxIKCgJJcBgFIAEoCRIMCgRQb3J0GAYg",
-            "ASgFEgwKBFNpZ24YByABKAkiWAoQQzJXRUJfQ3JlYXRlUm9sZRIRCglBY2Nv",
-            "dW50SWQYASABKAUSEAoIUm9sZU5hbWUYAiABKAkSEQoJVGltZXN0YW1wGAMg",
-            "ASgDEgwKBFNpZ24YBCABKAkigwEKEFdFQjJDX0NyZWF0ZVJvbGUSCwoDdGFn",
-            "GAEgASgFEhEKCUFjY291bnRJZBgCIAEoBRIUCgxJc0NyZWF0ZVJvbGUYAyAB",
-            "KAgSEQoJVGltZXN0YW1wGAQgASgDEgoKAklwGAUgASgJEgwKBFBvcnQYBiAB",
-            "KAUSDAoEc2lnbhgHIAEoCSJSCg1DMlNfVXNlckxvZ2luEhEKCUFjY291bnRJ",
-            "ZBgBIAEoBRIRCglUaW1lc3RhbXAYAiABKAMSDAoEc2lnbhgDIAEoCRINCgVS",
-            "cGNJZBhjIAEoBSI8Cg1TMkNfVXNlckxvZ2luEgsKA1RhZxhiIAEoBRINCgVS",
-            "cGNJZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJIjAKDFNhdmVSb2xlSW5mbxIO",
-            "CgZSb2xlSWQYASABKAUSEAoIUm9sZURhdGEYAiABKAwiZgoMUzJDX1JvbGVJ",
-            "bmZvEg4KBlJvbGVJZBgBIAEoBRIiCghBdHRySW50cxgCIAMoCzIQLkVUTW9k",
-            "ZWwuQXR0ckludBIiCghBdHRyU3RycxgDIAMoCzIQLkVUTW9kZWwuQXR0clN0",
-            "ciJdCgtTZXJ2ZXJIZWFydBIQCghTZXJ2ZXJJZBgBIAEoBRISCgpTZXJ2ZXJO",
-            "YW1lGAIgASgJEgoKAklwGAMgASgJEgwKBFBvcnQYBCABKAUSDgoGT25saW5l",
-            "GAUgASgFIkYKElMyTF9SZWdpc3RlclNlcnZlchIhCgRJbmZvGAEgASgLMhMu",
-            "RVRNb2RlbC5TZXJ2ZXJJbmZvEg0KBVJwY0lkGGMgASgFIkkKDkcyTV9DcmVh",
-            "dGVVbml0EhEKCUFjY291bnRJZBgBIAEoBRIVCg1HYXRlU2Vzc2lvbklkGAIg",
-            "ASgDEg0KBVJwY0lkGGMgASgFIk0KDk0yR19DcmVhdGVVbml0Eg4KBlVuaXRJ",
-            "ZBgBIAEoBRILCgNUYWcYYiABKAUSDQoFUnBjSWQYYyABKAUSDwoHTWVzc2Fn",
-            "ZRhkIAEoCSIzChFHMkxfR2V0TWFwQWRkcmVzcxIPCgdNYXBUeXBlGAEgASgF",
-            "Eg0KBVJwY0lkGGMgASgFIlEKEUwyR19HZXRNYXBBZGRyZXNzEg8KB0FkZHJl",
-            "c3MYASABKAkSCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3Nh",
-            "Z2UYZCABKAkq1gIKA01TRxIMCghfRGVmYXVsdBAAEhQKEF9SZXNwb25zZU1l",
-            "c3NhZ2UQARIUChBfQzJXRUJfVXNlckxvZ2luEAISFAoQX1dFQjJDX1VzZXJM",
-            "b2dpbhADEhUKEV9DMldFQl9DcmVhdGVSb2xlEAQSFQoRX1dFQjJDX0NyZWF0",
-            "ZVJvbGUQBRISCg5fQzJTX1VzZXJMb2dpbhAGEhIKDl9TMkNfVXNlckxvZ2lu",
-            "EAcSEQoNX1NhdmVSb2xlSW5mbxAIEhEKDV9TMkNfUm9sZUluZm8QCRIQCgxf",
-            "U2VydmVySGVhcnQQChIXChNfUzJMX1JlZ2lzdGVyU2VydmVyEAsSEwoPX0cy",
-            "TV9DcmVhdGVVbml0EAwSEwoPX00yR19DcmVhdGVVbml0EA0SFgoSX0cyTF9H",
-            "ZXRNYXBBZGRyZXNzEA4SFgoSX0wyR19HZXRNYXBBZGRyZXNzEA9iBnByb3Rv",
-            "Mw=="));
+            "YWdlGGQgASgJIkIKEE9iamVjdEFkZFJlcXVlc3QSCwoDS2V5GAEgASgDEhIK",
+            "Ckluc3RhbmNlSWQYAiABKAMSDQoFUnBjSWQYYyABKAUiQAoRT2JqZWN0QWRk",
+            "UmVzcG9uc2USCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3Nh",
+            "Z2UYZCABKAkiMQoTT2JqZWN0UmVtb3ZlUmVxdWVzdBILCgNLZXkYASABKAMS",
+            "DQoFUnBjSWQYYyABKAUiQwoUT2JqZWN0UmVtb3ZlUmVzcG9uc2USCwoDVGFn",
+            "GGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3NhZ2UYZCABKAkiUQoRT2Jq",
+            "ZWN0TG9ja1JlcXVlc3QSCwoDS2V5GAEgASgDEhIKCkluc3RhbmNlSWQYAiAB",
+            "KAMSDAoEVGltZRgDIAEoBRINCgVScGNJZBhjIAEoBSJBChJPYmplY3RMb2Nr",
+            "UmVzcG9uc2USCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3Nh",
+            "Z2UYZCABKAkiXAoTT2JqZWN0VW5Mb2NrUmVxdWVzdBILCgNLZXkYASABKAMS",
+            "FQoNT2xkSW5zdGFuY2VJZBgCIAEoAxISCgpJbnN0YW5jZUlkGAMgASgDEg0K",
+            "BVJwY0lkGGMgASgFIkMKFE9iamVjdFVuTG9ja1Jlc3BvbnNlEgsKA1RhZxhi",
+            "IAEoBRINCgVScGNJZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJIi4KEE9iamVj",
+            "dEdldFJlcXVlc3QSCwoDS2V5GAEgASgDEg0KBVJwY0lkGGMgASgFIlQKEU9i",
+            "amVjdEdldFJlc3BvbnNlEhIKCkluc3RhbmNlSWQYASABKAMSCwoDVGFnGGIg",
+            "ASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3NhZ2UYZCABKAkiNQoPQzJXRUJf",
+            "VXNlckxvZ2luEhAKCFVzZXJOYW1lGAEgASgJEhAKCFVzZXJQYXNzGAIgASgJ",
+            "IoIBCg9XRUIyQ19Vc2VyTG9naW4SCwoDdGFnGAEgASgFEhEKCUFjY291bnRJ",
+            "ZBgCIAEoBRIUCgxJc0NyZWF0ZVJvbGUYAyABKAgSEQoJVGltZXN0YW1wGAQg",
+            "ASgDEgoKAklwGAUgASgJEgwKBFBvcnQYBiABKAUSDAoEU2lnbhgHIAEoCSJY",
+            "ChBDMldFQl9DcmVhdGVSb2xlEhEKCUFjY291bnRJZBgBIAEoBRIQCghSb2xl",
+            "TmFtZRgCIAEoCRIRCglUaW1lc3RhbXAYAyABKAMSDAoEU2lnbhgEIAEoCSKD",
+            "AQoQV0VCMkNfQ3JlYXRlUm9sZRILCgN0YWcYASABKAUSEQoJQWNjb3VudElk",
+            "GAIgASgFEhQKDElzQ3JlYXRlUm9sZRgDIAEoCBIRCglUaW1lc3RhbXAYBCAB",
+            "KAMSCgoCSXAYBSABKAkSDAoEUG9ydBgGIAEoBRIMCgRzaWduGAcgASgJIlIK",
+            "DUMyU19Vc2VyTG9naW4SEQoJQWNjb3VudElkGAEgASgFEhEKCVRpbWVzdGFt",
+            "cBgCIAEoAxIMCgRzaWduGAMgASgJEg0KBVJwY0lkGGMgASgFIkwKDVMyQ19V",
+            "c2VyTG9naW4SDgoGVW5pdElkGAEgASgDEgsKA1RhZxhiIAEoBRINCgVScGNJ",
+            "ZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJIjAKDFNhdmVSb2xlSW5mbxIOCgZS",
+            "b2xlSWQYASABKAUSEAoIUm9sZURhdGEYAiABKAwiZgoMUzJDX1JvbGVJbmZv",
+            "Eg4KBlJvbGVJZBgBIAEoBRIiCghBdHRySW50cxgCIAMoCzIQLkVUTW9kZWwu",
+            "QXR0ckludBIiCghBdHRyU3RycxgDIAMoCzIQLkVUTW9kZWwuQXR0clN0ciJd",
+            "CgtTZXJ2ZXJIZWFydBIQCghTZXJ2ZXJJZBgBIAEoBRISCgpTZXJ2ZXJOYW1l",
+            "GAIgASgJEgoKAklwGAMgASgJEgwKBFBvcnQYBCABKAUSDgoGT25saW5lGAUg",
+            "ASgFIkYKElMyTF9SZWdpc3RlclNlcnZlchIhCgRJbmZvGAEgASgLMhMuRVRN",
+            "b2RlbC5TZXJ2ZXJJbmZvEg0KBVJwY0lkGGMgASgFIkkKDkcyTV9DcmVhdGVV",
+            "bml0EhEKCUFjY291bnRJZBgBIAEoBRIVCg1HYXRlU2Vzc2lvbklkGAIgASgD",
+            "Eg0KBVJwY0lkGGMgASgFIk0KDk0yR19DcmVhdGVVbml0Eg4KBlVuaXRJZBgB",
+            "IAEoAxILCgNUYWcYYiABKAUSDQoFUnBjSWQYYyABKAUSDwoHTWVzc2FnZRhk",
+            "IAEoCSIzChFHMkxfR2V0TWFwQWRkcmVzcxIPCgdNYXBUeXBlGAEgASgFEg0K",
+            "BVJwY0lkGGMgASgFIlEKEUwyR19HZXRNYXBBZGRyZXNzEg8KB0FkZHJlc3MY",
+            "ASABKAkSCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3NhZ2UY",
+            "ZCABKAkiUQoNQzJNX0VudGVyUm9vbRIQCghSb29tVHlwZRgBIAEoBRIOCgZS",
+            "b29tSWQYAiABKAUSDQoFUnBjSWQYYyABKAUSDwoHQWN0b3JJZBhkIAEoAyJM",
+            "Cg1NMkNfRW50ZXJSb29tEg4KBlJvb21JZBgBIAEoBRILCgNUYWcYYiABKAUS",
+            "DQoFUnBjSWQYYyABKAUSDwoHTWVzc2FnZRhkIAEoCSqLBQoDTVNHEgwKCF9E",
+            "ZWZhdWx0EAASEgoOX0FjdG9yUmVzcG9uc2UQHhIUChBfUmVzcG9uc2VNZXNz",
+            "YWdlEAESFQoRX09iamVjdEFkZFJlcXVlc3QQFBIWChJfT2JqZWN0QWRkUmVz",
+            "cG9uc2UQFRIYChRfT2JqZWN0UmVtb3ZlUmVxdWVzdBAWEhkKFV9PYmplY3RS",
+            "ZW1vdmVSZXNwb25zZRAXEhYKEl9PYmplY3RMb2NrUmVxdWVzdBAYEhcKE19P",
+            "YmplY3RMb2NrUmVzcG9uc2UQGRIYChRfT2JqZWN0VW5Mb2NrUmVxdWVzdBAa",
+            "EhkKFV9PYmplY3RVbkxvY2tSZXNwb25zZRAbEhUKEV9PYmplY3RHZXRSZXF1",
+            "ZXN0EBwSFgoSX09iamVjdEdldFJlc3BvbnNlEB0SFAoQX0MyV0VCX1VzZXJM",
+            "b2dpbhACEhQKEF9XRUIyQ19Vc2VyTG9naW4QAxIVChFfQzJXRUJfQ3JlYXRl",
+            "Um9sZRAEEhUKEV9XRUIyQ19DcmVhdGVSb2xlEAUSEgoOX0MyU19Vc2VyTG9n",
+            "aW4QBhISCg5fUzJDX1VzZXJMb2dpbhAHEhEKDV9TYXZlUm9sZUluZm8QCBIR",
+            "Cg1fUzJDX1JvbGVJbmZvEAkSEAoMX1NlcnZlckhlYXJ0EAoSFwoTX1MyTF9S",
+            "ZWdpc3RlclNlcnZlchALEhMKD19HMk1fQ3JlYXRlVW5pdBAMEhMKD19NMkdf",
+            "Q3JlYXRlVW5pdBANEhYKEl9HMkxfR2V0TWFwQWRkcmVzcxAOEhYKEl9MMkdf",
+            "R2V0TWFwQWRkcmVzcxAPEhIKDl9DMk1fRW50ZXJSb29tEBISEgoOX00yQ19F",
+            "bnRlclJvb20QE2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ETModel.MSG), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.AttrInt), global::ETModel.AttrInt.Parser, new[]{ "K", "V" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.AttrStr), global::ETModel.AttrStr.Parser, new[]{ "K", "V" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ServerInfo), global::ETModel.ServerInfo.Parser, new[]{ "ServerId", "ServerType", "NetInnerIp", "NetInnerPort" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ActorResponse), global::ETModel.ActorResponse.Parser, new[]{ "RpcId", "Tag", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.RoleDbInfo), global::ETModel.RoleDbInfo.Parser, new[]{ "RoleId", "AttrInts", "AttrStrs" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ActorResponse), global::ETModel.ActorResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ResponseMessage), global::ETModel.ResponseMessage.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectAddRequest), global::ETModel.ObjectAddRequest.Parser, new[]{ "Key", "InstanceId", "RpcId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectAddResponse), global::ETModel.ObjectAddResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectRemoveRequest), global::ETModel.ObjectRemoveRequest.Parser, new[]{ "Key", "RpcId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectRemoveResponse), global::ETModel.ObjectRemoveResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectLockRequest), global::ETModel.ObjectLockRequest.Parser, new[]{ "Key", "InstanceId", "Time", "RpcId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectLockResponse), global::ETModel.ObjectLockResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectUnLockRequest), global::ETModel.ObjectUnLockRequest.Parser, new[]{ "Key", "OldInstanceId", "InstanceId", "RpcId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectUnLockResponse), global::ETModel.ObjectUnLockResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectGetRequest), global::ETModel.ObjectGetRequest.Parser, new[]{ "Key", "RpcId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectGetResponse), global::ETModel.ObjectGetResponse.Parser, new[]{ "InstanceId", "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.C2WEB_UserLogin), global::ETModel.C2WEB_UserLogin.Parser, new[]{ "UserName", "UserPass" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.WEB2C_UserLogin), global::ETModel.WEB2C_UserLogin.Parser, new[]{ "Tag", "AccountId", "IsCreateRole", "Timestamp", "Ip", "Port", "Sign" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.C2WEB_CreateRole), global::ETModel.C2WEB_CreateRole.Parser, new[]{ "AccountId", "RoleName", "Timestamp", "Sign" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.WEB2C_CreateRole), global::ETModel.WEB2C_CreateRole.Parser, new[]{ "Tag", "AccountId", "IsCreateRole", "Timestamp", "Ip", "Port", "Sign" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.C2S_UserLogin), global::ETModel.C2S_UserLogin.Parser, new[]{ "AccountId", "Timestamp", "Sign", "RpcId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.S2C_UserLogin), global::ETModel.S2C_UserLogin.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.S2C_UserLogin), global::ETModel.S2C_UserLogin.Parser, new[]{ "UnitId", "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.SaveRoleInfo), global::ETModel.SaveRoleInfo.Parser, new[]{ "RoleId", "RoleData" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.S2C_RoleInfo), global::ETModel.S2C_RoleInfo.Parser, new[]{ "RoleId", "AttrInts", "AttrStrs" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ServerHeart), global::ETModel.ServerHeart.Parser, new[]{ "ServerId", "ServerName", "Ip", "Port", "Online" }, null, null, null),
@@ -88,7 +124,9 @@ namespace ETModel {
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.G2M_CreateUnit), global::ETModel.G2M_CreateUnit.Parser, new[]{ "AccountId", "GateSessionId", "RpcId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.M2G_CreateUnit), global::ETModel.M2G_CreateUnit.Parser, new[]{ "UnitId", "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.G2L_GetMapAddress), global::ETModel.G2L_GetMapAddress.Parser, new[]{ "MapType", "RpcId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.L2G_GetMapAddress), global::ETModel.L2G_GetMapAddress.Parser, new[]{ "Address", "Tag", "RpcId", "Message" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.L2G_GetMapAddress), global::ETModel.L2G_GetMapAddress.Parser, new[]{ "Address", "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.C2M_EnterRoom), global::ETModel.C2M_EnterRoom.Parser, new[]{ "RoomType", "RoomId", "RpcId", "ActorId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.M2C_EnterRoom), global::ETModel.M2C_EnterRoom.Parser, new[]{ "RoomId", "Tag", "RpcId", "Message" }, null, null, null)
           }));
     }
     #endregion
@@ -98,9 +136,53 @@ namespace ETModel {
   public enum MSG {
     [pbr::OriginalName("_Default")] Default = 0,
     /// <summary>
+    ///Actor回复信息
+    /// </summary>
+    [pbr::OriginalName("_ActorResponse")] ActorResponse = 30,
+    /// <summary>
     ///回复信息
     /// </summary>
     [pbr::OriginalName("_ResponseMessage")] ResponseMessage = 1,
+    /// <summary>
+    ///添加对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectAddRequest")] ObjectAddRequest = 20,
+    /// <summary>
+    ///添加对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectAddResponse")] ObjectAddResponse = 21,
+    /// <summary>
+    ///删除对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectRemoveRequest")] ObjectRemoveRequest = 22,
+    /// <summary>
+    ///删除对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectRemoveResponse")] ObjectRemoveResponse = 23,
+    /// <summary>
+    ///锁定对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectLockRequest")] ObjectLockRequest = 24,
+    /// <summary>
+    ///锁定对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectLockResponse")] ObjectLockResponse = 25,
+    /// <summary>
+    ///取消锁定对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectUnLockRequest")] ObjectUnLockRequest = 26,
+    /// <summary>
+    ///取消锁定对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectUnLockResponse")] ObjectUnLockResponse = 27,
+    /// <summary>
+    ///获取对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectGetRequest")] ObjectGetRequest = 28,
+    /// <summary>
+    ///获取对象
+    /// </summary>
+    [pbr::OriginalName("_ObjectGetResponse")] ObjectGetResponse = 29,
     /// <summary>
     ///用户登录
     /// </summary>
@@ -157,6 +239,14 @@ namespace ETModel {
     ///通知地图服务器创建unit
     /// </summary>
     [pbr::OriginalName("_L2G_GetMapAddress")] L2GGetMapAddress = 15,
+    /// <summary>
+    ///用户进入房间
+    /// </summary>
+    [pbr::OriginalName("_C2M_EnterRoom")] C2MEnterRoom = 18,
+    /// <summary>
+    ///用户进入房间
+    /// </summary>
+    [pbr::OriginalName("_M2C_EnterRoom")] M2CEnterRoom = 19,
   }
 
   #endregion
@@ -687,191 +777,6 @@ namespace ETModel {
   }
 
   /// <summary>
-  ///Actor回复信息
-  /// </summary>
-  public sealed partial class ActorResponse : pb::IMessage<ActorResponse> {
-    private static readonly pb::MessageParser<ActorResponse> _parser = new pb::MessageParser<ActorResponse>(() => new ActorResponse());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ActorResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ActorResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ActorResponse(ActorResponse other) : this() {
-      rpcId_ = other.rpcId_;
-      tag_ = other.tag_;
-      message_ = other.message_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ActorResponse Clone() {
-      return new ActorResponse(this);
-    }
-
-    /// <summary>Field number for the "RpcId" field.</summary>
-    public const int RpcIdFieldNumber = 1;
-    private int rpcId_;
-    /// <summary>
-    ///编号
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int RpcId {
-      get { return rpcId_; }
-      set {
-        rpcId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Tag" field.</summary>
-    public const int TagFieldNumber = 2;
-    private int tag_;
-    /// <summary>
-    ///结果
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Tag {
-      get { return tag_; }
-      set {
-        tag_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Message" field.</summary>
-    public const int MessageFieldNumber = 3;
-    private string message_ = "";
-    /// <summary>
-    ///名字
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Message {
-      get { return message_; }
-      set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ActorResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ActorResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (RpcId != other.RpcId) return false;
-      if (Tag != other.Tag) return false;
-      if (Message != other.Message) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (RpcId != 0) hash ^= RpcId.GetHashCode();
-      if (Tag != 0) hash ^= Tag.GetHashCode();
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (RpcId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(RpcId);
-      }
-      if (Tag != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Tag);
-      }
-      if (Message.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Message);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (RpcId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
-      }
-      if (Tag != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tag);
-      }
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ActorResponse other) {
-      if (other == null) {
-        return;
-      }
-      if (other.RpcId != 0) {
-        RpcId = other.RpcId;
-      }
-      if (other.Tag != 0) {
-        Tag = other.Tag;
-      }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            RpcId = input.ReadInt32();
-            break;
-          }
-          case 16: {
-            Tag = input.ReadInt32();
-            break;
-          }
-          case 26: {
-            Message = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
   ///角色数据存储信息
   /// </summary>
   public sealed partial class RoleDbInfo : pb::IMessage<RoleDbInfo> {
@@ -881,7 +786,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[4]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1032,6 +937,182 @@ namespace ETModel {
           }
           case 26: {
             attrStrs_.AddEntriesFrom(input, _repeated_attrStrs_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///Actor回复信息
+  /// </summary>
+  public sealed partial class ActorResponse : pb::IMessage<ActorResponse> {
+    private static readonly pb::MessageParser<ActorResponse> _parser = new pb::MessageParser<ActorResponse>(() => new ActorResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ActorResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ActorResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ActorResponse(ActorResponse other) : this() {
+      tag_ = other.tag_;
+      rpcId_ = other.rpcId_;
+      message_ = other.message_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ActorResponse Clone() {
+      return new ActorResponse(this);
+    }
+
+    /// <summary>Field number for the "Tag" field.</summary>
+    public const int TagFieldNumber = 98;
+    private int tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Message" field.</summary>
+    public const int MessageFieldNumber = 100;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ActorResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ActorResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Tag != other.Tag) return false;
+      if (RpcId != other.RpcId) return false;
+      if (Message != other.Message) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Tag != 0) {
+        output.WriteRawTag(144, 6);
+        output.WriteInt32(Tag);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(162, 6);
+        output.WriteString(Message);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ActorResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 784: {
+            Tag = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 802: {
+            Message = input.ReadString();
             break;
           }
         }
@@ -1217,6 +1298,1827 @@ namespace ETModel {
   }
 
   /// <summary>
+  ///添加对象
+  /// </summary>
+  public sealed partial class ObjectAddRequest : pb::IMessage<ObjectAddRequest> {
+    private static readonly pb::MessageParser<ObjectAddRequest> _parser = new pb::MessageParser<ObjectAddRequest>(() => new ObjectAddRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectAddRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectAddRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectAddRequest(ObjectAddRequest other) : this() {
+      key_ = other.key_;
+      instanceId_ = other.instanceId_;
+      rpcId_ = other.rpcId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectAddRequest Clone() {
+      return new ObjectAddRequest(this);
+    }
+
+    /// <summary>Field number for the "Key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private long key_;
+    /// <summary>
+    ///对象编号
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Key {
+      get { return key_; }
+      set {
+        key_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "InstanceId" field.</summary>
+    public const int InstanceIdFieldNumber = 2;
+    private long instanceId_;
+    /// <summary>
+    ///实例ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectAddRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectAddRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (InstanceId != other.InstanceId) return false;
+      if (RpcId != other.RpcId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key != 0L) hash ^= Key.GetHashCode();
+      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Key != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Key);
+      }
+      if (InstanceId != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(InstanceId);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Key);
+      }
+      if (InstanceId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectAddRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key != 0L) {
+        Key = other.Key;
+      }
+      if (other.InstanceId != 0L) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Key = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            InstanceId = input.ReadInt64();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///添加对象
+  /// </summary>
+  public sealed partial class ObjectAddResponse : pb::IMessage<ObjectAddResponse> {
+    private static readonly pb::MessageParser<ObjectAddResponse> _parser = new pb::MessageParser<ObjectAddResponse>(() => new ObjectAddResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectAddResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectAddResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectAddResponse(ObjectAddResponse other) : this() {
+      tag_ = other.tag_;
+      rpcId_ = other.rpcId_;
+      message_ = other.message_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectAddResponse Clone() {
+      return new ObjectAddResponse(this);
+    }
+
+    /// <summary>Field number for the "Tag" field.</summary>
+    public const int TagFieldNumber = 98;
+    private int tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Message" field.</summary>
+    public const int MessageFieldNumber = 100;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectAddResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectAddResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Tag != other.Tag) return false;
+      if (RpcId != other.RpcId) return false;
+      if (Message != other.Message) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Tag != 0) {
+        output.WriteRawTag(144, 6);
+        output.WriteInt32(Tag);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(162, 6);
+        output.WriteString(Message);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectAddResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 784: {
+            Tag = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 802: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///删除对象
+  /// </summary>
+  public sealed partial class ObjectRemoveRequest : pb::IMessage<ObjectRemoveRequest> {
+    private static readonly pb::MessageParser<ObjectRemoveRequest> _parser = new pb::MessageParser<ObjectRemoveRequest>(() => new ObjectRemoveRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectRemoveRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectRemoveRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectRemoveRequest(ObjectRemoveRequest other) : this() {
+      key_ = other.key_;
+      rpcId_ = other.rpcId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectRemoveRequest Clone() {
+      return new ObjectRemoveRequest(this);
+    }
+
+    /// <summary>Field number for the "Key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private long key_;
+    /// <summary>
+    ///对象编号
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Key {
+      get { return key_; }
+      set {
+        key_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectRemoveRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectRemoveRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (RpcId != other.RpcId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key != 0L) hash ^= Key.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Key != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Key);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Key);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectRemoveRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key != 0L) {
+        Key = other.Key;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Key = input.ReadInt64();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///删除对象
+  /// </summary>
+  public sealed partial class ObjectRemoveResponse : pb::IMessage<ObjectRemoveResponse> {
+    private static readonly pb::MessageParser<ObjectRemoveResponse> _parser = new pb::MessageParser<ObjectRemoveResponse>(() => new ObjectRemoveResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectRemoveResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectRemoveResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectRemoveResponse(ObjectRemoveResponse other) : this() {
+      tag_ = other.tag_;
+      rpcId_ = other.rpcId_;
+      message_ = other.message_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectRemoveResponse Clone() {
+      return new ObjectRemoveResponse(this);
+    }
+
+    /// <summary>Field number for the "Tag" field.</summary>
+    public const int TagFieldNumber = 98;
+    private int tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Message" field.</summary>
+    public const int MessageFieldNumber = 100;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectRemoveResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectRemoveResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Tag != other.Tag) return false;
+      if (RpcId != other.RpcId) return false;
+      if (Message != other.Message) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Tag != 0) {
+        output.WriteRawTag(144, 6);
+        output.WriteInt32(Tag);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(162, 6);
+        output.WriteString(Message);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectRemoveResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 784: {
+            Tag = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 802: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///锁定对象
+  /// </summary>
+  public sealed partial class ObjectLockRequest : pb::IMessage<ObjectLockRequest> {
+    private static readonly pb::MessageParser<ObjectLockRequest> _parser = new pb::MessageParser<ObjectLockRequest>(() => new ObjectLockRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectLockRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectLockRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectLockRequest(ObjectLockRequest other) : this() {
+      key_ = other.key_;
+      instanceId_ = other.instanceId_;
+      time_ = other.time_;
+      rpcId_ = other.rpcId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectLockRequest Clone() {
+      return new ObjectLockRequest(this);
+    }
+
+    /// <summary>Field number for the "Key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private long key_;
+    /// <summary>
+    ///对象编号
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Key {
+      get { return key_; }
+      set {
+        key_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "InstanceId" field.</summary>
+    public const int InstanceIdFieldNumber = 2;
+    private long instanceId_;
+    /// <summary>
+    ///实例ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Time" field.</summary>
+    public const int TimeFieldNumber = 3;
+    private int time_;
+    /// <summary>
+    ///实例ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Time {
+      get { return time_; }
+      set {
+        time_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectLockRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectLockRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (InstanceId != other.InstanceId) return false;
+      if (Time != other.Time) return false;
+      if (RpcId != other.RpcId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key != 0L) hash ^= Key.GetHashCode();
+      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (Time != 0) hash ^= Time.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Key != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Key);
+      }
+      if (InstanceId != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(InstanceId);
+      }
+      if (Time != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Time);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Key);
+      }
+      if (InstanceId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      }
+      if (Time != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Time);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectLockRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key != 0L) {
+        Key = other.Key;
+      }
+      if (other.InstanceId != 0L) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.Time != 0) {
+        Time = other.Time;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Key = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            InstanceId = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            Time = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///锁定对象
+  /// </summary>
+  public sealed partial class ObjectLockResponse : pb::IMessage<ObjectLockResponse> {
+    private static readonly pb::MessageParser<ObjectLockResponse> _parser = new pb::MessageParser<ObjectLockResponse>(() => new ObjectLockResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectLockResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectLockResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectLockResponse(ObjectLockResponse other) : this() {
+      tag_ = other.tag_;
+      rpcId_ = other.rpcId_;
+      message_ = other.message_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectLockResponse Clone() {
+      return new ObjectLockResponse(this);
+    }
+
+    /// <summary>Field number for the "Tag" field.</summary>
+    public const int TagFieldNumber = 98;
+    private int tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Message" field.</summary>
+    public const int MessageFieldNumber = 100;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectLockResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectLockResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Tag != other.Tag) return false;
+      if (RpcId != other.RpcId) return false;
+      if (Message != other.Message) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Tag != 0) {
+        output.WriteRawTag(144, 6);
+        output.WriteInt32(Tag);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(162, 6);
+        output.WriteString(Message);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectLockResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 784: {
+            Tag = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 802: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///取消锁定对象
+  /// </summary>
+  public sealed partial class ObjectUnLockRequest : pb::IMessage<ObjectUnLockRequest> {
+    private static readonly pb::MessageParser<ObjectUnLockRequest> _parser = new pb::MessageParser<ObjectUnLockRequest>(() => new ObjectUnLockRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectUnLockRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectUnLockRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectUnLockRequest(ObjectUnLockRequest other) : this() {
+      key_ = other.key_;
+      oldInstanceId_ = other.oldInstanceId_;
+      instanceId_ = other.instanceId_;
+      rpcId_ = other.rpcId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectUnLockRequest Clone() {
+      return new ObjectUnLockRequest(this);
+    }
+
+    /// <summary>Field number for the "Key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private long key_;
+    /// <summary>
+    ///对象编号
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Key {
+      get { return key_; }
+      set {
+        key_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "OldInstanceId" field.</summary>
+    public const int OldInstanceIdFieldNumber = 2;
+    private long oldInstanceId_;
+    /// <summary>
+    ///实例ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long OldInstanceId {
+      get { return oldInstanceId_; }
+      set {
+        oldInstanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "InstanceId" field.</summary>
+    public const int InstanceIdFieldNumber = 3;
+    private long instanceId_;
+    /// <summary>
+    ///实例ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectUnLockRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectUnLockRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (OldInstanceId != other.OldInstanceId) return false;
+      if (InstanceId != other.InstanceId) return false;
+      if (RpcId != other.RpcId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key != 0L) hash ^= Key.GetHashCode();
+      if (OldInstanceId != 0L) hash ^= OldInstanceId.GetHashCode();
+      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Key != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Key);
+      }
+      if (OldInstanceId != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(OldInstanceId);
+      }
+      if (InstanceId != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(InstanceId);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Key);
+      }
+      if (OldInstanceId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(OldInstanceId);
+      }
+      if (InstanceId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectUnLockRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key != 0L) {
+        Key = other.Key;
+      }
+      if (other.OldInstanceId != 0L) {
+        OldInstanceId = other.OldInstanceId;
+      }
+      if (other.InstanceId != 0L) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Key = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            OldInstanceId = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            InstanceId = input.ReadInt64();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///取消锁定对象
+  /// </summary>
+  public sealed partial class ObjectUnLockResponse : pb::IMessage<ObjectUnLockResponse> {
+    private static readonly pb::MessageParser<ObjectUnLockResponse> _parser = new pb::MessageParser<ObjectUnLockResponse>(() => new ObjectUnLockResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectUnLockResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectUnLockResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectUnLockResponse(ObjectUnLockResponse other) : this() {
+      tag_ = other.tag_;
+      rpcId_ = other.rpcId_;
+      message_ = other.message_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectUnLockResponse Clone() {
+      return new ObjectUnLockResponse(this);
+    }
+
+    /// <summary>Field number for the "Tag" field.</summary>
+    public const int TagFieldNumber = 98;
+    private int tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Message" field.</summary>
+    public const int MessageFieldNumber = 100;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectUnLockResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectUnLockResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Tag != other.Tag) return false;
+      if (RpcId != other.RpcId) return false;
+      if (Message != other.Message) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Tag != 0) {
+        output.WriteRawTag(144, 6);
+        output.WriteInt32(Tag);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(162, 6);
+        output.WriteString(Message);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectUnLockResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 784: {
+            Tag = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 802: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///获取对象
+  /// </summary>
+  public sealed partial class ObjectGetRequest : pb::IMessage<ObjectGetRequest> {
+    private static readonly pb::MessageParser<ObjectGetRequest> _parser = new pb::MessageParser<ObjectGetRequest>(() => new ObjectGetRequest());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectGetRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectGetRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectGetRequest(ObjectGetRequest other) : this() {
+      key_ = other.key_;
+      rpcId_ = other.rpcId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectGetRequest Clone() {
+      return new ObjectGetRequest(this);
+    }
+
+    /// <summary>Field number for the "Key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private long key_;
+    /// <summary>
+    ///对象编号
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Key {
+      get { return key_; }
+      set {
+        key_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectGetRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectGetRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (RpcId != other.RpcId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key != 0L) hash ^= Key.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Key != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Key);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Key);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectGetRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key != 0L) {
+        Key = other.Key;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Key = input.ReadInt64();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///获取对象
+  /// </summary>
+  public sealed partial class ObjectGetResponse : pb::IMessage<ObjectGetResponse> {
+    private static readonly pb::MessageParser<ObjectGetResponse> _parser = new pb::MessageParser<ObjectGetResponse>(() => new ObjectGetResponse());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectGetResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectGetResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectGetResponse(ObjectGetResponse other) : this() {
+      instanceId_ = other.instanceId_;
+      tag_ = other.tag_;
+      rpcId_ = other.rpcId_;
+      message_ = other.message_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectGetResponse Clone() {
+      return new ObjectGetResponse(this);
+    }
+
+    /// <summary>Field number for the "InstanceId" field.</summary>
+    public const int InstanceIdFieldNumber = 1;
+    private long instanceId_;
+    /// <summary>
+    ///实例ID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Tag" field.</summary>
+    public const int TagFieldNumber = 98;
+    private int tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Message" field.</summary>
+    public const int MessageFieldNumber = 100;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectGetResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectGetResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (InstanceId != other.InstanceId) return false;
+      if (Tag != other.Tag) return false;
+      if (RpcId != other.RpcId) return false;
+      if (Message != other.Message) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (InstanceId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(InstanceId);
+      }
+      if (Tag != 0) {
+        output.WriteRawTag(144, 6);
+        output.WriteInt32(Tag);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(162, 6);
+        output.WriteString(Message);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (InstanceId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      }
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectGetResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.InstanceId != 0L) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            InstanceId = input.ReadInt64();
+            break;
+          }
+          case 784: {
+            Tag = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 802: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///用户登录
   /// </summary>
   public sealed partial class C2WEB_UserLogin : pb::IMessage<C2WEB_UserLogin> {
@@ -1226,7 +3128,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[6]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1380,7 +3282,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[7]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1689,7 +3591,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[8]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1905,7 +3807,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[9]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2214,7 +4116,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[10]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2427,7 +4329,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[11]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2444,6 +4346,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_UserLogin(S2C_UserLogin other) : this() {
+      unitId_ = other.unitId_;
       tag_ = other.tag_;
       rpcId_ = other.rpcId_;
       message_ = other.message_;
@@ -2452,6 +4355,20 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_UserLogin Clone() {
       return new S2C_UserLogin(this);
+    }
+
+    /// <summary>Field number for the "UnitId" field.</summary>
+    public const int UnitIdFieldNumber = 1;
+    private long unitId_;
+    /// <summary>
+    ///UnitID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long UnitId {
+      get { return unitId_; }
+      set {
+        unitId_ = value;
+      }
     }
 
     /// <summary>Field number for the "Tag" field.</summary>
@@ -2500,6 +4417,7 @@ namespace ETModel {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (UnitId != other.UnitId) return false;
       if (Tag != other.Tag) return false;
       if (RpcId != other.RpcId) return false;
       if (Message != other.Message) return false;
@@ -2509,6 +4427,7 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (UnitId != 0L) hash ^= UnitId.GetHashCode();
       if (Tag != 0) hash ^= Tag.GetHashCode();
       if (RpcId != 0) hash ^= RpcId.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
@@ -2522,6 +4441,10 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (UnitId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(UnitId);
+      }
       if (Tag != 0) {
         output.WriteRawTag(144, 6);
         output.WriteInt32(Tag);
@@ -2539,6 +4462,9 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (UnitId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UnitId);
+      }
       if (Tag != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
       }
@@ -2555,6 +4481,9 @@ namespace ETModel {
     public void MergeFrom(S2C_UserLogin other) {
       if (other == null) {
         return;
+      }
+      if (other.UnitId != 0L) {
+        UnitId = other.UnitId;
       }
       if (other.Tag != 0) {
         Tag = other.Tag;
@@ -2575,6 +4504,10 @@ namespace ETModel {
           default:
             input.SkipLastField();
             break;
+          case 8: {
+            UnitId = input.ReadInt64();
+            break;
+          }
           case 784: {
             Tag = input.ReadInt32();
             break;
@@ -2603,7 +4536,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[12]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2757,7 +4690,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[13]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2926,7 +4859,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[14]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3173,7 +5106,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[15]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3330,7 +5263,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[16]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3512,7 +5445,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[17]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3542,12 +5475,12 @@ namespace ETModel {
 
     /// <summary>Field number for the "UnitId" field.</summary>
     public const int UnitIdFieldNumber = 1;
-    private int unitId_;
+    private long unitId_;
     /// <summary>
     ///unit编号
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int UnitId {
+    public long UnitId {
       get { return unitId_; }
       set {
         unitId_ = value;
@@ -3610,7 +5543,7 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (UnitId != 0) hash ^= UnitId.GetHashCode();
+      if (UnitId != 0L) hash ^= UnitId.GetHashCode();
       if (Tag != 0) hash ^= Tag.GetHashCode();
       if (RpcId != 0) hash ^= RpcId.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
@@ -3624,9 +5557,9 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (UnitId != 0) {
+      if (UnitId != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt32(UnitId);
+        output.WriteInt64(UnitId);
       }
       if (Tag != 0) {
         output.WriteRawTag(144, 6);
@@ -3645,8 +5578,8 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (UnitId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(UnitId);
+      if (UnitId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UnitId);
       }
       if (Tag != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
@@ -3665,7 +5598,7 @@ namespace ETModel {
       if (other == null) {
         return;
       }
-      if (other.UnitId != 0) {
+      if (other.UnitId != 0L) {
         UnitId = other.UnitId;
       }
       if (other.Tag != 0) {
@@ -3688,7 +5621,7 @@ namespace ETModel {
             input.SkipLastField();
             break;
           case 8: {
-            UnitId = input.ReadInt32();
+            UnitId = input.ReadInt64();
             break;
           }
           case 784: {
@@ -3719,7 +5652,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[18]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3870,7 +5803,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[19]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4047,6 +5980,423 @@ namespace ETModel {
             break;
           case 10: {
             Address = input.ReadString();
+            break;
+          }
+          case 784: {
+            Tag = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 802: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///用户进入房间
+  /// </summary>
+  public sealed partial class C2M_EnterRoom : pb::IMessage<C2M_EnterRoom> {
+    private static readonly pb::MessageParser<C2M_EnterRoom> _parser = new pb::MessageParser<C2M_EnterRoom>(() => new C2M_EnterRoom());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<C2M_EnterRoom> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[30]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2M_EnterRoom() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2M_EnterRoom(C2M_EnterRoom other) : this() {
+      roomType_ = other.roomType_;
+      roomId_ = other.roomId_;
+      rpcId_ = other.rpcId_;
+      actorId_ = other.actorId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2M_EnterRoom Clone() {
+      return new C2M_EnterRoom(this);
+    }
+
+    /// <summary>Field number for the "RoomType" field.</summary>
+    public const int RoomTypeFieldNumber = 1;
+    private int roomType_;
+    /// <summary>
+    ///房间类型
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RoomType {
+      get { return roomType_; }
+      set {
+        roomType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RoomId" field.</summary>
+    public const int RoomIdFieldNumber = 2;
+    private int roomId_;
+    /// <summary>
+    ///房间编号
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RoomId {
+      get { return roomId_; }
+      set {
+        roomId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ActorId" field.</summary>
+    public const int ActorIdFieldNumber = 100;
+    private long actorId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long ActorId {
+      get { return actorId_; }
+      set {
+        actorId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as C2M_EnterRoom);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(C2M_EnterRoom other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RoomType != other.RoomType) return false;
+      if (RoomId != other.RoomId) return false;
+      if (RpcId != other.RpcId) return false;
+      if (ActorId != other.ActorId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RoomType != 0) hash ^= RoomType.GetHashCode();
+      if (RoomId != 0) hash ^= RoomId.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (ActorId != 0L) hash ^= ActorId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RoomType != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(RoomType);
+      }
+      if (RoomId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(RoomId);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (ActorId != 0L) {
+        output.WriteRawTag(160, 6);
+        output.WriteInt64(ActorId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RoomType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomType);
+      }
+      if (RoomId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomId);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (ActorId != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(ActorId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(C2M_EnterRoom other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RoomType != 0) {
+        RoomType = other.RoomType;
+      }
+      if (other.RoomId != 0) {
+        RoomId = other.RoomId;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.ActorId != 0L) {
+        ActorId = other.ActorId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            RoomType = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            RoomId = input.ReadInt32();
+            break;
+          }
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 800: {
+            ActorId = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///用户进入房间
+  /// </summary>
+  public sealed partial class M2C_EnterRoom : pb::IMessage<M2C_EnterRoom> {
+    private static readonly pb::MessageParser<M2C_EnterRoom> _parser = new pb::MessageParser<M2C_EnterRoom>(() => new M2C_EnterRoom());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<M2C_EnterRoom> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[31]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public M2C_EnterRoom() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public M2C_EnterRoom(M2C_EnterRoom other) : this() {
+      roomId_ = other.roomId_;
+      tag_ = other.tag_;
+      rpcId_ = other.rpcId_;
+      message_ = other.message_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public M2C_EnterRoom Clone() {
+      return new M2C_EnterRoom(this);
+    }
+
+    /// <summary>Field number for the "RoomId" field.</summary>
+    public const int RoomIdFieldNumber = 1;
+    private int roomId_;
+    /// <summary>
+    ///房间编号
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RoomId {
+      get { return roomId_; }
+      set {
+        roomId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Tag" field.</summary>
+    public const int TagFieldNumber = 98;
+    private int tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Message" field.</summary>
+    public const int MessageFieldNumber = 100;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as M2C_EnterRoom);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(M2C_EnterRoom other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RoomId != other.RoomId) return false;
+      if (Tag != other.Tag) return false;
+      if (RpcId != other.RpcId) return false;
+      if (Message != other.Message) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RoomId != 0) hash ^= RoomId.GetHashCode();
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RoomId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(RoomId);
+      }
+      if (Tag != 0) {
+        output.WriteRawTag(144, 6);
+        output.WriteInt32(Tag);
+      }
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(162, 6);
+        output.WriteString(Message);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RoomId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomId);
+      }
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
+      }
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(M2C_EnterRoom other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RoomId != 0) {
+        RoomId = other.RoomId;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            RoomId = input.ReadInt32();
             break;
           }
           case 784: {

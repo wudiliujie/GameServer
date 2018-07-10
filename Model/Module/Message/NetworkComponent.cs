@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading;
 
 namespace ETModel
 {
@@ -72,7 +73,7 @@ namespace ETModel
 
         public void OnAccept(AChannel channel)
         {
-            Console.WriteLine("OnAccept");
+            Console.WriteLine("OnAccept:"+Thread.CurrentThread.ManagedThreadId);
             Session session = ComponentFactory.CreateWithParent<Session, NetworkComponent, AChannel>(this, this, channel);
             this.sessions.Add(session.Id, session);
         }

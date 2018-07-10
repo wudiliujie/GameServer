@@ -14,6 +14,7 @@ namespace ETModel
     {
         public override void Awake(Session self, NetworkComponent a, AChannel b)
         {
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
             self.Awake(a, b);
         }
     }
@@ -23,6 +24,7 @@ namespace ETModel
     {
         public override void Start(Session self)
         {
+            //Log.Debug("SessionStart1");
             self.Start();
         }
     }
@@ -73,7 +75,7 @@ namespace ETModel
             this.Error = 0;
             this.channel = aChannel;
             this.requestCallback.Clear();
-
+            //Log.Debug("唤醒");
             channel.ErrorCallback += (c, e) =>
             {
                 Log.Debug("移除:" + e);
@@ -85,7 +87,9 @@ namespace ETModel
 
         public void Start()
         {
+
             this.channel?.Start();
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
         }
 
         public override void Dispose()
@@ -163,6 +167,7 @@ namespace ETModel
             try
             {
                 OpcodeTypeComponent opcodeTypeComponent = this.Network.Entity.GetComponent<OpcodeTypeComponent>();
+                Log.Debug("opcode:" + opcode);
                 message = opcodeTypeComponent.GetNewMessage(opcode);
                 message.MergeFrom(packet.Bytes, packet.Offset, packet.Length);
                 //Log.Debug($"recv: {JsonHelper.ToJson(message)}");

@@ -50,6 +50,7 @@ namespace ETHotfix
                 info.NetInnerPort = innerConfig.Port;
                 info.ServerId = startConfig.AppId;
                 info.ServerType = (int)startConfig.AppType;
+                Log.Debug("开始发送:" + info);
                 var a = await session.Call<ResponseMessage>(new S2L_RegisterServer() { Info = info });
                 if (a.Tag != 0)
                 {
@@ -84,6 +85,37 @@ namespace ETHotfix
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
             L2G_GetMapAddress result = await session.Call<L2G_GetMapAddress>(new G2L_GetMapAddress() { MapType = mapType });
             return result;
+        }
+
+        public static async Task Add(this LocationProxyComponent self, long key, long instanceId)
+        {
+            Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
+            await session.Call<ObjectAddResponse>(new ObjectAddRequest() { Key = key, InstanceId = instanceId });
+        }
+
+        public static async Task Lock(this LocationProxyComponent self, long key, long instanceId, int time = 1000)
+        {
+            Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
+            await session.Call<ObjectLockResponse>(new ObjectLockRequest() { Key = key, InstanceId = instanceId, Time = time });
+        }
+
+        public static async Task UnLock(this LocationProxyComponent self, long key, long oldInstanceId, long instanceId)
+        {
+            Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
+            await session.Call<ObjectUnLockResponse>(new ObjectUnLockRequest() { Key = key, OldInstanceId = oldInstanceId, InstanceId = instanceId });
+        }
+
+        public static async Task Remove(this LocationProxyComponent self, long key)
+        {
+            Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
+            await session.Call<ObjectRemoveResponse>(new ObjectRemoveRequest() { Key = key });
+        }
+
+        public static async Task<long> Get(this LocationProxyComponent self, long key)
+        {
+            Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
+            ObjectGetResponse response =await session.Call<ObjectGetResponse>(new ObjectGetRequest() { Key = key });
+            return response.InstanceId;
         }
 
     }

@@ -16,17 +16,20 @@ namespace ETHotfix.Fishs.Maps.Handlers
             M2G_CreateUnit response = new M2G_CreateUnit();
             Log.Debug("请求");
             Model.Fishs.Entitys.Unit unit = ComponentFactory.Create<Model.Fishs.Entitys.Unit, UnitType>(UnitType.Hero);
+            await unit.AddComponent<MailBoxComponent>().AddLocation();
             unit.AddComponent<UnitGateComponent, long>(message.GateSessionId);
             unit.AddComponent<PlayerDbComponent, int>(message.AccountId);
             var initRet = await unit.GetComponent<PlayerDbComponent>().InitDataSync();
             if (initRet)
             {
                 Game.Scene.GetComponent<UnitManageComponent>().Add(unit);
-                session.AddComponent<Model.Fishs.Components.SessionPlayerComponent>().Player = unit;
             }
             response.Tag = 0;
+            Log.Debug("数据库结束:"+unit.Id);
+            response.UnitId = unit.Id;
+
             reply(response);
-            Log.Debug("数据库结束");
+            
             count++;
         }
     }

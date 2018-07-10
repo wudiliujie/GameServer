@@ -55,8 +55,6 @@ namespace Server.Map
                 InnerConfig innerConfig = startConfig.GetComponent<InnerConfig>();
                 OuterConfig outerConfig = startConfig.GetComponent<OuterConfig>();
                 DBConfig dbConfig = startConfig.GetComponent<DBConfig>();
-
-                Game.Scene.AddComponent<PlayerComponent>();
                 Game.Scene.AddComponent<ActorMessageDispatherComponent>();
                 Game.Scene.AddComponent<NetInnerComponent, IPEndPoint>(innerConfig.IPEndPoint);
                 Game.Scene.AddComponent<LocationProxyComponent>();

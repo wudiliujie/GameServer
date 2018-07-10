@@ -1,12 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- r:代表是资源结构 -->
 <pack>
-  <s n="ActorResponse" d="Actor回复信息" r="1" db="1">
-    <p i="1" n="RpcId" t="int" d="编号" />
-    <p i="2" n="Tag" t="int" d="结果" />
-    <p i="3" n="Message" t="string" d="名字" />
-  </s>
-  <p n="ResponseMessage" d="回复信息" r="1" db="1" pt="IResponse">
+  <p n="ActorResponse" d="Actor回复信息" pt="IResponse">
+  </p>
+  <p n="ResponseMessage" d="回复信息" pt="IResponse">
+  </p>
+  <p n="ObjectAddRequest" d="添加对象" pt="IRequest">
+    <p i="1" n="Key" t="long" d="对象编号" />
+    <p i="2" n="InstanceId" t="long" d="实例ID" />
+  </p>
+  <p n="ObjectAddResponse" d="添加对象" pt="IResponse">
+  </p>
+  <p n="ObjectRemoveRequest" d="删除对象" pt="IRequest">
+    <p i="1" n="Key" t="long" d="对象编号" />
+  </p>
+  <p n="ObjectRemoveResponse" d="删除对象" pt="IResponse">
+  </p>
+  <p n="ObjectLockRequest" d="锁定对象" pt="IRequest">
+    <p i="1" n="Key" t="long" d="对象编号" />
+    <p i="2" n="InstanceId" t="long" d="实例ID" />
+    <p i="3" n="Time" t="int" d="实例ID" />
+  </p>
+  <p n="ObjectLockResponse" d="锁定对象" pt="IResponse">
+  </p>
+  <p n="ObjectUnLockRequest" d="取消锁定对象" pt="IRequest">
+    <p i="1" n="Key" t="long" d="对象编号" />
+    <p i="2" n="OldInstanceId" t="long" d="实例ID" />
+    <p i="3" n="InstanceId" t="long" d="实例ID" />
+  </p>
+  <p n="ObjectUnLockResponse" d="取消锁定对象" pt="IResponse">
+  </p>
+  <p n="ObjectGetRequest" d="获取对象" pt="IRequest">
+    <p i="1" n="Key" t="long" d="对象编号" />
+  </p>
+  <p n="ObjectGetResponse" d="获取对象" pt="IResponse">
+    <p i="1" n="InstanceId" t="long" d="实例ID" />
   </p>
   <s n="ErrInfo" d="错误信息" r="1">
     <p i="1" n="i" t="int" d="编号" />
@@ -63,6 +91,7 @@
     <p i="3" n="sign" t="string" d="签名" />
   </p>
   <p n="S2C_UserLogin" d="用户登录返回" pt="IResponse">
+    <p i="1" n="UnitId" t="long" d="UnitID" />
   </p>
   <p n="SaveRoleInfo" d="读取用户信息" s="S" t="D">
     <p i="1" n="RoleId" t="int" d="角色编号" />
@@ -94,13 +123,20 @@
     <p i="2" n="GateSessionId" t="long" d="网关sessionid" />
   </p>
   <p n="M2G_CreateUnit" d="通知地图服务器创建unit" pt="IResponse">
-    <p i="1" n="UnitId" t="int" d="unit编号" />
+    <p i="1" n="UnitId" t="int64" d="unit编号" />
   </p>
   <p n="G2L_GetMapAddress" d="获取指定类型map 的地址" pt="IRequest">
     <p i="1" n="MapType" t="int" d="map类型" />
   </p>
   <p n="L2G_GetMapAddress" d="通知地图服务器创建unit" pt="IResponse">
     <p i="1" n="Address" t="string" d="地址" />
+  </p>
+  <p n="C2M_EnterRoom" d="用户进入房间" pt="IActorRequest">
+    <p i="1" n="RoomType" t="int" d="房间类型" />
+    <p i="2" n="RoomId" t="int" d="房间编号" />
+  </p>
+  <p n="M2C_EnterRoom" d="用户进入房间" pt="IActorResponse">
+    <p i="1" n="RoomId" t="int" d="房间编号" />
   </p>
   <ids>
     <id i="1" n="ResponseMessage" />
@@ -118,5 +154,20 @@
     <id i="13" n="M2G_CreateUnit" />
     <id i="14" n="G2L_GetMapAddress" />
     <id i="15" n="L2G_GetMapAddress" />
+    <id i="16" n="C2S_EnterRoom" />
+    <id i="17" n="S2C_EnterRoom" />
+    <id i="18" n="C2M_EnterRoom" />
+    <id i="19" n="M2C_EnterRoom" />
+    <id i="20" n="ObjectAddRequest" />
+    <id i="21" n="ObjectAddResponse" />
+    <id i="22" n="ObjectRemoveRequest" />
+    <id i="23" n="ObjectRemoveResponse" />
+    <id i="24" n="ObjectLockRequest" />
+    <id i="25" n="ObjectLockResponse" />
+    <id i="26" n="ObjectUnLockRequest" />
+    <id i="27" n="ObjectUnLockResponse" />
+    <id i="28" n="ObjectGetRequest" />
+    <id i="29" n="ObjectGetResponse" />
+    <id i="30" n="ActorResponse" />
   </ids>
 </pack>

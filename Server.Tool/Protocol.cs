@@ -222,7 +222,13 @@ namespace Server.Tool
                 {
                     writer.WriteLine("int32 RpcId = 99;");
                 }
-                if (item.pt == "IResponse")
+                if (item.pt == "IActorRequest")
+                {
+                    writer.WriteLine("int32 RpcId = 99;");
+                    writer.WriteLine("int64 ActorId = 100;");
+                }
+
+                if (item.pt == "IResponse" || item.pt== "IActorResponse")
                 {
                     writer.WriteLine("int32 Tag = 98;");
                     writer.WriteLine("int32 RpcId = 99;");
@@ -302,7 +308,7 @@ namespace Server.Tool
             writer.WriteLine("public static void Register(this OpcodeTypeComponent self)");
             writer.WriteLine("{");
             foreach (var item in m_Packs)
-            {                
+            {
                 writer.WriteLine("self.RegisterType({0}, typeof({1}), () => {{ return new {1}(); }});", m_Ids[item.GetName()], item.GetName());
             }
 
