@@ -90,13 +90,20 @@ namespace ETHotfix
         public static async Task Add(this LocationProxyComponent self, long key, long instanceId)
         {
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
-            await session.Call<ObjectAddResponse>(new ObjectAddRequest() { Key = key, InstanceId = instanceId });
+            ObjectInfo info = new ObjectInfo();
+            info.Key = key;
+            info.InstanceId = instanceId;
+            info.Address = Game.Scene.GetComponent<StartConfigComponent>().StartConfig.GetComponent<InnerConfig>().IPEndPoint.ToString();
+            await session.Call<ObjectAddResponse>(new ObjectAddRequest() { Item = info });
         }
 
         public static async Task Lock(this LocationProxyComponent self, long key, long instanceId, int time = 1000)
         {
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
-            await session.Call<ObjectLockResponse>(new ObjectLockRequest() { Key = key, InstanceId = instanceId, Time = time });
+            ObjectInfo info = new ObjectInfo();
+            info.Key = key;
+            info.InstanceId = instanceId;
+            await session.Call<ObjectLockResponse>(new ObjectLockRequest() { Item = info, Time = time });
         }
 
         public static async Task UnLock(this LocationProxyComponent self, long key, long oldInstanceId, long instanceId)
@@ -111,11 +118,11 @@ namespace ETHotfix
             await session.Call<ObjectRemoveResponse>(new ObjectRemoveRequest() { Key = key });
         }
 
-        public static async Task<long> Get(this LocationProxyComponent self, long key)
+        public static async Task<ObjectGetResponse> Get(this LocationProxyComponent self, long key)
         {
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
-            ObjectGetResponse response =await session.Call<ObjectGetResponse>(new ObjectGetRequest() { Key = key });
-            return response.InstanceId;
+            ObjectGetResponse response = await session.Call<ObjectGetResponse>(new ObjectGetRequest() { Key = key });
+            return response;
         }
 
     }

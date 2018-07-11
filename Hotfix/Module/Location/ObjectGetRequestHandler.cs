@@ -11,12 +11,13 @@ namespace ETHotfix
 			ObjectGetResponse response = new ObjectGetResponse();
 			try
 			{
-				long instanceId = await Game.Scene.GetComponent<LocationComponent>().GetAsync(message.Key);
-				if (instanceId == 0)
+				var  info = await Game.Scene.GetComponent<LocationComponent>().GetAsync(message.Key);
+				if (info == null)
 				{
-					response.Error = ErrorCode.ERR_ActorLocationNotFound;
+					response.Tag = ErrorCode.ERR_ActorLocationNotFound;
+                    info = new ObjectInfo();
 				}
-				response.InstanceId = instanceId;
+                response.Item = info;
 				reply(response);
 			}
 			catch (Exception e)

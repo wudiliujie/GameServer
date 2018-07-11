@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace ETHotfix.Fishs.Maps.Handlers
 {
     [ActorMessageHandler(AppType.Map)]
-    public class C2M_EnterRoomHandler : AMActorRpcHandler<Unit, C2M_EnterRoom, M2C_EnterRoom>
+    public class C2M_EnterRoomHandler : AMActorRpcHandler<Model.Fishs.Entitys.Unit, C2M_EnterRoom, M2C_EnterRoom>
     {
-        protected override async Task Run(Unit unit, C2M_EnterRoom message, Action<M2C_EnterRoom> reply)
+        protected override async Task Run(Model.Fishs.Entitys.Unit unit, C2M_EnterRoom message, Action<M2C_EnterRoom> reply)
         {
             await Task.CompletedTask;
             Log.Debug("EnterRoom");

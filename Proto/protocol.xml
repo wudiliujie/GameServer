@@ -5,9 +5,13 @@
   </p>
   <p n="ResponseMessage" d="回复信息" pt="IResponse">
   </p>
+  <s n="ObjectInfo" d="对象信息">
+    <p i="1" n="Key" t="long" d="key" />
+    <p i="2" n="InstanceId" t="long" d="实例编号" />
+    <p i="3" n="Address" t="string" d="地址" />
+  </s>
   <p n="ObjectAddRequest" d="添加对象" pt="IRequest">
-    <p i="1" n="Key" t="long" d="对象编号" />
-    <p i="2" n="InstanceId" t="long" d="实例ID" />
+    <p i="1" n="Item" t="ObjectInfo" d="对象" />
   </p>
   <p n="ObjectAddResponse" d="添加对象" pt="IResponse">
   </p>
@@ -17,9 +21,8 @@
   <p n="ObjectRemoveResponse" d="删除对象" pt="IResponse">
   </p>
   <p n="ObjectLockRequest" d="锁定对象" pt="IRequest">
-    <p i="1" n="Key" t="long" d="对象编号" />
-    <p i="2" n="InstanceId" t="long" d="实例ID" />
-    <p i="3" n="Time" t="int" d="实例ID" />
+    <p i="1" n="Item" t="ObjectInfo" d="对象" />
+    <p i="2" n="Time" t="int" d="实例ID" />
   </p>
   <p n="ObjectLockResponse" d="锁定对象" pt="IResponse">
   </p>
@@ -34,7 +37,7 @@
     <p i="1" n="Key" t="long" d="对象编号" />
   </p>
   <p n="ObjectGetResponse" d="获取对象" pt="IResponse">
-    <p i="1" n="InstanceId" t="long" d="实例ID" />
+    <p i="1" n="Item" t="ObjectInfo" d="对象" />
   </p>
   <s n="ErrInfo" d="错误信息" r="1">
     <p i="1" n="i" t="int" d="编号" />

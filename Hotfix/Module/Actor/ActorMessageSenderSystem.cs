@@ -37,15 +37,16 @@ namespace ETHotfix
 	[ObjectSystem]
 	public class ActorMessageSenderStartSystem : StartSystem<ActorMessageSender>
 	{
-		public override  void Start(ActorMessageSender self)
+		public override async  void Start(ActorMessageSender self)
 		{
-			//if (self.ActorId == 0)
-			//{
-			//	self.ActorId = await Game.Scene.GetComponent<LocationProxyComponent>().Get(self.Id);
-			//}
-
-			self.Address = Game.Scene.GetComponent<StartConfigComponent>().StartConfig
-					.GetComponent<InnerConfig>().IPEndPoint;
+			if (self.ActorId == 0)
+			{
+                var ret = await Game.Scene.GetComponent<LocationProxyComponent>().Get(self.Id);
+                self.ActorId = ret.Item.InstanceId;
+                self.Address = NetworkHelper.ToIPEndPoint(ret.Item.Address);
+			}
+			//self.Address = Game.Scene.GetComponent<StartConfigComponent>().StartConfig
+			//		.GetComponent<InnerConfig>().IPEndPoint;
 			self.UpdateAsync();
 		}
 	}

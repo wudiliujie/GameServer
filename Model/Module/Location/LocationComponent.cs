@@ -16,7 +16,7 @@ namespace ETModel
 		public override void Awake(LocationQueryTask self, long key)
 		{
 			self.Key = key;
-			self.Tcs = new TaskCompletionSource<long>();
+			self.Tcs = new TaskCompletionSource<ObjectInfo>();
 		}
 	}
 
@@ -24,9 +24,9 @@ namespace ETModel
 	{
 		public long Key;
 
-		public TaskCompletionSource<long> Tcs;
+		public TaskCompletionSource<ObjectInfo> Tcs;
 
-		public Task<long> Task
+		public Task<ObjectInfo> Task
 		{
 			get
 			{
@@ -39,7 +39,7 @@ namespace ETModel
 			try
 			{
 				LocationComponent locationComponent = this.GetParent<LocationComponent>();
-				long location = locationComponent.Get(this.Key);
+				ObjectInfo location = locationComponent.Get(this.Key);
 				this.Tcs.SetResult(location);
 			}
 			catch (Exception e)
@@ -51,17 +51,17 @@ namespace ETModel
 
 	public class LocationComponent : Component
 	{
-		private readonly Dictionary<long, long> locations = new Dictionary<long, long>();
+		private readonly Dictionary<long, ObjectInfo> locations = new Dictionary<long, ObjectInfo>();
 
 		private readonly Dictionary<long, long> lockDict = new Dictionary<long, long>();
 
 		private readonly Dictionary<long, Queue<LocationTask>> taskQueues = new Dictionary<long, Queue<LocationTask>>();
 
-		public void Add(long key, long instanceId)
+		public void Add(ObjectInfo info)
 		{
-			this.locations[key] = instanceId;
+            this.locations[info.Key] = info;
 
-			Log.Info($"location add key: {key} instanceId: {instanceId}");
+			Log.Info($"location add key: {info.Key} instanceId: {info.InstanceId}");
 
 			// 更新db
 			//await Game.Scene.GetComponent<DBProxyComponent>().Save(new Location(key, address));
@@ -73,9 +73,9 @@ namespace ETModel
 			this.locations.Remove(key);
 		}
 
-		public long Get(long key)
+		public ObjectInfo Get(long key)
 		{
-			this.locations.TryGetValue(key, out long instanceId);
+			this.locations.TryGetValue(key, out ObjectInfo instanceId);
 			return instanceId;
 		}
 
@@ -89,13 +89,13 @@ namespace ETModel
 
 			Log.Info($"location lock key: {key} InstanceId: {instanceId}");
 
-			if (!this.locations.TryGetValue(key, out long saveInstanceId))
+			if (!this.locations.TryGetValue(key, out ObjectInfo saveInstanceId))
 			{
 				Log.Error($"actor没有注册, key: {key} InstanceId: {instanceId}");
 				return;
 			}
 
-			if (saveInstanceId != instanceId)
+			if (saveInstanceId.InstanceId != instanceId)
 			{
 				Log.Error($"actor注册的instanceId与lock的不一致, key: {key} InstanceId: {instanceId} saveInstanceId: {saveInstanceId}");
 				return;
@@ -125,7 +125,7 @@ namespace ETModel
 				Log.Error($"unlock appid is different {lockInstanceId} {oldInstanceId}" );
 			}
 			Log.Info($"location unlock key: {key} oldInstanceId: {oldInstanceId} new: {instanceId}");
-			this.locations[key] = instanceId;
+			this.locations[key].InstanceId = instanceId;
 			this.UnLock(key);
 		}
 
@@ -163,11 +163,11 @@ namespace ETModel
 			}
 		}
 
-		public Task<long> GetAsync(long key)
+		public Task<ObjectInfo> GetAsync(long key)
 		{
 			if (!this.lockDict.ContainsKey(key))
 			{
-				this.locations.TryGetValue(key, out long instanceId);
+				this.locations.TryGetValue(key, out ObjectInfo instanceId);
 				Log.Info($"location get key: {key} {instanceId}");
 				return Task.FromResult(instanceId);
 			}

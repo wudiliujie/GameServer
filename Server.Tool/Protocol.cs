@@ -350,7 +350,20 @@ namespace Server.Tool
                     {
                         if (prop.t == @struct.n)
                         {
-                            result.Add(@struct);
+
+                            bool find = false;
+                            foreach (var other in result)
+                            {
+                                if (@struct.n == other.n)
+                                {
+                                    find = true;
+                                }
+                            }
+                            if (!find)
+                            {
+                                result.Add(@struct);
+                            }
+                    
                         }
                     }
                 }

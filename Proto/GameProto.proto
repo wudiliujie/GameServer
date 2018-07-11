@@ -31,6 +31,13 @@ enum MSG{
 	_C2M_EnterRoom = 18; //用户进入房间
 	_M2C_EnterRoom = 19; //用户进入房间
 }
+//对象信息
+message ObjectInfo{
+	int64 Key = 1;//key
+	int64 InstanceId = 2;//实例编号
+	string Address = 3;//地址
+}
+
 //int属性
 message AttrInt{
 	int32 K = 1;//key
@@ -74,8 +81,7 @@ message ResponseMessage{
 
 //添加对象
 message ObjectAddRequest{
-	int64 Key = 1;//对象编号
-	int64 InstanceId = 2;//实例ID
+	ObjectInfo Item = 1;//对象
 	int32 RpcId = 99;
 }
 
@@ -101,9 +107,8 @@ message ObjectRemoveResponse{
 
 //锁定对象
 message ObjectLockRequest{
-	int64 Key = 1;//对象编号
-	int64 InstanceId = 2;//实例ID
-	int32 Time = 3;//实例ID
+	ObjectInfo Item = 1;//对象
+	int32 Time = 2;//实例ID
 	int32 RpcId = 99;
 }
 
@@ -137,7 +142,7 @@ message ObjectGetRequest{
 
 //获取对象
 message ObjectGetResponse{
-	int64 InstanceId = 1;//实例ID
+	ObjectInfo Item = 1;//对象
 	int32 Tag = 98;
 	int32 RpcId = 99;
 	string Message = 100;

@@ -22,95 +22,98 @@ namespace ETModel {
     static GameProtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9HYW1lUHJvdG8ucHJvdG8SB0VUTW9kZWwiHwoHQXR0ckludBIJCgFLGAEg",
-            "ASgFEgkKAVYYAiABKAMiHwoHQXR0clN0chIJCgFLGAEgASgFEgkKAVYYAiAB",
-            "KAkiXAoKU2VydmVySW5mbxIQCghTZXJ2ZXJJZBgBIAEoBRISCgpTZXJ2ZXJU",
-            "eXBlGAIgASgFEhIKCk5ldElubmVySXAYAyABKAkSFAoMTmV0SW5uZXJQb3J0",
-            "GAQgASgFImQKClJvbGVEYkluZm8SDgoGUm9sZUlkGAEgASgFEiIKCEF0dHJJ",
-            "bnRzGAIgAygLMhAuRVRNb2RlbC5BdHRySW50EiIKCEF0dHJTdHJzGAMgAygL",
-            "MhAuRVRNb2RlbC5BdHRyU3RyIjwKDUFjdG9yUmVzcG9uc2USCwoDVGFnGGIg",
-            "ASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3NhZ2UYZCABKAkiPgoPUmVzcG9u",
-            "c2VNZXNzYWdlEgsKA1RhZxhiIAEoBRINCgVScGNJZBhjIAEoBRIPCgdNZXNz",
-            "YWdlGGQgASgJIkIKEE9iamVjdEFkZFJlcXVlc3QSCwoDS2V5GAEgASgDEhIK",
-            "Ckluc3RhbmNlSWQYAiABKAMSDQoFUnBjSWQYYyABKAUiQAoRT2JqZWN0QWRk",
-            "UmVzcG9uc2USCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3Nh",
-            "Z2UYZCABKAkiMQoTT2JqZWN0UmVtb3ZlUmVxdWVzdBILCgNLZXkYASABKAMS",
-            "DQoFUnBjSWQYYyABKAUiQwoUT2JqZWN0UmVtb3ZlUmVzcG9uc2USCwoDVGFn",
-            "GGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3NhZ2UYZCABKAkiUQoRT2Jq",
-            "ZWN0TG9ja1JlcXVlc3QSCwoDS2V5GAEgASgDEhIKCkluc3RhbmNlSWQYAiAB",
-            "KAMSDAoEVGltZRgDIAEoBRINCgVScGNJZBhjIAEoBSJBChJPYmplY3RMb2Nr",
-            "UmVzcG9uc2USCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3Nh",
-            "Z2UYZCABKAkiXAoTT2JqZWN0VW5Mb2NrUmVxdWVzdBILCgNLZXkYASABKAMS",
-            "FQoNT2xkSW5zdGFuY2VJZBgCIAEoAxISCgpJbnN0YW5jZUlkGAMgASgDEg0K",
-            "BVJwY0lkGGMgASgFIkMKFE9iamVjdFVuTG9ja1Jlc3BvbnNlEgsKA1RhZxhi",
-            "IAEoBRINCgVScGNJZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJIi4KEE9iamVj",
-            "dEdldFJlcXVlc3QSCwoDS2V5GAEgASgDEg0KBVJwY0lkGGMgASgFIlQKEU9i",
-            "amVjdEdldFJlc3BvbnNlEhIKCkluc3RhbmNlSWQYASABKAMSCwoDVGFnGGIg",
-            "ASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3NhZ2UYZCABKAkiNQoPQzJXRUJf",
-            "VXNlckxvZ2luEhAKCFVzZXJOYW1lGAEgASgJEhAKCFVzZXJQYXNzGAIgASgJ",
-            "IoIBCg9XRUIyQ19Vc2VyTG9naW4SCwoDdGFnGAEgASgFEhEKCUFjY291bnRJ",
-            "ZBgCIAEoBRIUCgxJc0NyZWF0ZVJvbGUYAyABKAgSEQoJVGltZXN0YW1wGAQg",
-            "ASgDEgoKAklwGAUgASgJEgwKBFBvcnQYBiABKAUSDAoEU2lnbhgHIAEoCSJY",
-            "ChBDMldFQl9DcmVhdGVSb2xlEhEKCUFjY291bnRJZBgBIAEoBRIQCghSb2xl",
-            "TmFtZRgCIAEoCRIRCglUaW1lc3RhbXAYAyABKAMSDAoEU2lnbhgEIAEoCSKD",
-            "AQoQV0VCMkNfQ3JlYXRlUm9sZRILCgN0YWcYASABKAUSEQoJQWNjb3VudElk",
-            "GAIgASgFEhQKDElzQ3JlYXRlUm9sZRgDIAEoCBIRCglUaW1lc3RhbXAYBCAB",
-            "KAMSCgoCSXAYBSABKAkSDAoEUG9ydBgGIAEoBRIMCgRzaWduGAcgASgJIlIK",
-            "DUMyU19Vc2VyTG9naW4SEQoJQWNjb3VudElkGAEgASgFEhEKCVRpbWVzdGFt",
-            "cBgCIAEoAxIMCgRzaWduGAMgASgJEg0KBVJwY0lkGGMgASgFIkwKDVMyQ19V",
-            "c2VyTG9naW4SDgoGVW5pdElkGAEgASgDEgsKA1RhZxhiIAEoBRINCgVScGNJ",
-            "ZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJIjAKDFNhdmVSb2xlSW5mbxIOCgZS",
-            "b2xlSWQYASABKAUSEAoIUm9sZURhdGEYAiABKAwiZgoMUzJDX1JvbGVJbmZv",
-            "Eg4KBlJvbGVJZBgBIAEoBRIiCghBdHRySW50cxgCIAMoCzIQLkVUTW9kZWwu",
-            "QXR0ckludBIiCghBdHRyU3RycxgDIAMoCzIQLkVUTW9kZWwuQXR0clN0ciJd",
-            "CgtTZXJ2ZXJIZWFydBIQCghTZXJ2ZXJJZBgBIAEoBRISCgpTZXJ2ZXJOYW1l",
-            "GAIgASgJEgoKAklwGAMgASgJEgwKBFBvcnQYBCABKAUSDgoGT25saW5lGAUg",
-            "ASgFIkYKElMyTF9SZWdpc3RlclNlcnZlchIhCgRJbmZvGAEgASgLMhMuRVRN",
-            "b2RlbC5TZXJ2ZXJJbmZvEg0KBVJwY0lkGGMgASgFIkkKDkcyTV9DcmVhdGVV",
-            "bml0EhEKCUFjY291bnRJZBgBIAEoBRIVCg1HYXRlU2Vzc2lvbklkGAIgASgD",
-            "Eg0KBVJwY0lkGGMgASgFIk0KDk0yR19DcmVhdGVVbml0Eg4KBlVuaXRJZBgB",
-            "IAEoAxILCgNUYWcYYiABKAUSDQoFUnBjSWQYYyABKAUSDwoHTWVzc2FnZRhk",
-            "IAEoCSIzChFHMkxfR2V0TWFwQWRkcmVzcxIPCgdNYXBUeXBlGAEgASgFEg0K",
-            "BVJwY0lkGGMgASgFIlEKEUwyR19HZXRNYXBBZGRyZXNzEg8KB0FkZHJlc3MY",
-            "ASABKAkSCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8KB01lc3NhZ2UY",
-            "ZCABKAkiUQoNQzJNX0VudGVyUm9vbRIQCghSb29tVHlwZRgBIAEoBRIOCgZS",
-            "b29tSWQYAiABKAUSDQoFUnBjSWQYYyABKAUSDwoHQWN0b3JJZBhkIAEoAyJM",
-            "Cg1NMkNfRW50ZXJSb29tEg4KBlJvb21JZBgBIAEoBRILCgNUYWcYYiABKAUS",
-            "DQoFUnBjSWQYYyABKAUSDwoHTWVzc2FnZRhkIAEoCSqLBQoDTVNHEgwKCF9E",
-            "ZWZhdWx0EAASEgoOX0FjdG9yUmVzcG9uc2UQHhIUChBfUmVzcG9uc2VNZXNz",
-            "YWdlEAESFQoRX09iamVjdEFkZFJlcXVlc3QQFBIWChJfT2JqZWN0QWRkUmVz",
-            "cG9uc2UQFRIYChRfT2JqZWN0UmVtb3ZlUmVxdWVzdBAWEhkKFV9PYmplY3RS",
-            "ZW1vdmVSZXNwb25zZRAXEhYKEl9PYmplY3RMb2NrUmVxdWVzdBAYEhcKE19P",
-            "YmplY3RMb2NrUmVzcG9uc2UQGRIYChRfT2JqZWN0VW5Mb2NrUmVxdWVzdBAa",
-            "EhkKFV9PYmplY3RVbkxvY2tSZXNwb25zZRAbEhUKEV9PYmplY3RHZXRSZXF1",
-            "ZXN0EBwSFgoSX09iamVjdEdldFJlc3BvbnNlEB0SFAoQX0MyV0VCX1VzZXJM",
-            "b2dpbhACEhQKEF9XRUIyQ19Vc2VyTG9naW4QAxIVChFfQzJXRUJfQ3JlYXRl",
-            "Um9sZRAEEhUKEV9XRUIyQ19DcmVhdGVSb2xlEAUSEgoOX0MyU19Vc2VyTG9n",
-            "aW4QBhISCg5fUzJDX1VzZXJMb2dpbhAHEhEKDV9TYXZlUm9sZUluZm8QCBIR",
-            "Cg1fUzJDX1JvbGVJbmZvEAkSEAoMX1NlcnZlckhlYXJ0EAoSFwoTX1MyTF9S",
-            "ZWdpc3RlclNlcnZlchALEhMKD19HMk1fQ3JlYXRlVW5pdBAMEhMKD19NMkdf",
-            "Q3JlYXRlVW5pdBANEhYKEl9HMkxfR2V0TWFwQWRkcmVzcxAOEhYKEl9MMkdf",
-            "R2V0TWFwQWRkcmVzcxAPEhIKDl9DMk1fRW50ZXJSb29tEBISEgoOX00yQ19F",
-            "bnRlclJvb20QE2IGcHJvdG8z"));
+            "Cg9HYW1lUHJvdG8ucHJvdG8SB0VUTW9kZWwiPgoKT2JqZWN0SW5mbxILCgNL",
+            "ZXkYASABKAMSEgoKSW5zdGFuY2VJZBgCIAEoAxIPCgdBZGRyZXNzGAMgASgJ",
+            "Ih8KB0F0dHJJbnQSCQoBSxgBIAEoBRIJCgFWGAIgASgDIh8KB0F0dHJTdHIS",
+            "CQoBSxgBIAEoBRIJCgFWGAIgASgJIlwKClNlcnZlckluZm8SEAoIU2VydmVy",
+            "SWQYASABKAUSEgoKU2VydmVyVHlwZRgCIAEoBRISCgpOZXRJbm5lcklwGAMg",
+            "ASgJEhQKDE5ldElubmVyUG9ydBgEIAEoBSJkCgpSb2xlRGJJbmZvEg4KBlJv",
+            "bGVJZBgBIAEoBRIiCghBdHRySW50cxgCIAMoCzIQLkVUTW9kZWwuQXR0cklu",
+            "dBIiCghBdHRyU3RycxgDIAMoCzIQLkVUTW9kZWwuQXR0clN0ciI8Cg1BY3Rv",
+            "clJlc3BvbnNlEgsKA1RhZxhiIAEoBRINCgVScGNJZBhjIAEoBRIPCgdNZXNz",
+            "YWdlGGQgASgJIj4KD1Jlc3BvbnNlTWVzc2FnZRILCgNUYWcYYiABKAUSDQoF",
+            "UnBjSWQYYyABKAUSDwoHTWVzc2FnZRhkIAEoCSJEChBPYmplY3RBZGRSZXF1",
+            "ZXN0EiEKBEl0ZW0YASABKAsyEy5FVE1vZGVsLk9iamVjdEluZm8SDQoFUnBj",
+            "SWQYYyABKAUiQAoRT2JqZWN0QWRkUmVzcG9uc2USCwoDVGFnGGIgASgFEg0K",
+            "BVJwY0lkGGMgASgFEg8KB01lc3NhZ2UYZCABKAkiMQoTT2JqZWN0UmVtb3Zl",
+            "UmVxdWVzdBILCgNLZXkYASABKAMSDQoFUnBjSWQYYyABKAUiQwoUT2JqZWN0",
+            "UmVtb3ZlUmVzcG9uc2USCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8K",
+            "B01lc3NhZ2UYZCABKAkiUwoRT2JqZWN0TG9ja1JlcXVlc3QSIQoESXRlbRgB",
+            "IAEoCzITLkVUTW9kZWwuT2JqZWN0SW5mbxIMCgRUaW1lGAIgASgFEg0KBVJw",
+            "Y0lkGGMgASgFIkEKEk9iamVjdExvY2tSZXNwb25zZRILCgNUYWcYYiABKAUS",
+            "DQoFUnBjSWQYYyABKAUSDwoHTWVzc2FnZRhkIAEoCSJcChNPYmplY3RVbkxv",
+            "Y2tSZXF1ZXN0EgsKA0tleRgBIAEoAxIVCg1PbGRJbnN0YW5jZUlkGAIgASgD",
+            "EhIKCkluc3RhbmNlSWQYAyABKAMSDQoFUnBjSWQYYyABKAUiQwoUT2JqZWN0",
+            "VW5Mb2NrUmVzcG9uc2USCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgFEg8K",
+            "B01lc3NhZ2UYZCABKAkiLgoQT2JqZWN0R2V0UmVxdWVzdBILCgNLZXkYASAB",
+            "KAMSDQoFUnBjSWQYYyABKAUiYwoRT2JqZWN0R2V0UmVzcG9uc2USIQoESXRl",
+            "bRgBIAEoCzITLkVUTW9kZWwuT2JqZWN0SW5mbxILCgNUYWcYYiABKAUSDQoF",
+            "UnBjSWQYYyABKAUSDwoHTWVzc2FnZRhkIAEoCSI1Cg9DMldFQl9Vc2VyTG9n",
+            "aW4SEAoIVXNlck5hbWUYASABKAkSEAoIVXNlclBhc3MYAiABKAkiggEKD1dF",
+            "QjJDX1VzZXJMb2dpbhILCgN0YWcYASABKAUSEQoJQWNjb3VudElkGAIgASgF",
+            "EhQKDElzQ3JlYXRlUm9sZRgDIAEoCBIRCglUaW1lc3RhbXAYBCABKAMSCgoC",
+            "SXAYBSABKAkSDAoEUG9ydBgGIAEoBRIMCgRTaWduGAcgASgJIlgKEEMyV0VC",
+            "X0NyZWF0ZVJvbGUSEQoJQWNjb3VudElkGAEgASgFEhAKCFJvbGVOYW1lGAIg",
+            "ASgJEhEKCVRpbWVzdGFtcBgDIAEoAxIMCgRTaWduGAQgASgJIoMBChBXRUIy",
+            "Q19DcmVhdGVSb2xlEgsKA3RhZxgBIAEoBRIRCglBY2NvdW50SWQYAiABKAUS",
+            "FAoMSXNDcmVhdGVSb2xlGAMgASgIEhEKCVRpbWVzdGFtcBgEIAEoAxIKCgJJ",
+            "cBgFIAEoCRIMCgRQb3J0GAYgASgFEgwKBHNpZ24YByABKAkiUgoNQzJTX1Vz",
+            "ZXJMb2dpbhIRCglBY2NvdW50SWQYASABKAUSEQoJVGltZXN0YW1wGAIgASgD",
+            "EgwKBHNpZ24YAyABKAkSDQoFUnBjSWQYYyABKAUiTAoNUzJDX1VzZXJMb2dp",
+            "bhIOCgZVbml0SWQYASABKAMSCwoDVGFnGGIgASgFEg0KBVJwY0lkGGMgASgF",
+            "Eg8KB01lc3NhZ2UYZCABKAkiMAoMU2F2ZVJvbGVJbmZvEg4KBlJvbGVJZBgB",
+            "IAEoBRIQCghSb2xlRGF0YRgCIAEoDCJmCgxTMkNfUm9sZUluZm8SDgoGUm9s",
+            "ZUlkGAEgASgFEiIKCEF0dHJJbnRzGAIgAygLMhAuRVRNb2RlbC5BdHRySW50",
+            "EiIKCEF0dHJTdHJzGAMgAygLMhAuRVRNb2RlbC5BdHRyU3RyIl0KC1NlcnZl",
+            "ckhlYXJ0EhAKCFNlcnZlcklkGAEgASgFEhIKClNlcnZlck5hbWUYAiABKAkS",
+            "CgoCSXAYAyABKAkSDAoEUG9ydBgEIAEoBRIOCgZPbmxpbmUYBSABKAUiRgoS",
+            "UzJMX1JlZ2lzdGVyU2VydmVyEiEKBEluZm8YASABKAsyEy5FVE1vZGVsLlNl",
+            "cnZlckluZm8SDQoFUnBjSWQYYyABKAUiSQoORzJNX0NyZWF0ZVVuaXQSEQoJ",
+            "QWNjb3VudElkGAEgASgFEhUKDUdhdGVTZXNzaW9uSWQYAiABKAMSDQoFUnBj",
+            "SWQYYyABKAUiTQoOTTJHX0NyZWF0ZVVuaXQSDgoGVW5pdElkGAEgASgDEgsK",
+            "A1RhZxhiIAEoBRINCgVScGNJZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJIjMK",
+            "EUcyTF9HZXRNYXBBZGRyZXNzEg8KB01hcFR5cGUYASABKAUSDQoFUnBjSWQY",
+            "YyABKAUiUQoRTDJHX0dldE1hcEFkZHJlc3MSDwoHQWRkcmVzcxgBIAEoCRIL",
+            "CgNUYWcYYiABKAUSDQoFUnBjSWQYYyABKAUSDwoHTWVzc2FnZRhkIAEoCSJR",
+            "Cg1DMk1fRW50ZXJSb29tEhAKCFJvb21UeXBlGAEgASgFEg4KBlJvb21JZBgC",
+            "IAEoBRINCgVScGNJZBhjIAEoBRIPCgdBY3RvcklkGGQgASgDIkwKDU0yQ19F",
+            "bnRlclJvb20SDgoGUm9vbUlkGAEgASgFEgsKA1RhZxhiIAEoBRINCgVScGNJ",
+            "ZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJKosFCgNNU0cSDAoIX0RlZmF1bHQQ",
+            "ABISCg5fQWN0b3JSZXNwb25zZRAeEhQKEF9SZXNwb25zZU1lc3NhZ2UQARIV",
+            "ChFfT2JqZWN0QWRkUmVxdWVzdBAUEhYKEl9PYmplY3RBZGRSZXNwb25zZRAV",
+            "EhgKFF9PYmplY3RSZW1vdmVSZXF1ZXN0EBYSGQoVX09iamVjdFJlbW92ZVJl",
+            "c3BvbnNlEBcSFgoSX09iamVjdExvY2tSZXF1ZXN0EBgSFwoTX09iamVjdExv",
+            "Y2tSZXNwb25zZRAZEhgKFF9PYmplY3RVbkxvY2tSZXF1ZXN0EBoSGQoVX09i",
+            "amVjdFVuTG9ja1Jlc3BvbnNlEBsSFQoRX09iamVjdEdldFJlcXVlc3QQHBIW",
+            "ChJfT2JqZWN0R2V0UmVzcG9uc2UQHRIUChBfQzJXRUJfVXNlckxvZ2luEAIS",
+            "FAoQX1dFQjJDX1VzZXJMb2dpbhADEhUKEV9DMldFQl9DcmVhdGVSb2xlEAQS",
+            "FQoRX1dFQjJDX0NyZWF0ZVJvbGUQBRISCg5fQzJTX1VzZXJMb2dpbhAGEhIK",
+            "Dl9TMkNfVXNlckxvZ2luEAcSEQoNX1NhdmVSb2xlSW5mbxAIEhEKDV9TMkNf",
+            "Um9sZUluZm8QCRIQCgxfU2VydmVySGVhcnQQChIXChNfUzJMX1JlZ2lzdGVy",
+            "U2VydmVyEAsSEwoPX0cyTV9DcmVhdGVVbml0EAwSEwoPX00yR19DcmVhdGVV",
+            "bml0EA0SFgoSX0cyTF9HZXRNYXBBZGRyZXNzEA4SFgoSX0wyR19HZXRNYXBB",
+            "ZGRyZXNzEA8SEgoOX0MyTV9FbnRlclJvb20QEhISCg5fTTJDX0VudGVyUm9v",
+            "bRATYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ETModel.MSG), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectInfo), global::ETModel.ObjectInfo.Parser, new[]{ "Key", "InstanceId", "Address" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.AttrInt), global::ETModel.AttrInt.Parser, new[]{ "K", "V" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.AttrStr), global::ETModel.AttrStr.Parser, new[]{ "K", "V" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ServerInfo), global::ETModel.ServerInfo.Parser, new[]{ "ServerId", "ServerType", "NetInnerIp", "NetInnerPort" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.RoleDbInfo), global::ETModel.RoleDbInfo.Parser, new[]{ "RoleId", "AttrInts", "AttrStrs" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ActorResponse), global::ETModel.ActorResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ResponseMessage), global::ETModel.ResponseMessage.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectAddRequest), global::ETModel.ObjectAddRequest.Parser, new[]{ "Key", "InstanceId", "RpcId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectAddRequest), global::ETModel.ObjectAddRequest.Parser, new[]{ "Item", "RpcId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectAddResponse), global::ETModel.ObjectAddResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectRemoveRequest), global::ETModel.ObjectRemoveRequest.Parser, new[]{ "Key", "RpcId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectRemoveResponse), global::ETModel.ObjectRemoveResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectLockRequest), global::ETModel.ObjectLockRequest.Parser, new[]{ "Key", "InstanceId", "Time", "RpcId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectLockRequest), global::ETModel.ObjectLockRequest.Parser, new[]{ "Item", "Time", "RpcId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectLockResponse), global::ETModel.ObjectLockResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectUnLockRequest), global::ETModel.ObjectUnLockRequest.Parser, new[]{ "Key", "OldInstanceId", "InstanceId", "RpcId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectUnLockResponse), global::ETModel.ObjectUnLockResponse.Parser, new[]{ "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectGetRequest), global::ETModel.ObjectGetRequest.Parser, new[]{ "Key", "RpcId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectGetResponse), global::ETModel.ObjectGetResponse.Parser, new[]{ "InstanceId", "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.ObjectGetResponse), global::ETModel.ObjectGetResponse.Parser, new[]{ "Item", "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.C2WEB_UserLogin), global::ETModel.C2WEB_UserLogin.Parser, new[]{ "UserName", "UserPass" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.WEB2C_UserLogin), global::ETModel.WEB2C_UserLogin.Parser, new[]{ "Tag", "AccountId", "IsCreateRole", "Timestamp", "Ip", "Port", "Sign" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.C2WEB_CreateRole), global::ETModel.C2WEB_CreateRole.Parser, new[]{ "AccountId", "RoleName", "Timestamp", "Sign" }, null, null, null),
@@ -253,6 +256,191 @@ namespace ETModel {
 
   #region Messages
   /// <summary>
+  ///对象信息
+  /// </summary>
+  public sealed partial class ObjectInfo : pb::IMessage<ObjectInfo> {
+    private static readonly pb::MessageParser<ObjectInfo> _parser = new pb::MessageParser<ObjectInfo>(() => new ObjectInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ObjectInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectInfo(ObjectInfo other) : this() {
+      key_ = other.key_;
+      instanceId_ = other.instanceId_;
+      address_ = other.address_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ObjectInfo Clone() {
+      return new ObjectInfo(this);
+    }
+
+    /// <summary>Field number for the "Key" field.</summary>
+    public const int KeyFieldNumber = 1;
+    private long key_;
+    /// <summary>
+    ///key
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Key {
+      get { return key_; }
+      set {
+        key_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "InstanceId" field.</summary>
+    public const int InstanceIdFieldNumber = 2;
+    private long instanceId_;
+    /// <summary>
+    ///实例编号
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Address" field.</summary>
+    public const int AddressFieldNumber = 3;
+    private string address_ = "";
+    /// <summary>
+    ///地址
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ObjectInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ObjectInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Key != other.Key) return false;
+      if (InstanceId != other.InstanceId) return false;
+      if (Address != other.Address) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Key != 0L) hash ^= Key.GetHashCode();
+      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Key != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Key);
+      }
+      if (InstanceId != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(InstanceId);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Address);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Key != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Key);
+      }
+      if (InstanceId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ObjectInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Key != 0L) {
+        Key = other.Key;
+      }
+      if (other.InstanceId != 0L) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Key = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            InstanceId = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            Address = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///int属性
   /// </summary>
   public sealed partial class AttrInt : pb::IMessage<AttrInt> {
@@ -262,7 +450,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[0]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -416,7 +604,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[1]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -570,7 +758,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[2]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -786,7 +974,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[3]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -955,7 +1143,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[4]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1131,7 +1319,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[5]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1307,7 +1495,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[6]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1324,8 +1512,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ObjectAddRequest(ObjectAddRequest other) : this() {
-      key_ = other.key_;
-      instanceId_ = other.instanceId_;
+      Item = other.item_ != null ? other.Item.Clone() : null;
       rpcId_ = other.rpcId_;
     }
 
@@ -1334,31 +1521,17 @@ namespace ETModel {
       return new ObjectAddRequest(this);
     }
 
-    /// <summary>Field number for the "Key" field.</summary>
-    public const int KeyFieldNumber = 1;
-    private long key_;
+    /// <summary>Field number for the "Item" field.</summary>
+    public const int ItemFieldNumber = 1;
+    private global::ETModel.ObjectInfo item_;
     /// <summary>
-    ///对象编号
+    ///对象
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Key {
-      get { return key_; }
+    public global::ETModel.ObjectInfo Item {
+      get { return item_; }
       set {
-        key_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "InstanceId" field.</summary>
-    public const int InstanceIdFieldNumber = 2;
-    private long instanceId_;
-    /// <summary>
-    ///实例ID
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long InstanceId {
-      get { return instanceId_; }
-      set {
-        instanceId_ = value;
+        item_ = value;
       }
     }
 
@@ -1386,8 +1559,7 @@ namespace ETModel {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Key != other.Key) return false;
-      if (InstanceId != other.InstanceId) return false;
+      if (!object.Equals(Item, other.Item)) return false;
       if (RpcId != other.RpcId) return false;
       return true;
     }
@@ -1395,8 +1567,7 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Key != 0L) hash ^= Key.GetHashCode();
-      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (item_ != null) hash ^= Item.GetHashCode();
       if (RpcId != 0) hash ^= RpcId.GetHashCode();
       return hash;
     }
@@ -1408,13 +1579,9 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Key != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(Key);
-      }
-      if (InstanceId != 0L) {
-        output.WriteRawTag(16);
-        output.WriteInt64(InstanceId);
+      if (item_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Item);
       }
       if (RpcId != 0) {
         output.WriteRawTag(152, 6);
@@ -1425,11 +1592,8 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Key != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Key);
-      }
-      if (InstanceId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      if (item_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Item);
       }
       if (RpcId != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
@@ -1442,11 +1606,11 @@ namespace ETModel {
       if (other == null) {
         return;
       }
-      if (other.Key != 0L) {
-        Key = other.Key;
-      }
-      if (other.InstanceId != 0L) {
-        InstanceId = other.InstanceId;
+      if (other.item_ != null) {
+        if (item_ == null) {
+          item_ = new global::ETModel.ObjectInfo();
+        }
+        Item.MergeFrom(other.Item);
       }
       if (other.RpcId != 0) {
         RpcId = other.RpcId;
@@ -1461,12 +1625,11 @@ namespace ETModel {
           default:
             input.SkipLastField();
             break;
-          case 8: {
-            Key = input.ReadInt64();
-            break;
-          }
-          case 16: {
-            InstanceId = input.ReadInt64();
+          case 10: {
+            if (item_ == null) {
+              item_ = new global::ETModel.ObjectInfo();
+            }
+            input.ReadMessage(item_);
             break;
           }
           case 792: {
@@ -1489,7 +1652,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[7]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1665,7 +1828,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[8]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1816,7 +1979,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[9]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1992,7 +2155,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[10]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2009,8 +2172,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ObjectLockRequest(ObjectLockRequest other) : this() {
-      key_ = other.key_;
-      instanceId_ = other.instanceId_;
+      Item = other.item_ != null ? other.Item.Clone() : null;
       time_ = other.time_;
       rpcId_ = other.rpcId_;
     }
@@ -2020,36 +2182,22 @@ namespace ETModel {
       return new ObjectLockRequest(this);
     }
 
-    /// <summary>Field number for the "Key" field.</summary>
-    public const int KeyFieldNumber = 1;
-    private long key_;
+    /// <summary>Field number for the "Item" field.</summary>
+    public const int ItemFieldNumber = 1;
+    private global::ETModel.ObjectInfo item_;
     /// <summary>
-    ///对象编号
+    ///对象
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Key {
-      get { return key_; }
+    public global::ETModel.ObjectInfo Item {
+      get { return item_; }
       set {
-        key_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "InstanceId" field.</summary>
-    public const int InstanceIdFieldNumber = 2;
-    private long instanceId_;
-    /// <summary>
-    ///实例ID
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long InstanceId {
-      get { return instanceId_; }
-      set {
-        instanceId_ = value;
+        item_ = value;
       }
     }
 
     /// <summary>Field number for the "Time" field.</summary>
-    public const int TimeFieldNumber = 3;
+    public const int TimeFieldNumber = 2;
     private int time_;
     /// <summary>
     ///实例ID
@@ -2086,8 +2234,7 @@ namespace ETModel {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Key != other.Key) return false;
-      if (InstanceId != other.InstanceId) return false;
+      if (!object.Equals(Item, other.Item)) return false;
       if (Time != other.Time) return false;
       if (RpcId != other.RpcId) return false;
       return true;
@@ -2096,8 +2243,7 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Key != 0L) hash ^= Key.GetHashCode();
-      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (item_ != null) hash ^= Item.GetHashCode();
       if (Time != 0) hash ^= Time.GetHashCode();
       if (RpcId != 0) hash ^= RpcId.GetHashCode();
       return hash;
@@ -2110,16 +2256,12 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Key != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(Key);
-      }
-      if (InstanceId != 0L) {
-        output.WriteRawTag(16);
-        output.WriteInt64(InstanceId);
+      if (item_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Item);
       }
       if (Time != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt32(Time);
       }
       if (RpcId != 0) {
@@ -2131,11 +2273,8 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Key != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Key);
-      }
-      if (InstanceId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      if (item_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Item);
       }
       if (Time != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Time);
@@ -2151,11 +2290,11 @@ namespace ETModel {
       if (other == null) {
         return;
       }
-      if (other.Key != 0L) {
-        Key = other.Key;
-      }
-      if (other.InstanceId != 0L) {
-        InstanceId = other.InstanceId;
+      if (other.item_ != null) {
+        if (item_ == null) {
+          item_ = new global::ETModel.ObjectInfo();
+        }
+        Item.MergeFrom(other.Item);
       }
       if (other.Time != 0) {
         Time = other.Time;
@@ -2173,15 +2312,14 @@ namespace ETModel {
           default:
             input.SkipLastField();
             break;
-          case 8: {
-            Key = input.ReadInt64();
+          case 10: {
+            if (item_ == null) {
+              item_ = new global::ETModel.ObjectInfo();
+            }
+            input.ReadMessage(item_);
             break;
           }
           case 16: {
-            InstanceId = input.ReadInt64();
-            break;
-          }
-          case 24: {
             Time = input.ReadInt32();
             break;
           }
@@ -2205,7 +2343,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[11]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2381,7 +2519,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[12]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2594,7 +2732,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[13]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2770,7 +2908,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[14]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2921,7 +3059,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[15]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2938,7 +3076,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ObjectGetResponse(ObjectGetResponse other) : this() {
-      instanceId_ = other.instanceId_;
+      Item = other.item_ != null ? other.Item.Clone() : null;
       tag_ = other.tag_;
       rpcId_ = other.rpcId_;
       message_ = other.message_;
@@ -2949,17 +3087,17 @@ namespace ETModel {
       return new ObjectGetResponse(this);
     }
 
-    /// <summary>Field number for the "InstanceId" field.</summary>
-    public const int InstanceIdFieldNumber = 1;
-    private long instanceId_;
+    /// <summary>Field number for the "Item" field.</summary>
+    public const int ItemFieldNumber = 1;
+    private global::ETModel.ObjectInfo item_;
     /// <summary>
-    ///实例ID
+    ///对象
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long InstanceId {
-      get { return instanceId_; }
+    public global::ETModel.ObjectInfo Item {
+      get { return item_; }
       set {
-        instanceId_ = value;
+        item_ = value;
       }
     }
 
@@ -3009,7 +3147,7 @@ namespace ETModel {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (InstanceId != other.InstanceId) return false;
+      if (!object.Equals(Item, other.Item)) return false;
       if (Tag != other.Tag) return false;
       if (RpcId != other.RpcId) return false;
       if (Message != other.Message) return false;
@@ -3019,7 +3157,7 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (item_ != null) hash ^= Item.GetHashCode();
       if (Tag != 0) hash ^= Tag.GetHashCode();
       if (RpcId != 0) hash ^= RpcId.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
@@ -3033,9 +3171,9 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (InstanceId != 0L) {
-        output.WriteRawTag(8);
-        output.WriteInt64(InstanceId);
+      if (item_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Item);
       }
       if (Tag != 0) {
         output.WriteRawTag(144, 6);
@@ -3054,8 +3192,8 @@ namespace ETModel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (InstanceId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      if (item_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Item);
       }
       if (Tag != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Tag);
@@ -3074,8 +3212,11 @@ namespace ETModel {
       if (other == null) {
         return;
       }
-      if (other.InstanceId != 0L) {
-        InstanceId = other.InstanceId;
+      if (other.item_ != null) {
+        if (item_ == null) {
+          item_ = new global::ETModel.ObjectInfo();
+        }
+        Item.MergeFrom(other.Item);
       }
       if (other.Tag != 0) {
         Tag = other.Tag;
@@ -3096,8 +3237,11 @@ namespace ETModel {
           default:
             input.SkipLastField();
             break;
-          case 8: {
-            InstanceId = input.ReadInt64();
+          case 10: {
+            if (item_ == null) {
+              item_ = new global::ETModel.ObjectInfo();
+            }
+            input.ReadMessage(item_);
             break;
           }
           case 784: {
@@ -3128,7 +3272,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[16]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3282,7 +3426,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[17]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3591,7 +3735,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[18]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3807,7 +3951,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[19]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4116,7 +4260,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[20]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4329,7 +4473,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[21]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4536,7 +4680,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[22]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4690,7 +4834,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[23]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4859,7 +5003,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[24]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5106,7 +5250,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[25]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5263,7 +5407,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[26]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5445,7 +5589,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[27]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5652,7 +5796,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[28]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5803,7 +5947,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[29]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6010,7 +6154,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[30]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6220,7 +6364,7 @@ namespace ETModel {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[31]; }
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
