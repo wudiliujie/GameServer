@@ -51,7 +51,7 @@ namespace ETHotfix
                 info.ServerId = startConfig.AppId;
                 info.ServerType = (int)startConfig.AppType;
                 Log.Debug("开始发送:" + info);
-                var a = await session.Call<ResponseMessage>(new S2L_RegisterServer() { Info = info });
+                var a = (ResponseMessage)await session.Call(new S2L_RegisterServer() { Info = info });
                 if (a.Tag != 0)
                 {
                     Log.Fatal("连接本地服务器失败" + a);
@@ -83,7 +83,7 @@ namespace ETHotfix
         public static async Task<L2G_GetMapAddress> GetMapAddress(this LocationProxyComponent self, int mapType)
         {
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
-            L2G_GetMapAddress result = await session.Call<L2G_GetMapAddress>(new G2L_GetMapAddress() { MapType = mapType });
+            L2G_GetMapAddress result = (L2G_GetMapAddress)await session.Call(new G2L_GetMapAddress() { MapType = mapType });
             return result;
         }
 
@@ -94,7 +94,7 @@ namespace ETHotfix
             info.Key = key;
             info.InstanceId = instanceId;
             info.Address = Game.Scene.GetComponent<StartConfigComponent>().StartConfig.GetComponent<InnerConfig>().IPEndPoint.ToString();
-            await session.Call<ObjectAddResponse>(new ObjectAddRequest() { Item = info });
+            await session.Call(new ObjectAddRequest() { Item = info });
         }
 
         public static async Task Lock(this LocationProxyComponent self, long key, long instanceId, int time = 1000)
@@ -103,25 +103,25 @@ namespace ETHotfix
             ObjectInfo info = new ObjectInfo();
             info.Key = key;
             info.InstanceId = instanceId;
-            await session.Call<ObjectLockResponse>(new ObjectLockRequest() { Item = info, Time = time });
+            await session.Call(new ObjectLockRequest() { Item = info, Time = time });
         }
 
         public static async Task UnLock(this LocationProxyComponent self, long key, long oldInstanceId, long instanceId)
         {
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
-            await session.Call<ObjectUnLockResponse>(new ObjectUnLockRequest() { Key = key, OldInstanceId = oldInstanceId, InstanceId = instanceId });
+            await session.Call(new ObjectUnLockRequest() { Key = key, OldInstanceId = oldInstanceId, InstanceId = instanceId });
         }
 
         public static async Task Remove(this LocationProxyComponent self, long key)
         {
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
-            await session.Call<ObjectRemoveResponse>(new ObjectRemoveRequest() { Key = key });
+            await session.Call(new ObjectRemoveRequest() { Key = key });
         }
 
         public static async Task<ObjectGetResponse> Get(this LocationProxyComponent self, long key)
         {
             Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.LocationAddress);
-            ObjectGetResponse response = await session.Call<ObjectGetResponse>(new ObjectGetRequest() { Key = key });
+            ObjectGetResponse response = (ObjectGetResponse)await session.Call(new ObjectGetRequest() { Key = key });
             return response;
         }
 

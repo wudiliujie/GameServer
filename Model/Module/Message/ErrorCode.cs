@@ -24,5 +24,19 @@ namespace ETModel
         public const int ERR_Exception = 100000;
 
         public const int ERR_SessionDispose = 100001;
+        public static bool IsRpcNeedThrowException(int error)
+        {
+            if (error == 0)
+            {
+                return false;
+            }
+
+            if (error > ERR_Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

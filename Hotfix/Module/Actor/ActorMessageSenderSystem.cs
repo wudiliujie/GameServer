@@ -141,7 +141,7 @@ namespace ETHotfix
 			Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.Address);
 
 			task.ActorMessage.ActorId = self.ActorId;
-			IResponse response = await session.Call<ResponseMessage>(task.ActorMessage);
+			IResponse response = await session.Call(task.ActorMessage);
 			
 
 			// 发送成功

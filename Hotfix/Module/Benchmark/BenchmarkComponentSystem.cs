@@ -74,7 +74,7 @@ namespace ETHotfix
             var send = new C2S_UserLogin();
             send.AccountId = 1;
             Log.Debug("发送");
-            var ret = await session.Call<S2C_UserLogin>(send);
+            var ret = (S2C_UserLogin)await session.Call(send);
             Log.Debug(ret.ToString());
             if (ret.Tag == 0)
             {
@@ -82,7 +82,7 @@ namespace ETHotfix
             }
             Log.Debug("发送:"+ ret);
             //发送进入房间
-            var ret1 = await session.Call<M2C_EnterRoom>(new C2M_EnterRoom() { RoomType = 0, ActorId = ret.UnitId });
+            var ret1 =(M2C_EnterRoom) await session.Call(new C2M_EnterRoom() { RoomType = 0, ActorId = ret.UnitId });
             Log.Debug(ret1.ToString());
         }
 
@@ -93,7 +93,7 @@ namespace ETHotfix
                 var send = new C2S_UserLogin();
                 send.AccountId = 1;
                 Log.Debug("发送");
-                await session.Call<S2C_UserLogin>(send);
+                await session.Call(send);
                 Log.Debug("发送完成");
                 //++self.k;
 

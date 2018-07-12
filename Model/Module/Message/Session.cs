@@ -33,16 +33,18 @@ namespace ETModel
         void Fail(int tag);
         void Success(IResponse response);
     }
-    public class RequestCallbackInfo<T> : IRequestCallbackInfo where T : class, IResponse, new()
+    public class RequestCallbackInfo : IRequestCallbackInfo
     {
-        public RequestCallbackInfo(Action<IResponse> action)
+        private Type CallBackType;
+        public RequestCallbackInfo(Type callbackType, Action<IResponse> action)
         {
             Action = action;
+            CallBackType = callbackType;
         }
         public Action<IResponse> Action { get; private set; }
         public void Fail(int tag)
         {
-            var param = new T();
+            var param = (IResponse)Activator.CreateInstance(CallBackType, null);
             param.Tag = tag;
             Action.Invoke(param);
         }
@@ -59,7 +61,7 @@ namespace ETModel
         private AChannel channel;
         public int Error;
 
-        private readonly Dictionary<int, IRequestCallbackInfo> requestCallback = new Dictionary<int, IRequestCallbackInfo>();
+        private readonly Dictionary<int, Action<IResponse>> requestCallback = new Dictionary<int, Action<IResponse>>();
         private readonly List<byte[]> byteses = new List<byte[]>() { new byte[1], new byte[0], new byte[0] };
 
         public NetworkComponent Network
@@ -103,10 +105,9 @@ namespace ETModel
             Game.EventSystem.Run<Session>(EventIdType.SessionDispose, this);
             base.Dispose();
             Log.Debug("session释放");
-            foreach (IRequestCallbackInfo action in this.requestCallback.Values.ToArray())
+            foreach (Action<IResponse> action in this.requestCallback.Values.ToArray())
             {
-                action.Fail(ErrorCode.ERR_SessionDispose);
-                //action.Invoke(new ResponseMessage { Tag = ErrorCode.ERR_SessionDispose });
+                action.Invoke(new ResponseMessage { Tag = this.Error });
             }
 
             this.Error = 0;
@@ -186,63 +187,64 @@ namespace ETModel
             {
                 throw new Exception($"flag is response, but message is not! {opcode}");
             }
-            IRequestCallbackInfo action;
+            Action<IResponse> action;
             if (!this.requestCallback.TryGetValue(response.RpcId, out action))
             {
                 return;
             }
             this.requestCallback.Remove(response.RpcId);
 
-            action.Success(response);
+            action(response);
         }
 
-        public Task<TRep> Call<TRep>(IRequest request) where TRep : class, IResponse, new()
+        public Task<IResponse> Call(IRequest request)
         {
             int rpcId = ++RpcId;
-            var tcs = new TaskCompletionSource<TRep>();
+            var tcs = new TaskCompletionSource<IResponse>();
 
-            this.requestCallback[rpcId] = new RequestCallbackInfo<TRep>((response) =>
+            this.requestCallback[rpcId] = (response) =>
             {
                 try
                 {
-                    //if (response.Tag > ErrorCode.ERR_Exception)
-                    //{
-                    //    throw new RpcException(response.Tag, response.Message);
-                    //}
+                    if (ErrorCode.IsRpcNeedThrowException(response.Tag))
+                    {
+                        throw new RpcException(response.Tag, response.Message);
+                    }
 
-                    tcs.SetResult(response as TRep);
+                    tcs.SetResult(response);
                 }
                 catch (Exception e)
                 {
                     tcs.SetException(new Exception($"Rpc Error: {request.GetType().FullName}", e));
                 }
-            });
+            };
+
             request.RpcId = rpcId;
             this.Send(0x00, request);
             return tcs.Task;
         }
 
-        public Task<TRep> Call<TRep>(IRequest request, CancellationToken cancellationToken) where TRep : class, IResponse, new()
+        public Task<IResponse> Call(IRequest request, CancellationToken cancellationToken)
         {
             int rpcId = ++RpcId;
-            var tcs = new TaskCompletionSource<TRep>();
+            var tcs = new TaskCompletionSource<IResponse>();
 
-            this.requestCallback[rpcId] = new RequestCallbackInfo<TRep>((response) =>
+            this.requestCallback[rpcId] = (response) =>
             {
                 try
                 {
-                    if (response.Tag > ErrorCode.ERR_Exception)
+                    if (ErrorCode.IsRpcNeedThrowException(response.Tag))
                     {
                         throw new RpcException(response.Tag, response.Message);
                     }
 
-                    tcs.SetResult(response as TRep);
+                    tcs.SetResult(response);
                 }
                 catch (Exception e)
                 {
                     tcs.SetException(new Exception($"Rpc Error: {request.GetType().FullName}", e));
                 }
-            });
+            };
 
             cancellationToken.Register(() => this.requestCallback.Remove(rpcId));
 

@@ -26,7 +26,7 @@ namespace ETHotfix
                 reply(response);
             }
             Session mapSession = Game.Scene.GetComponent<NetInnerComponent>().Get(NetworkHelper.ToIPEndPoint(ret.Address));
-            M2G_CreateUnit createUnit = await mapSession.Call<M2G_CreateUnit>(new G2M_CreateUnit() { AccountId = message.AccountId, GateSessionId = session.InstanceId });
+            M2G_CreateUnit createUnit =(M2G_CreateUnit) await mapSession.Call(new G2M_CreateUnit() { AccountId = message.AccountId, GateSessionId = session.InstanceId });
             Player player = ComponentFactory.Create<Player, int>(message.AccountId);
             player.UnitId = createUnit.UnitId;
             Log.Debug("数据库结束:" + createUnit);
