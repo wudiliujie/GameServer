@@ -64,6 +64,9 @@ namespace ETModel
 	public partial class M2C_EnterRoom : IActorResponse
 	{
 	}
+	public partial class G2M_UnitDispose : IActorMessage
+	{
+	}
 	public static class RegisterClass
 	{
 		public static void Register(this OpcodeTypeComponent self)
@@ -96,6 +99,7 @@ namespace ETModel
 			self.RegisterType(15, typeof(L2G_GetMapAddress), () => { return new L2G_GetMapAddress(); });
 			self.RegisterType(18, typeof(C2M_EnterRoom), () => { return new C2M_EnterRoom(); });
 			self.RegisterType(19, typeof(M2C_EnterRoom), () => { return new M2C_EnterRoom(); });
+			self.RegisterType(31, typeof(G2M_UnitDispose), () => { return new G2M_UnitDispose(); });
 		}
 	}
 }

@@ -32,7 +32,7 @@ namespace ETModel
 				{
 					this.InstanceId = IdGenerater.GenerateId();
 				}
-
+                Log.Debug("ADD:" + this.InstanceId);
 				Game.EventSystem.Add(this);
 			}
 		}
@@ -78,7 +78,7 @@ namespace ETModel
 			Game.EventSystem.Remove(this.InstanceId);
 
 			this.InstanceId = 0;
-
+            Log.Debug("釋放"+ this.GetType().FullName);
 			if (this.IsFromPool)
 			{
 				Game.ObjectPool.Recycle(this);

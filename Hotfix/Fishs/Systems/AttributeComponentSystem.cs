@@ -85,12 +85,11 @@ namespace ETHotfix.Fishs.Systems
 
             while (true)
             {
+                await timerComponent.WaitAsync(500);
                 if (self.InstanceId != instanceId)
                 {
                     return;
                 }
-
-                await timerComponent.WaitAsync(500);
                 if (self.TempAttrIntPool.Count > 0 || self.TempAttrStrPool.Count > 0)
                 {
                     S2C_RoleInfo send = new S2C_RoleInfo();

@@ -10,7 +10,11 @@ namespace Model.Fishs.Components
         private readonly Dictionary<long, Model.Fishs.Entitys.Unit> unitPool = new Dictionary<long, Model.Fishs.Entitys.Unit>();
         public void Add(Model.Fishs.Entitys.Unit unit)
         {
-            this.unitPool.Add(unit.Id, unit);
+            this.unitPool.Add(unit.InstanceId, unit);
+        }
+        public void Remove(long instanceId)
+        {
+            this.unitPool.Remove(instanceId);
         }
     }
 }

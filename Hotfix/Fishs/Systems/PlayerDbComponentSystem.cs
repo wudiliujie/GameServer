@@ -48,16 +48,15 @@ namespace ETHotfix.Fishs.Systems
             TimerComponent timerComponent = Game.Scene.GetComponent<TimerComponent>();
 
             long instanceId = self.InstanceId;
-
+            
             while (true)
             {
+                await timerComponent.WaitAsync(10000);
                 if (self.InstanceId != instanceId)
                 {
                     return;
                 }
-
-                await timerComponent.WaitAsync(10000);
-                Log.Debug("保存");
+                //Log.Debug("保存");
                 RoleDbInfo roledb = new RoleDbInfo();
                 self.GetParent<Model.Fishs.Entitys.Unit>().GetComponent<AttributeComponent>().GetRoleDbInfo(roledb);
                 //

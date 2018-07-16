@@ -222,13 +222,13 @@ namespace Server.Tool
                 {
                     writer.WriteLine("int32 RpcId = 99;");
                 }
-                if (item.pt == "IActorRequest")
+                if (item.pt == "IActorRequest" || item.pt == "IActorMessage")
                 {
                     writer.WriteLine("int32 RpcId = 99;");
                     writer.WriteLine("int64 ActorId = 100;");
                 }
 
-                if (item.pt == "IResponse" || item.pt== "IActorResponse")
+                if (item.pt == "IResponse" || item.pt == "IActorResponse")
                 {
                     writer.WriteLine("int32 Tag = 98;");
                     writer.WriteLine("int32 RpcId = 99;");
@@ -363,7 +363,7 @@ namespace Server.Tool
                             {
                                 result.Add(@struct);
                             }
-                    
+
                         }
                     }
                 }

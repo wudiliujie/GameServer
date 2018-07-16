@@ -12,8 +12,10 @@ namespace ETHotfix
 			try
 			{
 				var  info = await Game.Scene.GetComponent<LocationComponent>().GetAsync(message.Key);
-				if (info == null)
+                Log.Debug("获取object：%" + message.Key);
+                if (info == null)
 				{
+                    
 					response.Tag = ErrorCode.ERR_ActorLocationNotFound;
                     info = new ObjectInfo();
 				}

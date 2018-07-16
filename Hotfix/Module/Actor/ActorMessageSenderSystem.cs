@@ -43,6 +43,7 @@ namespace ETHotfix
 			{
                 var ret = await Game.Scene.GetComponent<LocationProxyComponent>().Get(self.Id);
                 self.ActorId = ret.Item.InstanceId;
+                Log.Debug("actorMessageInstanceId" + self.Id + ">>>" + ret.Item.InstanceId);
                 self.Address = NetworkHelper.ToIPEndPoint(ret.Item.Address);
 			}
 			//self.Address = Game.Scene.GetComponent<StartConfigComponent>().StartConfig

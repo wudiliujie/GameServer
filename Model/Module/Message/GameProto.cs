@@ -78,22 +78,23 @@ namespace ETModel {
             "Cg1DMk1fRW50ZXJSb29tEhAKCFJvb21UeXBlGAEgASgFEg4KBlJvb21JZBgC",
             "IAEoBRINCgVScGNJZBhjIAEoBRIPCgdBY3RvcklkGGQgASgDIkwKDU0yQ19F",
             "bnRlclJvb20SDgoGUm9vbUlkGAEgASgFEgsKA1RhZxhiIAEoBRINCgVScGNJ",
-            "ZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJKosFCgNNU0cSDAoIX0RlZmF1bHQQ",
-            "ABISCg5fQWN0b3JSZXNwb25zZRAeEhQKEF9SZXNwb25zZU1lc3NhZ2UQARIV",
-            "ChFfT2JqZWN0QWRkUmVxdWVzdBAUEhYKEl9PYmplY3RBZGRSZXNwb25zZRAV",
-            "EhgKFF9PYmplY3RSZW1vdmVSZXF1ZXN0EBYSGQoVX09iamVjdFJlbW92ZVJl",
-            "c3BvbnNlEBcSFgoSX09iamVjdExvY2tSZXF1ZXN0EBgSFwoTX09iamVjdExv",
-            "Y2tSZXNwb25zZRAZEhgKFF9PYmplY3RVbkxvY2tSZXF1ZXN0EBoSGQoVX09i",
-            "amVjdFVuTG9ja1Jlc3BvbnNlEBsSFQoRX09iamVjdEdldFJlcXVlc3QQHBIW",
-            "ChJfT2JqZWN0R2V0UmVzcG9uc2UQHRIUChBfQzJXRUJfVXNlckxvZ2luEAIS",
-            "FAoQX1dFQjJDX1VzZXJMb2dpbhADEhUKEV9DMldFQl9DcmVhdGVSb2xlEAQS",
-            "FQoRX1dFQjJDX0NyZWF0ZVJvbGUQBRISCg5fQzJTX1VzZXJMb2dpbhAGEhIK",
-            "Dl9TMkNfVXNlckxvZ2luEAcSEQoNX1NhdmVSb2xlSW5mbxAIEhEKDV9TMkNf",
-            "Um9sZUluZm8QCRIQCgxfU2VydmVySGVhcnQQChIXChNfUzJMX1JlZ2lzdGVy",
-            "U2VydmVyEAsSEwoPX0cyTV9DcmVhdGVVbml0EAwSEwoPX00yR19DcmVhdGVV",
-            "bml0EA0SFgoSX0cyTF9HZXRNYXBBZGRyZXNzEA4SFgoSX0wyR19HZXRNYXBB",
-            "ZGRyZXNzEA8SEgoOX0MyTV9FbnRlclJvb20QEhISCg5fTTJDX0VudGVyUm9v",
-            "bRATYgZwcm90bzM="));
+            "ZBhjIAEoBRIPCgdNZXNzYWdlGGQgASgJIjEKD0cyTV9Vbml0RGlzcG9zZRIN",
+            "CgVScGNJZBhjIAEoBRIPCgdBY3RvcklkGGQgASgDKqEFCgNNU0cSDAoIX0Rl",
+            "ZmF1bHQQABISCg5fQWN0b3JSZXNwb25zZRAeEhQKEF9SZXNwb25zZU1lc3Nh",
+            "Z2UQARIVChFfT2JqZWN0QWRkUmVxdWVzdBAUEhYKEl9PYmplY3RBZGRSZXNw",
+            "b25zZRAVEhgKFF9PYmplY3RSZW1vdmVSZXF1ZXN0EBYSGQoVX09iamVjdFJl",
+            "bW92ZVJlc3BvbnNlEBcSFgoSX09iamVjdExvY2tSZXF1ZXN0EBgSFwoTX09i",
+            "amVjdExvY2tSZXNwb25zZRAZEhgKFF9PYmplY3RVbkxvY2tSZXF1ZXN0EBoS",
+            "GQoVX09iamVjdFVuTG9ja1Jlc3BvbnNlEBsSFQoRX09iamVjdEdldFJlcXVl",
+            "c3QQHBIWChJfT2JqZWN0R2V0UmVzcG9uc2UQHRIUChBfQzJXRUJfVXNlckxv",
+            "Z2luEAISFAoQX1dFQjJDX1VzZXJMb2dpbhADEhUKEV9DMldFQl9DcmVhdGVS",
+            "b2xlEAQSFQoRX1dFQjJDX0NyZWF0ZVJvbGUQBRISCg5fQzJTX1VzZXJMb2dp",
+            "bhAGEhIKDl9TMkNfVXNlckxvZ2luEAcSEQoNX1NhdmVSb2xlSW5mbxAIEhEK",
+            "DV9TMkNfUm9sZUluZm8QCRIQCgxfU2VydmVySGVhcnQQChIXChNfUzJMX1Jl",
+            "Z2lzdGVyU2VydmVyEAsSEwoPX0cyTV9DcmVhdGVVbml0EAwSEwoPX00yR19D",
+            "cmVhdGVVbml0EA0SFgoSX0cyTF9HZXRNYXBBZGRyZXNzEA4SFgoSX0wyR19H",
+            "ZXRNYXBBZGRyZXNzEA8SEgoOX0MyTV9FbnRlclJvb20QEhISCg5fTTJDX0Vu",
+            "dGVyUm9vbRATEhQKEF9HMk1fVW5pdERpc3Bvc2UQH2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ETModel.MSG), }, new pbr::GeneratedClrTypeInfo[] {
@@ -129,7 +130,8 @@ namespace ETModel {
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.G2L_GetMapAddress), global::ETModel.G2L_GetMapAddress.Parser, new[]{ "MapType", "RpcId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.L2G_GetMapAddress), global::ETModel.L2G_GetMapAddress.Parser, new[]{ "Address", "Tag", "RpcId", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.C2M_EnterRoom), global::ETModel.C2M_EnterRoom.Parser, new[]{ "RoomType", "RoomId", "RpcId", "ActorId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.M2C_EnterRoom), global::ETModel.M2C_EnterRoom.Parser, new[]{ "RoomId", "Tag", "RpcId", "Message" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.M2C_EnterRoom), global::ETModel.M2C_EnterRoom.Parser, new[]{ "RoomId", "Tag", "RpcId", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ETModel.G2M_UnitDispose), global::ETModel.G2M_UnitDispose.Parser, new[]{ "RpcId", "ActorId" }, null, null, null)
           }));
     }
     #endregion
@@ -250,6 +252,10 @@ namespace ETModel {
     ///用户进入房间
     /// </summary>
     [pbr::OriginalName("_M2C_EnterRoom")] M2CEnterRoom = 19,
+    /// <summary>
+    ///釋放unit
+    /// </summary>
+    [pbr::OriginalName("_G2M_UnitDispose")] G2MUnitDispose = 31,
   }
 
   #endregion
@@ -6553,6 +6559,154 @@ namespace ETModel {
           }
           case 802: {
             Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///釋放unit
+  /// </summary>
+  public sealed partial class G2M_UnitDispose : pb::IMessage<G2M_UnitDispose> {
+    private static readonly pb::MessageParser<G2M_UnitDispose> _parser = new pb::MessageParser<G2M_UnitDispose>(() => new G2M_UnitDispose());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<G2M_UnitDispose> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ETModel.GameProtoReflection.Descriptor.MessageTypes[33]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public G2M_UnitDispose() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public G2M_UnitDispose(G2M_UnitDispose other) : this() {
+      rpcId_ = other.rpcId_;
+      actorId_ = other.actorId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public G2M_UnitDispose Clone() {
+      return new G2M_UnitDispose(this);
+    }
+
+    /// <summary>Field number for the "RpcId" field.</summary>
+    public const int RpcIdFieldNumber = 99;
+    private int rpcId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ActorId" field.</summary>
+    public const int ActorIdFieldNumber = 100;
+    private long actorId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long ActorId {
+      get { return actorId_; }
+      set {
+        actorId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as G2M_UnitDispose);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(G2M_UnitDispose other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RpcId != other.RpcId) return false;
+      if (ActorId != other.ActorId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RpcId != 0) hash ^= RpcId.GetHashCode();
+      if (ActorId != 0L) hash ^= ActorId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RpcId != 0) {
+        output.WriteRawTag(152, 6);
+        output.WriteInt32(RpcId);
+      }
+      if (ActorId != 0L) {
+        output.WriteRawTag(160, 6);
+        output.WriteInt64(ActorId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (ActorId != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(ActorId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(G2M_UnitDispose other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RpcId != 0) {
+        RpcId = other.RpcId;
+      }
+      if (other.ActorId != 0L) {
+        ActorId = other.ActorId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 792: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 800: {
+            ActorId = input.ReadInt64();
             break;
           }
         }

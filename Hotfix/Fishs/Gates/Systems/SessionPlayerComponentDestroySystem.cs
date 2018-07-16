@@ -15,6 +15,12 @@ namespace ETHotfix.Fishs.Gates.Systems
             //ActorMessageSender actorMessageSender = Game.Scene.GetComponent<ActorMessageSenderComponent>().Get(self.Player.UnitId);
             //actorMessageSender.Send(new G2M_SessionDisconnect());
             Log.Debug("断开连接:"+self.Player.Id);
+            if (self.Player.UnitId != 0) //需要通知map清理掉unit
+            {
+                ActorMessageSender actorMessageSender = Game.Scene.GetComponent<ActorMessageSenderComponent>().Get(self.Player.UnitId);
+                actorMessageSender.Send(new G2M_UnitDispose() { ActorId=self.Player.UnitId } );
+                Game.Scene.GetComponent<ActorMessageSenderComponent>().Remove(self.Player.UnitId);
+            }
             Game.Scene.GetComponent<PlayerManagerComponent>()?.Remove(self.Player.Id);
         }
     }

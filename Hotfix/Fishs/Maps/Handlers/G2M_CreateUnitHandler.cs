@@ -1,6 +1,7 @@
 ﻿using ETHotfix.Fishs.Systems;
 using ETModel;
 using Model.Fishs.Components;
+using Model.Fishs.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,6 +23,7 @@ namespace ETHotfix.Fishs.Maps.Handlers
             var initRet = await unit.GetComponent<PlayerDbComponent>().InitDataSync();
             if (initRet)
             {
+                Log.Debug("unitId:" + unit.Id);
                 Game.Scene.GetComponent<UnitManageComponent>().Add(unit);
             }
             response.Tag = 0;

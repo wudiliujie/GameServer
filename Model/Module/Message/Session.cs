@@ -210,7 +210,7 @@ namespace ETModel
                     {
                         throw new RpcException(response.Tag, response.Message);
                     }
-
+                    Log.Debug("response:" + response.GetType().FullName);
                     tcs.SetResult(response);
                 }
                 catch (Exception e)
