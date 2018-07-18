@@ -62,6 +62,7 @@ namespace Server.Map
                 //Game.Scene.AddComponent<GateSessionKeyComponent>();
                 Game.Scene.AddComponent<SqlComponent, string>(dbConfig.ConnectionString);
                 Game.Scene.AddComponent<UnitManageComponent>();
+                Game.Scene.AddComponent<RoomManagerComponent>();
 
                 while (true)
                 {

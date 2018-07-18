@@ -143,10 +143,13 @@ namespace ETHotfix
 
 			task.ActorMessage.ActorId = self.ActorId;
 			IResponse response = await session.Call(task.ActorMessage);
-			
 
-			// 发送成功
-			switch (response.Tag)
+            Log.Debug("runTask:" + task.ActorMessage.GetType().FullName);
+            Log.Debug("runTask1:" + response.Tag);
+            
+
+            // 发送成功
+            switch (response.Tag)
 			{
 				case ErrorCode.ERR_NotFoundActor:
 					// 如果没找到Actor,重试

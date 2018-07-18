@@ -1,6 +1,7 @@
 ﻿using ETModel;
 using Model.Fishs.Components;
 using Model.Fishs.Entitys;
+using ETHotfix.Fishs.Maps.Systems;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +19,13 @@ namespace ETHotfix.Fishs.Maps.Handlers
             Game.EventSystem.Remove(unitId);
             Game.Scene.GetComponent<UnitManageComponent>().Remove(unitId);
             await Game.Scene.GetComponent<LocationProxyComponent>().Remove(unitId); //刪除远程
+            var unitRoom = unit.GetComponent<UnitRoomComponent>();
+            if (unitRoom != null)
+            {
+                Log.Debug("离开room");
+                unitRoom.LeaveRoom();
+            }
+
 
             //保存数据
             Log.Debug("删除数据:unit" + unitId);

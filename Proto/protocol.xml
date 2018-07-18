@@ -141,7 +141,7 @@
   <p n="M2C_EnterRoom" d="用户进入房间" pt="IActorResponse">
     <p i="1" n="RoomId" t="int" d="房间编号" />
   </p>
-  <p n="G2M_UnitDispose" d="釋放unit" pt="IActorMessage">
+  <p n="G2M_UnitDispose" d="釋放unit" pt="IActorRequest">
   </p>
   <ids>
     <id i="1" n="ResponseMessage" />

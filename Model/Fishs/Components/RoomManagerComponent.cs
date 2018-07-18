@@ -10,9 +10,15 @@ namespace Model.Fishs.Components
     public class RoomManagerComponent : Component
     {
         private readonly Dictionary<long, Room> idRooms = new Dictionary<long, Room>();
+        private int _roomIdSeq;
+
         public void Awake()
         {
         }
+        /// <summary>
+        /// 房间ID,索引
+        /// </summary>
+        public int RoomIdSeq { get => _roomIdSeq++; }
 
         public void Add(Room room)
         {

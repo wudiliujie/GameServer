@@ -64,7 +64,7 @@ namespace ETModel
 	public partial class M2C_EnterRoom : IActorResponse
 	{
 	}
-	public partial class G2M_UnitDispose : IActorMessage
+	public partial class G2M_UnitDispose : IActorRequest
 	{
 	}
 	public static class RegisterClass

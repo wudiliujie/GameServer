@@ -19,7 +19,10 @@ namespace ETModel
         public const int ERR_ActorLocationNotFound = 2004;
 
         public const int ERR_ServerIdExt = 3001;//服务器已经存在
+        public const int ERR_Server_NO_Start = 3002;//服务器没有启动
 
+        public const int ERR_RoomNOExist = 4001; //房间不存在
+        public const int ERR_Room_Full = 4002; //房间人说已满
 
         public const int ERR_Exception = 100000;
 

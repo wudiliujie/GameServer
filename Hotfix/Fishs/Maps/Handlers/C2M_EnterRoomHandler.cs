@@ -1,8 +1,11 @@
 ﻿using ETModel;
+using Model.Fishs.Components;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using ETHotfix.Fishs.Maps.Systems;
+using Model.Fishs.Entitys;
 
 namespace ETHotfix.Fishs.Maps.Handlers
 {
@@ -13,7 +16,18 @@ namespace ETHotfix.Fishs.Maps.Handlers
         {
             await Task.CompletedTask;
             Log.Debug("EnterRoom");
-            reply(new M2C_EnterRoom() { Tag = 0 });
+            RoomManagerComponent roomManager = Game.Scene.GetComponent<RoomManagerComponent>();
+            Room room = roomManager.GetBestRoom((RoomType)message.RoomType);
+            var response = new M2C_EnterRoom();
+            if (room == null)
+            {
+                response.Tag = ErrorCode.ERR_RoomNOExist;
+                reply(response);
+            }
+            response.Tag = room.EnterRoom(unit);
+            reply(response);
+            room.BroadcastNewUnit(unit);
+
         }
     }
 }

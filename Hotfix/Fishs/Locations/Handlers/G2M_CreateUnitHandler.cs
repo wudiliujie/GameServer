@@ -17,7 +17,7 @@ namespace ETHotfix.Fishs.Locations.Handlers
             var address = Game.Scene.GetComponent<ServerManagerComponent>().GetAddressByType(message.MapType);
             if (address == "")
             {
-                response.Tag = 1;//地址不存在
+                response.Tag = ErrorCode.ERR_AccountOrPasswordError;//地址不存在
             }
             else
             {
